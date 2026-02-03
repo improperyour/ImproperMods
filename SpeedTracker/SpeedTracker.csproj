@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net462</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <AssemblyName>SpeedTracker</AssemblyName>
+        <RootNamespace>SpeedTracker</RootNamespace>
+
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
+        <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+
+        <GamePath Condition="'$(GamePath)'==''">D:\SteamLibrary\steamapps\common\Valheim</GamePath>
+
+        <NoWarn>$(NoWarn);MSB3277</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+
+        <!-- BepInEx core -->
+        <Reference Include="BepInEx">
+            <HintPath>$(GamePath)\BepInEx\core\BepInEx.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        
+        <!-- Unity -->
+        <Reference Include="UnityEngine">
+            <HintPath>$(GamePath)\valheim_Data\Managed\UnityEngine.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>$(GamePath)\valheim_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+
+        <Reference Include="UnityEngine.UI">
+            <HintPath>$(GamePath)\valheim_Data\Managed\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule">
+            <HintPath>$(GamePath)\valheim_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRederingModule">
+            <HintPath>$(GamePath)\valheim_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+            <HintPath>$(GamePath)\valheim_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+            <HintPath>$(GamePath)\valheim_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+
+
+        <!-- Valheim server assembly -->
+        <Reference Include="assembly_valheim">
+            <HintPath>$(GamePath)\valheim_Data\Managed\publicized_assemblies\assembly_valheim_publicized.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
+
+    <Target Name="ValidateGamePath" BeforeTargets="ResolveReferences">
+        <Error Condition="!Exists('$(GamePath)\Valheim_Data\Managed\publicized_assemblies\assembly_valheim_publicized.dll')"
+               Text="GamePath is invalid. Provide -p:GamePath=&quot;C:\Path\To\Valheim&quot; (must contain valheim_Data\Managed\assembly_valheim.dll). Current: $(GamePath)" />
+        <Error Condition="!Exists('$(GamePath)\BepInEx\core\BepInEx.dll')"
+               Text="BepInEx.dll not found. Check that BepInEx is installed and GamePath is correct. Current: $(GamePath)" />
+        <Error Condition="!Exists('$(GamePath)\BepInEx\core\0Harmony.dll')"
+               Text="0Harmony.dll not found in BepInEx\core. Check BepInEx install. Current: $(GamePath)" />
+    </Target>
+
+
+</Project>
