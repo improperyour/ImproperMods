@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedTracker", "SpeedTracker\SpeedTracker.csproj", "{322BE603-8B16-4F70-BC64-D28A1FD84929}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatencyLogger", "LegacyLogger\LatencyLogger.csproj", "{D4059B20-C73C-4115-83D6-B2BF5D3904E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandingTorchColors", "StandingTorchColors\StandingTorchColors.csproj", "{7D291F34-AD56-4AD2-8142-233B9A0DA2F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{322BE603-8B16-4F70-BC64-D28A1FD84929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{322BE603-8B16-4F70-BC64-D28A1FD84929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{322BE603-8B16-4F70-BC64-D28A1FD84929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{322BE603-8B16-4F70-BC64-D28A1FD84929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4059B20-C73C-4115-83D6-B2BF5D3904E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4059B20-C73C-4115-83D6-B2BF5D3904E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4059B20-C73C-4115-83D6-B2BF5D3904E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4059B20-C73C-4115-83D6-B2BF5D3904E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D291F34-AD56-4AD2-8142-233B9A0DA2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D291F34-AD56-4AD2-8142-233B9A0DA2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D291F34-AD56-4AD2-8142-233B9A0DA2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D291F34-AD56-4AD2-8142-233B9A0DA2F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

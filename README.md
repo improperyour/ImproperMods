@@ -24,3 +24,9 @@ excellent install guide for devs.  While I suggest you go read that, if you are 
 * Get the Assembly Publicizer: [Link](https://github.com/elliotttate/Bepinex-Tools/releases) 
   * This one is the most important, it creates versions of the Valheim DLLs that have every class member and method made public, so you don’t have to do convoluted reflection stuff to get access to the private members, and your compiled mod will still link with the normal DLLs no problem.
   * NOTE: Run the game once after the publicizer is installed to generate the publicized DLLs! After you have the publicized DLLs, you can uninstall this mod and only re-install it when Valheim updates.
+
+
+
+Used this to get assets:
+
+https://valtools.org/wiki.php?page=Valheim-Unity-Project-Guide
