@@ -50,5 +50,8 @@
                Text="0Harmony.dll not found in BepInEx\core. Check BepInEx install. Current: $(GamePath)" />
     </Target>
 
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="xcopy &quot;$(TargetDir)\$(TargetFileName)&quot; &quot;D:\SteamLibrary\steamapps\common\Valheim\BepInEx\plugins&quot; /q /y /i" />
+    </Target>
 
 </Project>

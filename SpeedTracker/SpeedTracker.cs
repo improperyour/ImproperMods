@@ -20,7 +20,7 @@ namespace SpeedTracker
         private ManualLogSource _log;
 
         // Configurable settings
-        private Vector2 _displayPosition = new Vector2(20, -20);
+        private Vector2 _displayPosition = new Vector2(100, 100);
         private Color _textColor = Color.white;
         private int _fontSize = 24;
         private bool _isDragging;
@@ -28,14 +28,15 @@ namespace SpeedTracker
 
         private ConfigEntry<int> _cfgFontSize;
         private ConfigEntry<Color> _cfgFontColor;
-        private static ConfigEntry<bool> modEnabled;
-
-
+        private static ConfigEntry<bool> _modEnabled;
+        private ConfigEntry<Vector2> _cfgDisplayPosition;
+        private ConfigEntry<bool> _cfgDebugLogs;
+ 
         void Awake()
         {
             _log = Logger;
 
-            modEnabled = Config.Bind<bool>(
+            _modEnabled = Config.Bind(
                 "General", 
                 "Enabled", 
                 true, 
@@ -44,7 +45,7 @@ namespace SpeedTracker
             _cfgFontSize = Config.Bind(
                 "Display",
                 "FontSize",
-                24,
+                12,
                 new ConfigDescription(
                     "Font size of the speed display",
                     new AcceptableValueRange<int>(10, 64)
@@ -57,11 +58,34 @@ namespace SpeedTracker
                 Color.white,
                 "Font color of the speed display (RGBA)"
             );
+            
+            _cfgDisplayPosition = Config.Bind(
+                "Display",
+                "Position",
+                new Vector2(20f, -20f),
+                "Anchored position of the speed display (X,Y) in screen-space canvas units"
+            );
+            
+            _cfgDebugLogs = Config.Bind(
+                "Debug",
+                "EnableDebugLogs",
+                false,
+                "Enable debug logging");
 
             _cfgFontSize.SettingChanged += (_, __) => ApplyConfig();
             _cfgFontColor.SettingChanged += (_, __) => ApplyConfig();
+            _cfgDisplayPosition.SettingChanged += (_, __) => ApplyConfig();
+
 
             _log.LogInfo($"{PluginName} {PluginVersion} loaded.");
+        }
+        
+        private void DebugLog(string message)
+        {
+            if (_cfgDebugLogs.Value)
+            {
+                _log.LogInfo(message);
+            }
         }
 
         private void ApplyConfig()
@@ -69,15 +93,21 @@ namespace SpeedTracker
             // this is called once when the Game (not server/world) starts up
             // and then anytime a change to the config happens
             
-            _log.LogInfo("ApplyConfig");
             _fontSize = _cfgFontSize.Value;
             _textColor = _cfgFontColor.Value;
+            _displayPosition = _cfgDisplayPosition.Value;
 
             if (_speedText != null)
             {
                 _speedText.fontSize = _fontSize;
                 _speedText.color = _textColor;
             }
+
+            if (_displayRect != null)
+            {
+                _displayRect.anchoredPosition = _displayPosition;
+            }
+
         }
 
         private bool _updateLog;
@@ -85,45 +115,36 @@ namespace SpeedTracker
         private bool _hudLog;
         void Update()
         {
-            // this is continuously called (in Game and in Server/World)
-            // Hud.instance will be null while in Game menu
-            // Hud.instance will be set when in Server/World
-            if (!modEnabled.Value)
+            if (!_modEnabled.Value)
             {
+                if (_speedDisplay != null)
+                {
+                    _speedDisplay.SetActive(false);
+                }
                 return;
             }
 
-            if (_speedDisplay == null)
-            {
-                // so this is only ever called once from what I can tell...
-                _log.LogInfo("speedDisplay & ApplyConfig about to be called");
-                _log.LogInfo($"Hud.Instance is currently: {Hud.instance}");
-                CreateSpeedDisplay();
-                ApplyConfig();
-            }
-
-            if (Player.m_localPlayer && ! _playerLog)
-            {
-                _log.LogInfo($"Player object is set!");
-                _playerLog = true;
-            }
-            if (Hud.instance && ! _hudLog)
-            {
-                _log.LogInfo("Hud.Instance is now set");
-                _hudLog = true;
-            }
-            
             if (Player.m_localPlayer && Hud.instance)
             {
-                // Hud.instance can be set, but Player.m_localPlayer is not until inside server/world
+                if (_speedDisplay == null)
+                {
+                    CreateSpeedDisplay();
+                    ApplyConfig();
+                }
+
+                _speedDisplay.SetActive(true);
+
                 if (!_updateLog)
                 {
-                    _log.LogInfo("UpdateSpeedDisplay & HandleDragging about to be called");
                     _updateLog = true;
                 }
 
                 UpdateSpeedDisplay();
                 HandleDragging();
+            }
+            else if (_speedDisplay != null)
+            {
+                _speedDisplay.SetActive(false);
             }
         }
 
@@ -178,26 +199,57 @@ namespace SpeedTracker
 
         private void HandleDragging()
         {
-            // Right-click to drag
             if (Input.GetMouseButtonDown(1))
             {
-                Vector2 mousePos = Input.mousePosition;
-                if (RectTransformUtility.RectangleContainsScreenPoint(_displayRect, mousePos))
+                Vector2 localMousePos;
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                    _displayRect.parent as RectTransform,
+                    Input.mousePosition,
+                    null,
+                    out localMousePos
+                );
+
+                if (RectTransformUtility.RectangleContainsScreenPoint(_displayRect, Input.mousePosition))
                 {
                     _isDragging = true;
-                    _dragOffset = _displayRect.anchoredPosition - mousePos;
+                    _dragOffset = _displayRect.anchoredPosition - localMousePos;
+            
+                    DebugLog($"START DRAG - Screen: {Input.mousePosition}, Local: {localMousePos}, Anchored: {_displayRect.anchoredPosition}, Offset: {_dragOffset}");
                 }
             }
 
             if (Input.GetMouseButtonUp(1))
             {
                 _isDragging = false;
+                DebugLog("STOP DRAG");
             }
 
             if (_isDragging)
             {
-                _displayRect.anchoredPosition = (Vector2)Input.mousePosition + _dragOffset;
+                Vector2 localMousePos;
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                    _displayRect.parent as RectTransform,
+                    Input.mousePosition,
+                    null,
+                    out localMousePos
+                );
+        
+                Vector2 newPos = localMousePos + _dragOffset;
+        
+                // Log every 10th frame to avoid spam
+                if (Time.frameCount % 10 == 0)
+                {
+                    DebugLog($"DRAGGING - Screen: {Input.mousePosition}, Local: {localMousePos}, NewPos: {newPos}, Offset: {_dragOffset}");
+                }
+        
+                _displayRect.anchoredPosition = newPos;
                 _displayPosition = _displayRect.anchoredPosition;
+                
+                if (_cfgDisplayPosition != null) 
+                {
+                    _cfgDisplayPosition.Value = _displayPosition;
+                    Config.Save();
+                }
             }
         }
 
