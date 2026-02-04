@@ -1,246 +1,226 @@
 using BepInEx;
 using BepInEx.Configuration;
-using System;
-using System.Globalization;
-using System.IO;
+using BepInEx.Logging;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 namespace SpeedTracker
 {
-    [BepInPlugin("com.improperyour.speedtracker", "Speed Tracker", "1.1.0")]
+    [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     public class SpeedTrackerPlugin : BaseUnityPlugin
     {
-        // UI
-        private GameObject _canvasObj;
+        private const string PluginGuid = "com.improperyour.speedtracker";
+        private const string PluginName = "Speed Tracker";
+        private const string PluginVersion = "0.1.0";
+
         private GameObject _speedDisplay;
-        private TextMeshProUGUI _speedText;
+        private Text _speedText;
         private RectTransform _displayRect;
 
-        // Dragging
-        private bool _isDragging;
-        private Vector2 _dragOffset;
+        private ManualLogSource _log;
 
-        // Current applied state
+        // Configurable settings
         private Vector2 _displayPosition = new Vector2(20, -20);
         private Color _textColor = Color.white;
         private int _fontSize = 24;
+        private bool _isDragging;
+        private Vector2 _dragOffset;
 
-        // Config entries
         private ConfigEntry<int> _cfgFontSize;
-        private ConfigEntry<string> _cfgTextColorRgba;
-        private ConfigEntry<string> _cfgDisplayPosition;
+        private ConfigEntry<Color> _cfgFontColor;
+        private static ConfigEntry<bool> modEnabled;
 
-        // Live reload
-        private DateTime _lastConfigWriteUtc = DateTime.MinValue;
-        private float _nextConfigPollTime;
-        private const float ConfigPollIntervalSeconds = 2.0f;
 
-        private void Awake()
+        void Awake()
         {
+            _log = Logger;
+
+            modEnabled = Config.Bind<bool>(
+                "General", 
+                "Enabled", 
+                true, 
+                "Enable this mod");
+
             _cfgFontSize = Config.Bind(
                 "Display",
                 "FontSize",
                 24,
                 new ConfigDescription(
                     "Font size of the speed display",
-                    new AcceptableValueRange<int>(10, 64))
+                    new AcceptableValueRange<int>(10, 64)
+                )
             );
 
-            _cfgTextColorRgba = Config.Bind(
+            _cfgFontColor = Config.Bind(
                 "Display",
-                "TextColorRGBA",
-                "255,255,255,255",
-                "Text color as RGBA bytes: R,G,B,A (0–255)"
+                "FontColor",
+                Color.white,
+                "Font color of the speed display (RGBA)"
             );
 
-            _cfgDisplayPosition = Config.Bind(
-                "Display",
-                "Position",
-                "20,-20",
-                "UI anchored position as \"x,y\""
-            );
+            _cfgFontSize.SettingChanged += (_, __) => ApplyConfig();
+            _cfgFontColor.SettingChanged += (_, __) => ApplyConfig();
 
-            ApplyConfig();
-            UpdateLastConfigWriteTime();
-            _nextConfigPollTime = Time.unscaledTime + ConfigPollIntervalSeconds;
-        }
-
-        private void Update()
-        {
-            PollConfigForChanges();
-
-            // Player.m_localPlayer is NULL on menus and loading screens
-            if (Player.m_localPlayer == null)
-                return;
-
-            if (_speedDisplay == null)
-            {
-                CreateUI();
-                ApplyConfig();
-            }
-
-            UpdateSpeed();
-            HandleDragging();
-        }
-
-        private void CreateUI()
-        {
-            _canvasObj = new GameObject("SpeedTrackerCanvas");
-            var canvas = _canvasObj.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvas.sortingOrder = 100;
-
-            var scaler = _canvasObj.AddComponent<CanvasScaler>();
-            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(1920, 1080);
-
-            DontDestroyOnLoad(_canvasObj);
-
-            _speedDisplay = new GameObject("SpeedDisplay");
-            _speedDisplay.transform.SetParent(_canvasObj.transform, false);
-
-            _speedText = _speedDisplay.AddComponent<TextMeshProUGUI>();
-            _speedText.alignment = TextAlignmentOptions.Left;
-            _speedText.textWrappingMode = TextWrappingModes.NoWrap;
-            _speedText.raycastTarget = false;
-            _speedText.text = "Speed: 0.0 m/s";
-
-            _displayRect = _speedDisplay.GetComponent<RectTransform>();
-            _displayRect.anchorMin = new Vector2(0, 1);
-            _displayRect.anchorMax = new Vector2(0, 1);
-            _displayRect.pivot = new Vector2(0, 1);
-            _displayRect.sizeDelta = new Vector2(220, 40);
-        }
-
-        private void UpdateSpeed()
-        {
-            Vector3 vel = Player.m_localPlayer.GetVelocity();
-            float speed = new Vector3(vel.x, 0, vel.z).magnitude;
-            _speedText.text = $"Speed: {speed:F1} m/s";
-        }
-
-        private void HandleDragging()
-        {
-            if (Input.GetMouseButtonDown(1))
-            {
-                if (RectTransformUtility.RectangleContainsScreenPoint(
-                        _displayRect, Input.mousePosition))
-                {
-                    _isDragging = true;
-                    _dragOffset = _displayRect.anchoredPosition -
-                                  (Vector2)Input.mousePosition;
-                }
-            }
-
-            if (Input.GetMouseButtonUp(1) && _isDragging)
-            {
-                _isDragging = false;
-
-                _cfgDisplayPosition.Value =
-                    $"{_displayPosition.x.ToString(CultureInfo.InvariantCulture)}," +
-                    $"{_displayPosition.y.ToString(CultureInfo.InvariantCulture)}";
-
-                Config.Save();
-                UpdateLastConfigWriteTime();
-            }
-
-            if (_isDragging)
-            {
-                _displayRect.anchoredPosition =
-                    (Vector2)Input.mousePosition + _dragOffset;
-                _displayPosition = _displayRect.anchoredPosition;
-            }
+            _log.LogInfo($"{PluginName} {PluginVersion} loaded.");
         }
 
         private void ApplyConfig()
         {
-            _fontSize = Mathf.Clamp(_cfgFontSize.Value, 10, 64);
-
-            if (!TryParseRgba(_cfgTextColorRgba.Value, out _textColor))
-                _textColor = Color.white;
-
-            if (TryParseVector2(_cfgDisplayPosition.Value, out var pos))
-                _displayPosition = pos;
+            // this is called once when the Game (not server/world) starts up
+            // and then anytime a change to the config happens
+            
+            _log.LogInfo("ApplyConfig");
+            _fontSize = _cfgFontSize.Value;
+            _textColor = _cfgFontColor.Value;
 
             if (_speedText != null)
             {
                 _speedText.fontSize = _fontSize;
                 _speedText.color = _textColor;
             }
-
-            if (_displayRect != null)
-                _displayRect.anchoredPosition = _displayPosition;
         }
 
-        private void PollConfigForChanges()
+        private bool _updateLog;
+        private bool _playerLog;
+        private bool _hudLog;
+        void Update()
         {
-            if (Time.unscaledTime < _nextConfigPollTime)
-                return;
-
-            _nextConfigPollTime = Time.unscaledTime + ConfigPollIntervalSeconds;
-
-            try
+            // this is continuously called (in Game and in Server/World)
+            // Hud.instance will be null while in Game menu
+            // Hud.instance will be set when in Server/World
+            if (!modEnabled.Value)
             {
-                if (!File.Exists(Config.ConfigFilePath))
-                    return;
+                return;
+            }
 
-                var writeTime = File.GetLastWriteTimeUtc(Config.ConfigFilePath);
-                if (writeTime > _lastConfigWriteUtc)
+            if (_speedDisplay == null)
+            {
+                // so this is only ever called once from what I can tell...
+                _log.LogInfo("speedDisplay & ApplyConfig about to be called");
+                _log.LogInfo($"Hud.Instance is currently: {Hud.instance}");
+                CreateSpeedDisplay();
+                ApplyConfig();
+            }
+
+            if (Player.m_localPlayer && ! _playerLog)
+            {
+                _log.LogInfo($"Player object is set!");
+                _playerLog = true;
+            }
+            if (Hud.instance && ! _hudLog)
+            {
+                _log.LogInfo("Hud.Instance is now set");
+                _hudLog = true;
+            }
+            
+            if (Player.m_localPlayer && Hud.instance)
+            {
+                // Hud.instance can be set, but Player.m_localPlayer is not until inside server/world
+                if (!_updateLog)
                 {
-                    _lastConfigWriteUtc = writeTime;
-                    Config.Reload();
-                    ApplyConfig();
+                    _log.LogInfo("UpdateSpeedDisplay & HandleDragging about to be called");
+                    _updateLog = true;
+                }
+
+                UpdateSpeedDisplay();
+                HandleDragging();
+            }
+        }
+
+        private void CreateSpeedDisplay()
+        {
+            // this is called once when Game (not server/world) starts up
+            
+            // Create canvas
+            GameObject canvasObj = new GameObject("SpeedTrackerCanvas");
+            Canvas canvas = canvasObj.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 100;
+
+            CanvasScaler scaler = canvasObj.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920, 1080);
+
+            DontDestroyOnLoad(canvasObj);
+
+            // Create text display
+            _speedDisplay = new GameObject("SpeedDisplay");
+            _speedDisplay.transform.SetParent(canvasObj.transform, false);
+
+            _speedText = _speedDisplay.AddComponent<Text>();
+            _speedText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            _speedText.fontSize = _fontSize;
+            _speedText.color = _textColor;
+            _speedText.alignment = TextAnchor.MiddleLeft;
+            _speedText.text = "Speed: 0.0 m/s";
+
+            // Setup rect transform
+            _displayRect = _speedDisplay.GetComponent<RectTransform>();
+            _displayRect.anchorMin = new Vector2(0, 1);
+            _displayRect.anchorMax = new Vector2(0, 1);
+            _displayRect.pivot = new Vector2(0, 1);
+            _displayRect.anchoredPosition = _displayPosition;
+            _displayRect.sizeDelta = new Vector2(200, 50);
+
+            // Add outline for visibility
+            Outline outline = _speedDisplay.AddComponent<Outline>();
+            outline.effectColor = Color.black;
+            outline.effectDistance = new Vector2(1, -1);
+        }
+
+        private void UpdateSpeedDisplay()
+        {
+            Vector3 velocity = Player.m_localPlayer.GetVelocity();
+            float speed = new Vector3(velocity.x, 0, velocity.z).magnitude;
+
+            _speedText.text = $"Speed: {speed:F1} m/s";
+        }
+
+        private void HandleDragging()
+        {
+            // Right-click to drag
+            if (Input.GetMouseButtonDown(1))
+            {
+                Vector2 mousePos = Input.mousePosition;
+                if (RectTransformUtility.RectangleContainsScreenPoint(_displayRect, mousePos))
+                {
+                    _isDragging = true;
+                    _dragOffset = _displayRect.anchoredPosition - mousePos;
                 }
             }
-            catch
+
+            if (Input.GetMouseButtonUp(1))
             {
-                // intentionally swallow errors
+                _isDragging = false;
+            }
+
+            if (_isDragging)
+            {
+                _displayRect.anchoredPosition = (Vector2)Input.mousePosition + _dragOffset;
+                _displayPosition = _displayRect.anchoredPosition;
             }
         }
 
-        private void UpdateLastConfigWriteTime()
+        // Public methods to customize appearance
+        public void SetTextColor(Color color)
         {
-            try
-            {
-                if (File.Exists(Config.ConfigFilePath))
-                    _lastConfigWriteUtc =
-                        File.GetLastWriteTimeUtc(Config.ConfigFilePath);
-            }
-            catch { }
+            _textColor = color;
+            if (_speedText != null)
+                _speedText.color = color;
         }
 
-        private static bool TryParseRgba(string s, out Color c)
+        public void SetFontSize(int size)
         {
-            c = Color.white;
-            var parts = s.Split(',');
-            if (parts.Length != 4)
-                return false;
-
-            if (!byte.TryParse(parts[0], out var r)) return false;
-            if (!byte.TryParse(parts[1], out var g)) return false;
-            if (!byte.TryParse(parts[2], out var b)) return false;
-            if (!byte.TryParse(parts[3], out var a)) return false;
-
-            c = new Color(r / 255f, g / 255f, b / 255f, a / 255f);
-            return true;
+            _fontSize = size;
+            if (_speedText != null)
+                _speedText.fontSize = size;
         }
 
-        private static bool TryParseVector2(string s, out Vector2 v)
+        public void SetPosition(Vector2 position)
         {
-            v = default;
-            var parts = s.Split(',');
-            if (parts.Length != 2)
-                return false;
-
-            if (!float.TryParse(parts[0], NumberStyles.Float,
-                    CultureInfo.InvariantCulture, out var x)) return false;
-            if (!float.TryParse(parts[1], NumberStyles.Float,
-                    CultureInfo.InvariantCulture, out var y)) return false;
-
-            v = new Vector2(x, y);
-            return true;
+            _displayPosition = position;
+            if (_displayRect != null)
+                _displayRect.anchoredPosition = position;
         }
     }
 }
