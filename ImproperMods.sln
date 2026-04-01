@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatencyLogger", "LegacyLogg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandingTorchColors", "StandingTorchColors\StandingTorchColors.csproj", "{7D291F34-AD56-4AD2-8142-233B9A0DA2F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildMenu", "BuildMenu\BuildMenu.csproj", "{065DAE2D-68F1-4EB4-9FA6-99302120AAAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{7D291F34-AD56-4AD2-8142-233B9A0DA2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D291F34-AD56-4AD2-8142-233B9A0DA2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D291F34-AD56-4AD2-8142-233B9A0DA2F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{065DAE2D-68F1-4EB4-9FA6-99302120AAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{065DAE2D-68F1-4EB4-9FA6-99302120AAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{065DAE2D-68F1-4EB4-9FA6-99302120AAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{065DAE2D-68F1-4EB4-9FA6-99302120AAAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
