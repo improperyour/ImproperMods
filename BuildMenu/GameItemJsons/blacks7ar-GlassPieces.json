@@ -1,0 +1,1194 @@
+{
+  "pieces": [
+    {
+      "Prefab": "BGP_DiagonalBeam26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Diagonal Beam 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_diagonalbeam26"
+    },
+    {
+      "Prefab": "BGP_DiagonalBeam26_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Diagonal Copper Beam 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_diagonalbeam26_copper"
+    },
+    {
+      "Prefab": "BGP_DiagonalBeam45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Diagonal Beam 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_diagonalbeam45"
+    },
+    {
+      "Prefab": "BGP_DiagonalBeam45_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Diagonal Copper Beam 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_diagonalbeam45_copper"
+    },
+    {
+      "Prefab": "BGP_GlassDoor",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Glass Door",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Iron"
+        },
+        {
+          "amount": 4,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassdoor"
+    },
+    {
+      "Prefab": "BGP_GlassDoor_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Glass Copper Door",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Copper"
+        },
+        {
+          "amount": 4,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassdoor_copper"
+    },
+    {
+      "Prefab": "BGP_GlassFloorRoof",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof-Floor",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassfloorroof"
+    },
+    {
+      "Prefab": "BGP_GlassFloorRoof_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof-Floor",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassfloorroof_copper"
+    },
+    {
+      "Prefab": "BGP_GlassFloorRoof_Half",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof-Floor Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassfloorroof_half"
+    },
+    {
+      "Prefab": "BGP_GlassFloorRoof_Half_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof-Floor Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Copper"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassfloorroof_half_copper"
+    },
+    {
+      "Prefab": "BGP_GlassHalfWall",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Half Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasshalfwall"
+    },
+    {
+      "Prefab": "BGP_GlassHalfWall_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Half Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Copper"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasshalfwall_copper"
+    },
+    {
+      "Prefab": "BGP_GlassHalfWall_Vertical",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Half Wall - Vertical",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasshalfwall_vertical"
+    },
+    {
+      "Prefab": "BGP_GlassHalfWall_Vertical_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Half Wall - Vertical",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Copper"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasshalfwall_vertical_copper"
+    },
+    {
+      "Prefab": "BGP_GlassQuarterWall",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Quarter Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassquarterwall"
+    },
+    {
+      "Prefab": "BGP_GlassQuarterWall_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Quarter Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Copper"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassquarterwall_copper"
+    },
+    {
+      "Prefab": "BGP_GlassRoof26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof26"
+    },
+    {
+      "Prefab": "BGP_GlassRoof26_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof26_copper"
+    },
+    {
+      "Prefab": "BGP_GlassRoof45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof45"
+    },
+    {
+      "Prefab": "BGP_GlassRoof45_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof45_copper"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_ICorner26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof I-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_icorner26"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_ICorner26_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof I-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_icorner26_copper"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_ICorner45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof I-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_icorner45"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_ICorner45_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof I-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_icorner45_copper"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_OCorner26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof O-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_ocorner26"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_OCorner26_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof O-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_ocorner26_copper"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_OCorner45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof O-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_ocorner45"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_OCorner45_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof O-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_ocorner45_copper"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_Top26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof Top 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_top26"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_Top26_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof Top 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_top26_copper"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_Top45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Roof Top 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_top45"
+    },
+    {
+      "Prefab": "BGP_GlassRoof_Top45_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Roof Top 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glassroof_top45_copper"
+    },
+    {
+      "Prefab": "BGP_GlassWall",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswall"
+    },
+    {
+      "Prefab": "BGP_GlassWall_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswall_copper"
+    },
+    {
+      "Prefab": "BGP_GlassWall_Roof26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Wall Roof 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswall_roof26"
+    },
+    {
+      "Prefab": "BGP_GlassWall_Roof26_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Wall Roof 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswall_roof26_copper"
+    },
+    {
+      "Prefab": "BGP_GlassWall_Roof45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Wall Roof 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswall_roof45"
+    },
+    {
+      "Prefab": "BGP_GlassWall_Roof45_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Glass Copper Wall Roof 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswall_roof45_copper"
+    },
+    {
+      "Prefab": "BGP_GlassWindow",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Glass Window",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Iron"
+        },
+        {
+          "amount": 4,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswindow"
+    },
+    {
+      "Prefab": "BGP_GlassWindow_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Glass Copper Window",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Copper"
+        },
+        {
+          "amount": 4,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswindow_copper"
+    },
+    {
+      "Prefab": "BGP_GlassWindow_Half",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Glass Window Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswindow_half"
+    },
+    {
+      "Prefab": "BGP_GlassWindow_Half_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Glass Copper Window Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswindow_half_copper"
+    },
+    {
+      "Prefab": "BGP_GlassWindow_Quarter",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Glass Window Quarter",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswindow_quarter"
+    },
+    {
+      "Prefab": "BGP_GlassWindow_Quarter_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Glass Copper Window Quarter",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        },
+        {
+          "amount": 1,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_glasswindow_quarter_copper"
+    },
+    {
+      "Prefab": "BGP_HorizontalBeam",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Horizontal Beam",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_horizontalbeam"
+    },
+    {
+      "Prefab": "BGP_HorizontalBeam_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Horizontal Copper Beam",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_horizontalbeam_copper"
+    },
+    {
+      "Prefab": "BGP_HorizontalBeam_Half",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Horizontal Beam Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_horizontalbeam_half"
+    },
+    {
+      "Prefab": "BGP_HorizontalBeam_Half_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Horizontal Copper Beam Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_horizontalbeam_half_copper"
+    },
+    {
+      "Prefab": "BGP_IronStair",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Iron Stairs",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_ironstair"
+    },
+    {
+      "Prefab": "BGP_IronStair_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Copper Stairs",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_ironstair_copper"
+    },
+    {
+      "Prefab": "BGP_SilicaCollector",
+      "category": "Crafting",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Collector"
+      ],
+      "name": "Silica Ore Collector",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Surtling Core"
+        },
+        {
+          "amount": 15,
+          "required": "Iron"
+        },
+        {
+          "amount": 5,
+          "required": "Crystal"
+        },
+        {
+          "amount": 5,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_silica_collector"
+    },
+    {
+      "Prefab": "BGP_SlidingGlassDoor",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Sliding Glass Door",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Iron"
+        },
+        {
+          "amount": 6,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_slidingglassdoor"
+    },
+    {
+      "Prefab": "BGP_SlidingGlassDoor_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Sliding Glass Copper Door",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Copper"
+        },
+        {
+          "amount": 6,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_slidingglassdoor_copper"
+    },
+    {
+      "Prefab": "BGP_SlidingGlassWindow",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Sliding Glass Window",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Iron"
+        },
+        {
+          "amount": 4,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_slidingglasswindow"
+    },
+    {
+      "Prefab": "BGP_SlidingGlassWindow_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Sliding Glass Copper Window",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Copper"
+        },
+        {
+          "amount": 4,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_slidingglasswindow_copper"
+    },
+    {
+      "Prefab": "BGP_SlidingGlassWindow_Half",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Sliding Glass Window Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_slidingglasswindow_half"
+    },
+    {
+      "Prefab": "BGP_SlidingGlassWindow_Half_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Sliding Glass Copper Window Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Copper"
+        },
+        {
+          "amount": 2,
+          "required": "Glass"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_slidingglasswindow_half_copper"
+    },
+    {
+      "Prefab": "BGP_VerticalBeam",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Vertical Beam",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_verticalbeam"
+    },
+    {
+      "Prefab": "BGP_VerticalBeam_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Vertical Copper Beam",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_verticalbeam_copper"
+    },
+    {
+      "Prefab": "BGP_VerticalBeam_Half",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Vertical Beam Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_verticalbeam_half"
+    },
+    {
+      "Prefab": "BGP_VerticalBeam_Half_Copper",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Vertical Copper Beam Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bgp_verticalbeam_half_copper"
+    }
+  ]
+}

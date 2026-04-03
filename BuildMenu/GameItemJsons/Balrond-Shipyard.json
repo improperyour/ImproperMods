@@ -1,0 +1,968 @@
+{
+  "pieces": [
+    {
+      "Prefab": "FishnetTrap",
+      "category": "Crafting",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fishnet Trap",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 14,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 4,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 10,
+          "required": "Fishing Bait"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Fishnet Trap"
+    },
+    {
+      "Prefab": "Holk",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Ship"
+      ],
+      "name": "Holk",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Yggdrasil Wood"
+        },
+        {
+          "amount": 400,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 50,
+          "required": "Ancient Bark"
+        },
+        {
+          "amount": 12,
+          "required": "Lox Pelt"
+        },
+        {
+          "amount": 20,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:5"
+      ],
+      "token": "Holk"
+    },
+    {
+      "Prefab": "Karve",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Ship"
+      ],
+      "name": "Karve",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 30,
+          "required": "Finewood"
+        },
+        {
+          "amount": 90,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 16,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 10,
+          "required": "Deer Hide"
+        },
+        {
+          "amount": 20,
+          "required": "Charcoal paste"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:2"
+      ],
+      "token": "$ship_karve"
+    },
+    {
+      "Prefab": "Knarr",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Ship"
+      ],
+      "name": "Knarr",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 35,
+          "required": "Finewood"
+        },
+        {
+          "amount": 120,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 14,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 12,
+          "required": "Troll Hide"
+        },
+        {
+          "amount": 25,
+          "required": "Charcoal paste"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:2"
+      ],
+      "token": "Knarr"
+    },
+    {
+      "Prefab": "ShipyardStation",
+      "category": "Crafting",
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Shipyard",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 30,
+          "required": "Finewood"
+        },
+        {
+          "amount": 200,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 25,
+          "required": "Coal"
+        },
+        {
+          "amount": 10,
+          "required": "Deer Hide"
+        },
+        {
+          "amount": 25,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Shipyard"
+    },
+    {
+      "Prefab": "Snekke",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Ship"
+      ],
+      "name": "Snekke",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 40,
+          "required": "Finewood"
+        },
+        {
+          "amount": 100,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 30,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 16,
+          "required": "Troll Hide"
+        },
+        {
+          "amount": 30,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:3"
+      ],
+      "token": "Snekke"
+    },
+    {
+      "Prefab": "VikingShip",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Ship"
+      ],
+      "name": "Longship",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 45,
+          "required": "Finewood"
+        },
+        {
+          "amount": 200,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 40,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 12,
+          "required": "Wolf Pelt"
+        },
+        {
+          "amount": 4,
+          "required": "Red Jute"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:4"
+      ],
+      "token": "$ship_longship"
+    },
+    {
+      "Prefab": "VikingShip_Ashlands",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Ship"
+      ],
+      "name": "Drakkar",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Finewood"
+        },
+        {
+          "amount": 350,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 25,
+          "required": "Tar"
+        },
+        {
+          "amount": 40,
+          "required": "Yggdrasil Wood"
+        },
+        {
+          "amount": 40,
+          "required": "Ceramic Plate"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:5"
+      ],
+      "token": "$ship_longship_ashlands"
+    },
+    {
+      "Prefab": "bridge_rope",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Rope Bridge",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Rope Bridge"
+    },
+    {
+      "Prefab": "bridge_rope_support",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Rope Bridge Supported",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        },
+        {
+          "amount": 6,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Rope Bridge Supported"
+    },
+    {
+      "Prefab": "bridge_rope_support_side",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Rope Bridge one side support",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 1,
+          "required": "Corewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Rope Bridge one side support"
+    },
+    {
+      "Prefab": "cloth_roof",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tent Roof",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 6,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tent Roof"
+    },
+    {
+      "Prefab": "cloth_roof_corner",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tent Roof Flat",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 6,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tent Roof Flat"
+    },
+    {
+      "Prefab": "cloth_roof_corner2",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tent wall side",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 6,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tent wall side"
+    },
+    {
+      "Prefab": "cloth_roof_triangle_sloope",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tent Roof Sloope",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 6,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tent Roof Sloope"
+    },
+    {
+      "Prefab": "decor_dragon",
+      "category": "Furniture",
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Dragon Decor Head",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Coal"
+        },
+        {
+          "amount": 1,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "Dragon Decor Head"
+    },
+    {
+      "Prefab": "fishnet_wall",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fishnet Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 6,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Fishnet Wall"
+    },
+    {
+      "Prefab": "piece_banner_sail1",
+      "category": "Furniture",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Sail banner wide",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 2,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "Sail banner wide"
+    },
+    {
+      "Prefab": "piece_banner_sail2",
+      "category": "Furniture",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Sail banner",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 2,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "Sail banner"
+    },
+    {
+      "Prefab": "piece_chest_cargo",
+      "category": "Furniture",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Container"
+      ],
+      "name": "Cargo",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 24,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Cargo"
+    },
+    {
+      "Prefab": "piece_chest_tarred",
+      "category": "Furniture",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Container"
+      ],
+      "name": "Dock Cargo",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Tar"
+        },
+        {
+          "amount": 64,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 20,
+          "required": "Finewood"
+        },
+        {
+          "amount": 10,
+          "required": "Leather Scraps"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Dock Cargo"
+    },
+    {
+      "Prefab": "piece_iron_wall_torch",
+      "category": "Furniture",
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Iron wall Torch",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 1,
+          "required": "Iron"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "Iron wall Torch"
+    },
+    {
+      "Prefab": "piece_ropewall",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Ladder"
+      ],
+      "name": "Rope wall 2m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 2,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "Rope wall 2m"
+    },
+    {
+      "Prefab": "piece_ropewall_big",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Ladder"
+      ],
+      "name": "Rope wall 4m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 2,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "Rope wall 4m"
+    },
+    {
+      "Prefab": "piece_scribetable",
+      "category": "Crafting",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "CraftingStation"
+      ],
+      "name": "Scribe Table",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 15,
+          "required": "Finewood"
+        },
+        {
+          "amount": 15,
+          "required": "Wood"
+        },
+        {
+          "amount": 55,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 15,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 10,
+          "required": "Feathers"
+        }
+      ],
+      "systemEffects": [
+        "CraftingStation"
+      ],
+      "token": "Scribe Table"
+    },
+    {
+      "Prefab": "piece_wisplampceiling",
+      "category": "Furniture",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wisp lamp",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wisp"
+        },
+        {
+          "amount": 3,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 8,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "Wisp lamp"
+    },
+    {
+      "Prefab": "tar_ladder",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Ladder 2m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 3,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Ladder 2m"
+    },
+    {
+      "Prefab": "tar_wood_floor",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Floor 2x2",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Floor 2x2"
+    },
+    {
+      "Prefab": "tar_wood_log_26",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Beam 27",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Beam 27"
+    },
+    {
+      "Prefab": "tar_wood_log_45",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Beam 45",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Beam 45"
+    },
+    {
+      "Prefab": "tar_wood_pole_log1",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Pole 1m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 1,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Pole 1m"
+    },
+    {
+      "Prefab": "tar_wood_pole_log2",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Pole 2m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Pole 2m"
+    },
+    {
+      "Prefab": "tar_wood_pole_log4",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Pole 4m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 4,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Pole 4m"
+    },
+    {
+      "Prefab": "tar_wood_ramp",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Ramp 26",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Ramp 26"
+    },
+    {
+      "Prefab": "tar_wood_wall_log2",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Beam 2m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Beam 2m"
+    },
+    {
+      "Prefab": "tar_wood_wall_log4",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Tarred Wood Beam 4m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Charcoal paste"
+        },
+        {
+          "amount": 4,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Tarred Wood Beam 4m"
+    }
+  ]
+}

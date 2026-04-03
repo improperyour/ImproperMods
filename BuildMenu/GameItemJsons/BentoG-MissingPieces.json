@@ -1,0 +1,372 @@
+{
+  "pieces": [
+    {
+      "Prefab": "piece_chest_wooden_drawer",
+      "category": "Furniture",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Container",
+        "CustomInteract",
+        "Sign"
+      ],
+      "name": "Wooden Drawer",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Coal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_mpwoodendrawer"
+    },
+    {
+      "Prefab": "roof_darkwood_26_left",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Left Triangular Shingle Roof (26°)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_leftdarkwoodroof26triangular"
+    },
+    {
+      "Prefab": "roof_darkwood_26_right",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Right Triangular Shingle Roof (26°)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_rightdarkwoodroof26triangular"
+    },
+    {
+      "Prefab": "roof_darkwood_2m",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Shingle Roof 2m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_roofdarkwood2m"
+    },
+    {
+      "Prefab": "roof_darkwood_45_left",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Left Triangular Shingle Roof (45°)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_leftdarkwoodroof45triangular"
+    },
+    {
+      "Prefab": "roof_darkwood_45_right",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Right Triangular Shingle Roof (45°)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_rightdarkwoodroof45triangular"
+    },
+    {
+      "Prefab": "roof_wood_26_left",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Left Triangular Thatch Roof (26°)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_leftwoodroof26triangular"
+    },
+    {
+      "Prefab": "roof_wood_26_right",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Right Triangular Thatch Roof (26°)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_rightwoodroof26triangular"
+    },
+    {
+      "Prefab": "roof_wood_2m",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof 2m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_roofwood2m"
+    },
+    {
+      "Prefab": "roof_wood_45_left",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Left Triangular Thatch Roof (45°)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_leftwoodroof45triangular"
+    },
+    {
+      "Prefab": "roof_wood_45_right",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Right Triangular Thatch Roof (45°)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_rightwoodroof45triangular"
+    },
+    {
+      "Prefab": "stone_floor_1x1",
+      "category": "BuildingStonecutter",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Floor 1x1",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_stonefloor1x1"
+    },
+    {
+      "Prefab": "stone_stair_corner",
+      "category": "BuildingStonecutter",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Stair Corner",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_stonestaircorner"
+    },
+    {
+      "Prefab": "stone_wall_1x1_triangular",
+      "category": "BuildingStonecutter",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Ramp 1x1",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_stonewall1x1triangular"
+    },
+    {
+      "Prefab": "stone_wall_2x1_triangular",
+      "category": "BuildingStonecutter",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Ramp 2x1",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_stonewall2x1triangular"
+    },
+    {
+      "Prefab": "wood_finerstepladder",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finer Wood Ladder",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_finerstepladder"
+    },
+    {
+      "Prefab": "wood_floor_triangular1",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Triangular Wood Floor (1)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_woodfloortriangular1"
+    },
+    {
+      "Prefab": "wood_floor_triangular2",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Triangular Wood Floor (2)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_woodfloortriangular2"
+    },
+    {
+      "Prefab": "wood_stair_1m",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Narrow wood stair",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_woodstair1m"
+    },
+    {
+      "Prefab": "wood_wall_half_upper",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Wall Half Upper",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_woodwallhalfupper"
+    },
+    {
+      "Prefab": "wood_wall_quarter_upper",
+      "category": "BuildingWorkbench",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Wall Quarter Upper",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_woodwallquarterupper"
+    }
+  ]
+}

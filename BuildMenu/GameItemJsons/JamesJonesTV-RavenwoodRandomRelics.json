@@ -1,0 +1,1820 @@
+{
+  "pieces": [
+    {
+      "Prefab": "AsianTeaSet",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Asian Tea Set",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Stone"
+        },
+        {
+          "amount": 5,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Asian Tea Set"
+    },
+    {
+      "Prefab": "AsianTeaSetPlate",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Asian Tea Set Plate",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        },
+        {
+          "amount": 5,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Asian Tea Set Plate"
+    },
+    {
+      "Prefab": "BearHead",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Bear Head Trophy",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 40,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Bear Head Trophy"
+    },
+    {
+      "Prefab": "BoarHead",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Boar Head Trophy",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 40,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Boar Head Trophy"
+    },
+    {
+      "Prefab": "BoatinBottle",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "The Black Pearl",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Coins"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "The Black Pearl"
+    },
+    {
+      "Prefab": "Chinese_Lamp",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Warden’s Lantern",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Warden’s Lantern"
+    },
+    {
+      "Prefab": "DeerGlobe",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Deer in Snow Globe",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Coins"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Deer in Snow Globe"
+    },
+    {
+      "Prefab": "DeerHead",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Deer Head Trophy",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 40,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Deer Head Trophy"
+    },
+    {
+      "Prefab": "DragonBanner",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "The Red Dragon",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        },
+        {
+          "amount": 3,
+          "required": "Bronze"
+        },
+        {
+          "amount": 3,
+          "required": "Red Jute"
+        }
+      ],
+      "systemEffects": [],
+      "token": "The Red Dragon"
+    },
+    {
+      "Prefab": "DutchBanner",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Banner of Kings",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Deer Hide"
+        },
+        {
+          "amount": 1,
+          "required": "Bronze"
+        },
+        {
+          "amount": 5,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Banner of Kings"
+    },
+    {
+      "Prefab": "ElephantHead",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Elefant Head Trophy",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 40,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Elefant Head Trophy"
+    },
+    {
+      "Prefab": "HippoHead",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hipo Head Trophy",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 40,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Hipo Head Trophy"
+    },
+    {
+      "Prefab": "HornX",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "HornOfThor"
+      ],
+      "name": "Horn of Thor",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 25,
+          "required": "Bone Fragments"
+        },
+        {
+          "amount": 5,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Horn of Thor"
+    },
+    {
+      "Prefab": "HotAirBalloon",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hot Air Balloon",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Greydwarf Eye"
+        },
+        {
+          "amount": 10,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Hot Air Balloon"
+    },
+    {
+      "Prefab": "ItalianCypress0",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Tall Orange",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Tall Orange"
+    },
+    {
+      "Prefab": "ItalianCypress1",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Tall Green",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Tall Green"
+    },
+    {
+      "Prefab": "ItalianCypress2",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Medium Green",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Medium Green"
+    },
+    {
+      "Prefab": "ItalianCypress3",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Small Green",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Small Green"
+    },
+    {
+      "Prefab": "ItalianCypress4",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Small Orange",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Small Orange"
+    },
+    {
+      "Prefab": "JPGate",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Japanese Torii Gate II",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Wood"
+        },
+        {
+          "amount": 20,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Japanese Torii Gate II"
+    },
+    {
+      "Prefab": "JapaneseStoneLantern",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Japanese Stone Lantern",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Japanese Stone Lantern"
+    },
+    {
+      "Prefab": "JapaneseToriiGate",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Japanese Torii Gate I",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Wood"
+        },
+        {
+          "amount": 20,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Japanese Torii Gate I"
+    },
+    {
+      "Prefab": "LionHead",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Lion Head Trophy",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 40,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Lion Head Trophy"
+    },
+    {
+      "Prefab": "OdinGuard",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Heimdall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Bronze"
+        },
+        {
+          "amount": 15,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Heimdall"
+    },
+    {
+      "Prefab": "Picture1",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Ravenwood Vikings",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Ravenwood Vikings"
+    },
+    {
+      "Prefab": "Picture2",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Ravenwood Vikings II",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Ravenwood Vikings II"
+    },
+    {
+      "Prefab": "Picture3",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Ravenwood Vikings III",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Ravenwood Vikings III"
+    },
+    {
+      "Prefab": "Picture4",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Ravenwood Vikings IV",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Ravenwood Vikings IV"
+    },
+    {
+      "Prefab": "Picture5",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Ravenwood Vikings V",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Ravenwood Vikings V"
+    },
+    {
+      "Prefab": "Picture_01_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 01 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 01 A"
+    },
+    {
+      "Prefab": "Picture_01_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 01 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 01 B"
+    },
+    {
+      "Prefab": "Picture_02_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 02 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 02 A"
+    },
+    {
+      "Prefab": "Picture_02_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 02 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 02 B"
+    },
+    {
+      "Prefab": "Picture_03_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 03 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 03 A"
+    },
+    {
+      "Prefab": "Picture_03_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 03 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 03 B"
+    },
+    {
+      "Prefab": "Picture_04_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 04 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 04 A"
+    },
+    {
+      "Prefab": "Picture_04_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 04 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 04 B"
+    },
+    {
+      "Prefab": "Picture_05_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 05 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 05 A"
+    },
+    {
+      "Prefab": "Picture_05_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 05 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 05 B"
+    },
+    {
+      "Prefab": "Picture_06_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 06 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 06 A"
+    },
+    {
+      "Prefab": "Picture_06_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 06 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 06 B"
+    },
+    {
+      "Prefab": "Picture_07_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 07 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 07 A"
+    },
+    {
+      "Prefab": "Picture_07_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 07 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 07 B"
+    },
+    {
+      "Prefab": "Picture_08_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 08 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 08 A"
+    },
+    {
+      "Prefab": "Picture_08_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 08 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 08 B"
+    },
+    {
+      "Prefab": "Picture_09_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 09 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 09 A"
+    },
+    {
+      "Prefab": "Picture_09_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 09 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 09 B"
+    },
+    {
+      "Prefab": "Picture_10_A",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 10 A",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 10 A"
+    },
+    {
+      "Prefab": "Picture_10_B",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Picture 10 B",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Picture 10 B"
+    },
+    {
+      "Prefab": "R_KnightArmour",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Kinght Armour",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Iron"
+        },
+        {
+          "amount": 15,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Kinght Armour"
+    },
+    {
+      "Prefab": "RhinoHead",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Rhino Head Trophy",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 40,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Rhino Head Trophy"
+    },
+    {
+      "Prefab": "Rose",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Rose in a Globe",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Thistle"
+        },
+        {
+          "amount": 10,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Rose in a Globe"
+    },
+    {
+      "Prefab": "SM_ItalianCypress_Growing_A",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Growing",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Growing"
+    },
+    {
+      "Prefab": "SM_ItalianCypress_Growing_C",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Growing Thin",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Growing Thin"
+    },
+    {
+      "Prefab": "SM_ItalianCypress_Growing_E",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Growing Wide",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Growing Wide"
+    },
+    {
+      "Prefab": "SM_ItalianCypress_Large_A",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Large Wide",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Large Wide"
+    },
+    {
+      "Prefab": "SM_ItalianCypress_Large_B",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Large Thin",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Large Thin"
+    },
+    {
+      "Prefab": "SM_ItalianCypress_Large_B1",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Extra Large",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 30,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Extra Large "
+    },
+    {
+      "Prefab": "SM_ItalianCypress_Massive",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Massive",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Massive"
+    },
+    {
+      "Prefab": "SM_ItalianCypress_Medium_B",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Italian Cypress Tree Small",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Italian Cypress Tree Small"
+    },
+    {
+      "Prefab": "SWC",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Vintage Swiss Wooden Cuckoo Clock",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 20,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Vintage Swiss Wooden Cuckoo Clock"
+    },
+    {
+      "Prefab": "TP",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Toilet Paper",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Dandelion"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Toilet Paper"
+    },
+    {
+      "Prefab": "Vikings",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Ravenwood Vikings VI",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Ravenwood Vikings VI"
+    },
+    {
+      "Prefab": "WitchCat",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "WitchCat",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "WitchCat"
+    },
+    {
+      "Prefab": "WoodenBear",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wooden Brown Bear",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Coins"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wooden Brown Bear"
+    },
+    {
+      "Prefab": "armor",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Dark Knight",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Iron"
+        },
+        {
+          "amount": 15,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Dark Knight"
+    },
+    {
+      "Prefab": "bear",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Bear Statue",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Stone"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        },
+        {
+          "amount": 5,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Bear Statue"
+    },
+    {
+      "Prefab": "blackdragonskeleton",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Dark Angel",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Iron"
+        },
+        {
+          "amount": 20,
+          "required": "Finewood"
+        },
+        {
+          "amount": 100,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Dark Angel"
+    },
+    {
+      "Prefab": "blackthrone",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Black throne",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Bronze"
+        },
+        {
+          "amount": 200,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Black throne"
+    },
+    {
+      "Prefab": "bouquet",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Flower Bouquet",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Thistle"
+        },
+        {
+          "amount": 5,
+          "required": "Dandelion"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Flower Bouquet"
+    },
+    {
+      "Prefab": "clock",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wooden Big Ben Clock",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 25,
+          "required": "Wood"
+        },
+        {
+          "amount": 15,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wooden Big Ben Clock"
+    },
+    {
+      "Prefab": "dragon",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Draco",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 333,
+          "required": "Refined Eitr"
+        },
+        {
+          "amount": 3333,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Draco"
+    },
+    {
+      "Prefab": "gargoyledog",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Gargoyle I",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        },
+        {
+          "amount": 10,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Gargoyle I"
+    },
+    {
+      "Prefab": "goldenthrone",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Gold throne",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Bronze"
+        },
+        {
+          "amount": 200,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Gold throne"
+    },
+    {
+      "Prefab": "greythrone",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Grey throne",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Bronze"
+        },
+        {
+          "amount": 200,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Grey throne"
+    },
+    {
+      "Prefab": "horse",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Horse Brust Statue",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Horse Brust Statue"
+    },
+    {
+      "Prefab": "lion",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Lion Statue",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 40,
+          "required": "Stone"
+        },
+        {
+          "amount": 40,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Lion Statue"
+    },
+    {
+      "Prefab": "pedestalplanter",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Pedestal Planter",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 15,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Pedestal Planter"
+    },
+    {
+      "Prefab": "porcelainteaset",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Porcelain Tea Set",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Stone"
+        },
+        {
+          "amount": 5,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Porcelain Tea Set"
+    },
+    {
+      "Prefab": "skullgoblet",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Skull Goblet",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 15,
+          "required": "Bone Fragments"
+        },
+        {
+          "amount": 5,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Skull Goblet"
+    },
+    {
+      "Prefab": "throne",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Odin",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Stone"
+        },
+        {
+          "amount": 100,
+          "required": "Bronze"
+        },
+        {
+          "amount": 1000,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Odin"
+    },
+    {
+      "Prefab": "v2_Lionking",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Banner of a Lion",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Deer Hide"
+        },
+        {
+          "amount": 1,
+          "required": "Bronze"
+        },
+        {
+          "amount": 5,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Banner of a Lion"
+    },
+    {
+      "Prefab": "v2_NiceChair",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Chair"
+      ],
+      "name": "Chair of the Windweaver",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 15,
+          "required": "Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Deer Hide"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Chair of the Windweaver"
+    },
+    {
+      "Prefab": "v2_PersianRug",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "World Tree Rug",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Deer Hide"
+        }
+      ],
+      "systemEffects": [],
+      "token": "World Tree Rug"
+    },
+    {
+      "Prefab": "v2_gargoylestatue",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Gargoyle II",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        },
+        {
+          "amount": 5,
+          "required": "Finewood"
+        },
+        {
+          "amount": 10,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Gargoyle II"
+    },
+    {
+      "Prefab": "valkyrie",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Norse Valkyrie",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Bronze"
+        },
+        {
+          "amount": 25,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Norse Valkyrie"
+    },
+    {
+      "Prefab": "werewolf",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fenrir the Devourer",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Fenring Trophy"
+        },
+        {
+          "amount": 20,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 20,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Fenrir the Devourer"
+    },
+    {
+      "Prefab": "werewolfbust",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fenrir Bust",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Fenring Trophy"
+        },
+        {
+          "amount": 20,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Fenrir Bust"
+    },
+    {
+      "Prefab": "werewolfmirrored",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fenrir the Devourer mirrored",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Fenring Trophy"
+        },
+        {
+          "amount": 20,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 20,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Fenrir the Devourer mirrored"
+    },
+    {
+      "Prefab": "whitethrone",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "White throne",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Bronze"
+        },
+        {
+          "amount": 200,
+          "required": "Coins"
+        }
+      ],
+      "systemEffects": [],
+      "token": "White throne"
+    }
+  ]
+}

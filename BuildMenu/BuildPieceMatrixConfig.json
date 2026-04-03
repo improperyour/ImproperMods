@@ -1,0 +1,698 @@
+{
+  "classification": {
+    "source_category_to_top": {
+      "_comment": "Direct mapping from (game) input 'category' field to top category.  This is the last category that will be considered."
+    }
+
+  },
+
+  "overrides": {
+    "placement_rules": {
+      "_comment": "Unified top/full placement overrides. Ordered first-match wins. property: prefab|name|combined(prefab+name)|category|crafting_station|interaction_hooks|system_effects, match_type: exact|regex (this will be case-insenstive), patterns: string[], top required, subcategory optional. This is the first precedence.",
+      "rules": [
+        {
+          "property": "name",
+          "match_type": "regex",
+          "patterns": [
+            "\\[tag_",
+            "\\[piece_"
+          ],
+          "top": "Unknown",
+          "subcategory": "UnLocalized"
+        },
+        { 
+          "property": "name",
+          "match_type": "exact",
+          "patterns": [
+            "Finewood Wall Roof 64°"
+          ],
+          "subcategory": "No Cost",
+          "top": "Unknown"
+        },
+        { 
+          "property": "prefab",
+          "match_type": "exact",
+          "patterns": [
+            "piece_repair"
+          ],
+          "subcategory": "Repair",
+          "top": "Repair"
+        },
+        {
+          "property": "combined",
+          "match_type": "regex",
+          "patterns": [
+            "tree"
+          ],
+          "top": "Building",
+          "subcategory": "Trees"
+        },
+        { 
+          "property": "interaction_hooks",
+          "match_type": "exact",
+          "patterns": [
+            "ship"
+          ],
+          "top": "Crafting",
+          "subcategory": "Ships"
+        },
+        {
+          "property": "interaction_hooks",
+          "match_type": "exact",
+          "patterns": [
+            "Fireplace"
+          ],
+          "subcategory": "Fire!Fire!",
+          "top": "Crafting"
+        },
+        {
+          "property": "system_effects",
+          "match_type": "regex",
+          "patterns": [
+            "\\bcomfort\\b"
+          ],
+          "top": "Furniture",
+          "subcategory": "Comfort"
+        },
+        {
+          "property": "system_effects",
+          "match_type": "regex",
+          "patterns": [
+            "\\bcraftingstation\\b"
+          ],
+          "top": "Crafting",
+          "subcategory": "Stations"
+        },
+        {
+          "property": "system_effects",
+          "match_type": "regex",
+          "patterns": [
+            "\\bstationextension\\b"
+          ],
+          "top": "Crafting",
+          "subcategory": "Extensions"
+        },
+        {
+          "property": "interaction_hooks",
+          "match_type": "regex",
+          "patterns": [
+            "bed"
+          ],
+          "top": "Furniture",
+          "subcategory": "Bed"
+        },
+        {
+          "property": "interaction_hooks",
+          "match_type": "regex",
+          "patterns": [
+            "smelter"
+          ],
+          "top": "Crafting",
+          "subcategory": "Smelter"
+        },
+        {
+          "property": "prefab",
+          "match_type": "exact",
+          "patterns": [
+            "gabro_oriel4m_bal"
+          ],
+          "subcategory": "Stone",
+          "top": "Walls"
+        },
+        {
+          "property": "prefab",
+          "match_type": "exact",
+          "patterns": [
+            "piece_groundtorch_mist",
+            "piece_dvergr_lantern_pole",
+            "bfp_stonelightpost",
+            "piece_wisplampceiling",
+            "brp_refinedstone_hearth",
+            "piece_dvergr_lantern"
+          ],
+          "subcategory": "Fire!Fire!",
+          "top": "Crafting"
+        },
+        {
+          "property": "interaction_hooks",
+          "match_type": "exact",
+          "patterns": [
+            "chair",
+            "piece_blackwood_bench01",
+            "piece_bench01",
+            "piece_logbench01"
+          ],
+          "top": "Furniture",
+          "subcategory": "Chairs"
+        },
+        {
+          "property": "combined",
+          "match_type": "regex",
+          "patterns": [
+            "bridge"
+          ],
+          "subcategory": "Bridges",
+          "top": "Building"
+        },
+        {
+          "property": "combined",
+          "match_type": "regex",
+          "patterns": [
+            "window"
+          ],
+          "subcategory": "Windows",
+          "top": "Building"
+        },
+        {
+          "property": "interaction_hooks",
+          "match_type": "exact",
+          "patterns": [
+            "door"
+          ],
+          "top": "Building",
+          "subcategory": "Doors"
+        },
+        {
+          "property": "prefab",
+          "match_type": "exact",
+          "patterns": [
+            "blackmarble_gate_bal",
+            "bgp_slidingglassdoor_copper",
+            "bgp_slidingglassdoor",
+            "stone_frame_bal",
+            "finewood_frame_bal"
+          ],
+          "top": "Building",
+          "subcategory": "Doors"
+        },
+        {
+          "property": "combined",
+          "match_type": "regex",
+          "patterns": [
+            "stair",
+            "ladder",
+            "stairs",
+            "staircase",
+            "ramp",
+            "slope",
+            "spiral stair"
+          ],
+          "top": "Building",
+          "subcategory": "Stairs"
+        },
+        {
+          "property": "prefab",
+          "match_type": "exact",
+          "patterns": [
+            "fermenter",
+            "piece_preptable",
+            "piece_cookingstation",
+            "piece_oven",
+            "piece_cookingstation_iron",
+            "piece_wisplure",
+            "piece_enchantingtable",
+            "shipyardstation",
+            "FishnetTrap"
+          ],
+          "top": "Crafting",
+          "subcategory": "Stations"
+        },
+        {
+          "property": "name",
+          "match_type": "regex",
+          "patterns": [
+            "\\b(stack|pile)\\b"
+          ],
+          "top": "Crafting",
+          "subcategory": "Stacks"
+        },
+        {
+          "property": "prefab",
+          "match_type": "exact",
+          "patterns": [
+            "piece_sapcollector",
+            "bgp_silicacollector",
+            "piece_beehive",
+            "incinerator",
+            "piece_trainingdummy",
+            "piece_ArcheryTarget",
+            "guard_stone",
+            "piece_enchanter",
+            "piece_augmenter",
+            "piece_cartographytable"
+          ],
+          "top": "Crafting",
+          "subcategory": "Other"
+        },
+        {
+          "property": "interaction_hooks",
+          "match_type": "exact",
+          "patterns": [
+            "Container",
+            "DrawerComponent"
+          ],
+          "subcategory": "Containers",
+          "top": "Furniture"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "trim",
+            "railing",
+            "ledge"
+          ],
+          "subcategory": "Trim",
+          "top": "Building"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "bgp_glasswall_roof26_copper",
+            "bgp_glasswall_roof45_copper",
+            "bgp_glasswall_roof26",
+            "bgp_glasswall_roof45"
+          ],
+          "subcategory": "Glass",
+          "top": "Roofs"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "cloth_roof"
+          ],
+          "subcategory": "Tent",
+          "top": "Roofs"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "fb_house_",
+            "fb_viking_house_"
+          ],
+          "subcategory": "Houses",
+          "top": "Building"
+        },
+        {
+          "property": "combined",
+          "match_type": "regex",
+          "patterns": [
+            "hedge"
+          ],
+          "top": "Building",
+          "subcategory": "Hedges"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "mm_large_wall",
+            "fb_fortress_wall_"
+          ],
+          "subcategory": "Large",
+          "top": "Walls"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "_road_"
+          ],
+          "subcategory": "Roads",
+          "top": "Building"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "rope",
+            "fishnet"
+          ],
+          "subcategory": "Rope",
+          "top": "Walls"
+        },
+        {
+          "property": "name",
+          "match_type": "regex",
+          "patterns": [
+            "rug"
+          ],
+          "subcategory": "Rugs",
+          "top": "Furniture"
+        },
+        {
+          "property": "name",
+          "match_type": "exact",
+          "patterns": [
+            "Wooden Big Ben Clock",
+            "Mysterious Rock"
+          ],
+          "subcategory": "Decor",
+          "top": "Furniture"
+        },
+        {
+          "property": "name",
+          "match_type": "exact",
+          "patterns": [
+            "Bear Statue",
+            "Dark Angel",
+            "Dark Knight",
+            "Draco",
+            "Fenrir the Devourer",
+            "FineWood Dragon",
+            "FineWood Raven",
+            "FineWood Wolf",
+            "Gargoyle II",
+            "Horse Brust Statue",
+            "Lion Statue",
+            "Witchcat",
+            "Wooden Brown Bear",
+            "The Red Dragon",
+            "Odin",
+            "Norse Valkyrie",
+            "Gargoyle I"
+          ],
+          "subcategory": "Statues",
+          "top": "Furniture"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "\\bpicture",
+            "gabro_counter",
+            "asianteaset",
+            "bearhead",
+            "blackmarble_head",
+            "blackthrone",
+            "boarhead",
+            "boatinbottle",
+            "bouquet",
+            "brp_stonehead",
+            "chinese_lamp",
+            "coppermarble_head",
+            "darkwood_(raven|wolf)",
+            "deerglobe",
+            "deerhead",
+            "dragonbanner",
+            "dutchbanner",
+            "elephanthead",
+            "gargoyledog",
+            "garland",
+            "goldenthrone",
+            "greythrone",
+            "hippohead",
+            "hornx",
+            "hotairballoon",
+            "italiancypress3",
+            "italiancypress4",
+            "japanesestonelantern",
+            "japanesetoriigate",
+            "jpgate",
+            "lionhead",
+            "mistletoe",
+            "mm_displaycase",
+            "odinguard",
+            "pedestalplanter",
+            "piece_archerytarget",
+            "piece_cloth_hanging_door",
+            "piece_cloth_hanging_door_blue",
+            "porcelainteaset",
+            "r_knightarmour",
+            "rhinohead",
+            "rose",
+            "skullgoblet",
+            "swc",
+            "throne",
+            "tp",
+            "v2_lionking",
+            "valkyrie",
+            "vikings",
+            "werewolfbust",
+            "werewolfmirrored",
+            "whitethrone",
+            "witchcat",
+            "wood_dragon",
+            "woodenbear",
+            "xmas"
+          ],
+          "subcategory": "Decor",
+          "top": "Furniture"
+        },
+        {
+          "property": "prefab",
+          "match_type": "exact",
+          "patterns": [
+            "piece_chest_treasure",
+            "cart"
+          ],
+          "top": "Furniture",
+          "subcategory": "Containers"
+        },
+        { 
+          "property": "interaction_hooks",
+          "match_type": "exact",
+          "patterns": [
+            "TrapDoor"
+          ],
+          "top": "Building",
+          "subcategory": "Defense"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "turret",
+            "stake",
+            "piece_trap",
+            "piece_ballista",
+            "piece_shieldgenerator",
+            "batteringram",
+            "catapult",
+            "rp_monster_protector",
+            "Copper_Wall_Spikes_bal",
+            "flametalchain_hook_wall_bal",
+            "piece_iron_fence_bal",
+            "piece_iron_fence_small_bal",
+            "Copper_Wall_Spikes_bal"
+          ],
+          "top": "Building",
+          "subcategory": "Defense"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "portal"
+          ],
+          "top": "Crafting",
+          "subcategory": "Portals"
+        },
+        {
+          "property": "prefab",
+          "match_type": "regex",
+          "patterns": [
+            "itemstand",
+            "itemstandh",
+            "sign"
+          ],
+          "subcategory": "Signs",
+          "top": "Furniture"
+        },
+        {
+          "property": "combined",
+          "match_type": "regex",
+          "patterns": [
+            "wall",
+            "half wall",
+            "quarter wall",
+            "arched wall",
+            "decorative wall",
+            "divider",
+            "window",
+            "fence"
+          ],
+          "top": "Walls"
+        },
+        {
+          "property": "combined",
+          "match_type": "regex",
+          "patterns": [
+            "floor",
+            "flooring",
+            "platform",
+            "chain_hook_bal"
+          ],
+          "top": "Floors"
+        },
+        {
+          "property": "combined",
+          "match_type": "regex",
+          "patterns": [
+            "roof",
+            "ridge",
+            "inner corner",
+            "outer corner",
+            "26°",
+            "45°",
+            "inverted",
+            "upsidedown",
+            "hook_top_bal",
+            "celling",
+            "ceiling"
+          ],
+          "top": "Roofs"
+        },
+        {
+          "property": "combined",
+          "match_type": "regex",
+          "patterns": [
+            "beam",
+            "pole",
+            "pillar",
+            "column",
+            "arch",
+            "cross",
+            "spire",
+            "plinth",
+            "cornice"
+          ],
+          "top": "Beams"
+        },
+        {
+          "property": "prefab",
+          "match_type": "exact",
+          "patterns": [
+            "blackmarble_1x1",
+            "blackmarble_1x2",
+            "blackmarble_2x1x1",
+            "claycube_bal",
+            "blackmarble_1x1_enforced_bal",
+            "blackmarble_2x2x1_bal",
+            "stone_1x1_enforced_bal",
+            "yggdrasil_wood_block_bal",
+            "cheeseblock_bal",
+            "blackmarble_2x2x2",
+            "metalbar_1x2_bal",
+            "brp_stoneblock1x1",
+            "brp_stoneblock2x1x1",
+            "brp_stoneblock2x2x1",
+            "brp_stoneblock2x2x2",
+            "brp_stoneblock2x2_enforced",
+            "blackmarble_2x2_enforced_bal"
+          ],
+          "top": "Building",
+          "subcategory": "Blocks"
+        }
+      ]
+    },
+
+    "subcategory_overrides": {
+      "_comment": "Ordered subcategory regex overrides. Prefab rules are listed first, then name rules.",
+      "rules": [
+      ]
+    }
+
+  },
+
+  "config_version": "1.0",
+  "limits": {
+    "max_subcategories_per_top": 12,
+    "max_top_levels": 10,
+    "min_subcategory_size": 1,
+    "other_subcategory_name": "Other"
+  },
+
+  "materials": {
+    "_comment": "Fallback structural score for materials not present in structural_material_scores.",
+
+    "default_unknown_material_score": 15,
+    "known_material_aliases": {
+      "_comment": "Map raw/variant material names (case-insensitive) to canonical names before scoring.",
+      "black metal": "Black Metal",
+      "blackmarble": "Black Marble",
+      "bronze nails": "Bronze",
+      "fine wood": "Finewood",
+      "iron nails": "Iron",
+      "yggdrasilwood": "Yggdrasil Wood"
+    },
+
+    "material_family_normalization": {
+      "Asksvin Hide": "Hide/Pelt",
+      "Bearskin Rug": "Hide/Pelt",
+      "Blue Jute": "Decorations",
+      "Deer Hide": "Hide/Pelt",
+      "Leather Scraps": "Hide/Pelt",
+      "Lox Pelt": "Hide/Pelt",
+      "Red Jute": "Decorations",
+      "Rock": "Stone",
+      "Scale Hide": "Hide/Pelt",
+      "Wolf Pelt": "Hide/Pelt",
+      "_comment": "Remap selected subcategories into broader families after initial subcategory selection."
+    },
+
+    "material_precedence": {
+      "_comment": "Ordered highest-to-lowest subcategory precedence when a piece uses multiple materials.",
+      "rules": [
+        "Flametal",
+        "Black Metal",
+        "Refined Eitr",
+        "Black Marble",
+        "Glass",
+        "Iron",
+        "Bronze",
+        "Copper",
+        "Grausten",
+        "Stone",
+        "Finewood",
+        "Corewood",
+        "Straw",
+        "Chitin",
+        "Flint",
+        "Wood"
+      ]
+    },
+
+    "structural_material_scores": {
+      "Ashwood": 100,
+      "Black Marble": 100,
+      "Black Metal": 75,
+      "Blue Jute": 60,
+      "Bone Fragments": 55,
+      "Bronze": 75,
+      "Copper": 75,
+      "Corewood": 95,
+      "Crystal": 90,
+      "Finewood": 95,
+      "Flametal": 85,
+      "Grausten": 100,
+      "Iron": 80,
+      "Red Jute": 60,
+      "Stone": 100,
+      "Wood": 100,
+      "Yggdrasil Wood": 100,
+      "_comment": "Structural weight used during fallback amount scoring when no earlier override wins."
+    }
+
+  },
+
+
+  "split": {
+    "auxiliary_materials": [
+      "Resin",
+      "Tar",
+      "Coal",
+      "Chain",
+      "Linen Thread",
+      "Deer Hide",
+      "Wolf Pelt",
+      "Lox Pelt",
+      "Feathers"
+    ],
+    "secondary_structural_ratio_threshold": 0.35,
+    "secondary_structural_score_threshold": 70
+  }
+}

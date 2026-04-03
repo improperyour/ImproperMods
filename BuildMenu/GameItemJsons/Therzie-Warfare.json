@@ -1,0 +1,228 @@
+{
+  "pieces": [
+    {
+      "Prefab": "BlackForge_ext3_TW",
+      "category": "Crafting",
+      "craftingStation": "Black Forge",
+      "interactionHooks": [
+        "StationExtension"
+      ],
+      "name": "Eitr-infused sharpening stone",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Refined Eitr"
+        },
+        {
+          "amount": 16,
+          "required": "Flametal"
+        },
+        {
+          "amount": 12,
+          "required": "Grausten"
+        },
+        {
+          "amount": 12,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [
+        "StationExtension"
+      ],
+      "token": "$piece_blackforge_ext3_TW"
+    },
+    {
+      "Prefab": "BlackForge_ext4_TW",
+      "category": "Crafting",
+      "craftingStation": "Black Forge",
+      "interactionHooks": [
+        "StationExtension"
+      ],
+      "name": "Black anvil",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Iron"
+        },
+        {
+          "amount": 25,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 10,
+          "required": "Yggdrasil Wood"
+        },
+        {
+          "amount": 5,
+          "required": "Black Core"
+        }
+      ],
+      "systemEffects": [
+        "StationExtension"
+      ],
+      "token": "$piece_blackforge_ext2_TW"
+    },
+    {
+      "Prefab": "FletcherTable_TW",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "CraftingStation"
+      ],
+      "name": "Fletcher table",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Feathers"
+        },
+        {
+          "amount": 10,
+          "required": "Corewood"
+        },
+        {
+          "amount": 6,
+          "required": "Leather Scraps"
+        },
+        {
+          "amount": 4,
+          "required": "Deer Hide"
+        }
+      ],
+      "systemEffects": [
+        "CraftingStation"
+      ],
+      "token": "$piece_fletchertable_TW"
+    },
+    {
+      "Prefab": "FletcherTable_ext1_TW",
+      "category": "9",
+      "craftingStation": "Fletcher table",
+      "interactionHooks": [
+        "StationExtension"
+      ],
+      "name": "Bow rack",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Bronze"
+        },
+        {
+          "amount": 12,
+          "required": "Finewood"
+        },
+        {
+          "amount": 20,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 4,
+          "required": "Deer Hide"
+        }
+      ],
+      "systemEffects": [
+        "StationExtension"
+      ],
+      "token": "$piece_fletchertable_ext1_TW"
+    },
+    {
+      "Prefab": "FletcherTable_ext2_TW",
+      "category": "9",
+      "craftingStation": "Fletcher table",
+      "interactionHooks": [
+        "StationExtension"
+      ],
+      "name": "Target dummy",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 8,
+          "required": "Corewood"
+        },
+        {
+          "amount": 10,
+          "required": "Troll Hide"
+        },
+        {
+          "amount": 2,
+          "required": "Troll Bone"
+        }
+      ],
+      "systemEffects": [
+        "StationExtension"
+      ],
+      "token": "$piece_fletchertable_ext2_TW"
+    },
+    {
+      "Prefab": "FletcherTable_ext3_TW",
+      "category": "9",
+      "craftingStation": "Fletcher table",
+      "interactionHooks": [
+        "StationExtension"
+      ],
+      "name": "Bow vise",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Iron"
+        },
+        {
+          "amount": 10,
+          "required": "Ancient Bark"
+        },
+        {
+          "amount": 40,
+          "required": "Iron Nails"
+        },
+        {
+          "amount": 4,
+          "required": "Rotten Pelt"
+        }
+      ],
+      "systemEffects": [
+        "StationExtension"
+      ],
+      "token": "$piece_fletchertable_ext3_TW"
+    },
+    {
+      "Prefab": "FletcherTable_ext4_TW",
+      "category": "9",
+      "craftingStation": "Fletcher table",
+      "interactionHooks": [
+        "StationExtension"
+      ],
+      "name": "Wood lathe",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 14,
+          "required": "Silver"
+        },
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Obsidian"
+        },
+        {
+          "amount": 4,
+          "required": "Wolf Pelt"
+        }
+      ],
+      "systemEffects": [
+        "StationExtension"
+      ],
+      "token": "$piece_fletchertable_ext4_TW"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "pieces": [
+    {
+      "Prefab": "cl_piece_groundtorch_black",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Black Iron Torch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Coal"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "Black Iron Torch"
+    },
+    {
+      "Prefab": "cl_piece_groundtorch_green",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Green Iron Torch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Guck"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "Green Iron Torch"
+    },
+    {
+      "Prefab": "cl_piece_groundtorch_indigo",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Indigo Iron Torch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Crystal"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "Indigo Iron Torch"
+    },
+    {
+      "Prefab": "cl_piece_groundtorch_magenta",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Magenta Iron Torch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Black Core"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "Magenta Iron Torch"
+    },
+    {
+      "Prefab": "cl_piece_groundtorch_red",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Red Iron Torch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Ruby"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "Red Iron Torch"
+    },
+    {
+      "Prefab": "cl_piece_groundtorch_teal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Teal Iron Torch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Freeze Gland"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "Teal Iron Torch"
+    },
+    {
+      "Prefab": "cl_piece_groundtorch_violet",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Violet Iron Torch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Refined Eitr"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "Violet Iron Torch"
+    },
+    {
+      "Prefab": "cl_piece_groundtorch_white",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "White Iron Torch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Silver"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "White Iron Torch"
+    },
+    {
+      "Prefab": "cl_piece_groundtorch_yellow",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Yellow Iron Torch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Amber"
+        }
+      ],
+      "systemEffects": [
+        "HeatSource"
+      ],
+      "token": "Yellow Iron Torch"
+    }
+  ]
+}

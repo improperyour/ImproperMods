@@ -1,0 +1,1287 @@
+{
+  "pieces": [
+    {
+      "Prefab": "BFP_FenceGate",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Fence Gate",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 14,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_fencegate"
+    },
+    {
+      "Prefab": "BFP_FencePillar1",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fence Pillar",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_fencepillar1"
+    },
+    {
+      "Prefab": "BFP_FencePillar2",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fence Pillar",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_fencepillar2"
+    },
+    {
+      "Prefab": "BFP_FencePillar3",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fence Pillar",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_fencepillar3"
+    },
+    {
+      "Prefab": "BFP_FencePillar4",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fence Pillar",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_fencepillar4"
+    },
+    {
+      "Prefab": "BFP_FenceTile1",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fence Tile",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_fencetile1"
+    },
+    {
+      "Prefab": "BFP_FenceTile2",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fence Tile",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_fencetile2"
+    },
+    {
+      "Prefab": "BFP_FenceTile3",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fence Tile",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_fencetile3"
+    },
+    {
+      "Prefab": "BFP_FenceTile4",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fence Tile",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_fencetile4"
+    },
+    {
+      "Prefab": "BFP_FineWoodArch",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Arch",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodarch"
+    },
+    {
+      "Prefab": "BFP_FineWoodBeam1x1",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Beam 1x1",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodbeam1x1"
+    },
+    {
+      "Prefab": "BFP_FineWoodBeam26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Beam 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodbeam26"
+    },
+    {
+      "Prefab": "BFP_FineWoodBeam2x2",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Beam 2x2",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodbeam2x2"
+    },
+    {
+      "Prefab": "BFP_FineWoodBeam45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Beam 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodbeam45"
+    },
+    {
+      "Prefab": "BFP_FineWoodDecoWall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Carved FineWood Divider",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewooddecowall"
+    },
+    {
+      "Prefab": "BFP_FineWoodDoor",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "FineWood Door",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewooddoor"
+    },
+    {
+      "Prefab": "BFP_FineWoodDragon",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Dragon",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewooddragon"
+    },
+    {
+      "Prefab": "BFP_FineWoodFloor1x1",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Floor 1x1",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodfloor1x1"
+    },
+    {
+      "Prefab": "BFP_FineWoodFloor2x2",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Floor 2x2",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodfloor2x2"
+    },
+    {
+      "Prefab": "BFP_FineWoodGate",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "FineWood Gate",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodgate"
+    },
+    {
+      "Prefab": "BFP_FineWoodHalfWall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Wall (Half)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodhalfwall"
+    },
+    {
+      "Prefab": "BFP_FineWoodLedge",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Ledge",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodledge"
+    },
+    {
+      "Prefab": "BFP_FineWoodPole1x1",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Pole 1x1",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodpole1x1"
+    },
+    {
+      "Prefab": "BFP_FineWoodPole2x2",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Pole 2x2",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodpole2x2"
+    },
+    {
+      "Prefab": "BFP_FineWoodQuarterWall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Wall (Quarter)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodquarterwall"
+    },
+    {
+      "Prefab": "BFP_FineWoodRaven",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Raven",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodraven"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoof26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Thatch Roof 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodroof26"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoof45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Thatch Roof 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodroof45"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoofCross26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Roof Cross 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodroofcross26"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoofCross45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Roof Cross 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodroofcross45"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoofICorner26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Thatch Roof I-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodrooficorner26"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoofICorner45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Thatch Roof I-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodrooficorner45"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoofOCorner26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Thatch Roof O-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodroofocorner26"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoofOCorner45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Thatch Roof O-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodroofocorner45"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoofTop26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Thatch Roof Ridge 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodrooftop26"
+    },
+    {
+      "Prefab": "BFP_FineWoodRoofTop45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Thatch Roof Ridge 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 8,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodrooftop45"
+    },
+    {
+      "Prefab": "BFP_FineWoodStair",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Stair",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        },
+        {
+          "amount": 4,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodstair"
+    },
+    {
+      "Prefab": "BFP_FineWoodStepLadder",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Ladder",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 4,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodstepladder"
+    },
+    {
+      "Prefab": "BFP_FineWoodWall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodwall"
+    },
+    {
+      "Prefab": "BFP_FineWoodWallRoof26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Wall 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodwallroof26"
+    },
+    {
+      "Prefab": "BFP_FineWoodWallRoof26_UpsideDown",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Wall 26° (Inverted)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodwallroof26_upsidedown"
+    },
+    {
+      "Prefab": "BFP_FineWoodWallRoof45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Wall 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodwallroof45"
+    },
+    {
+      "Prefab": "BFP_FineWoodWallRoof45_UpsideDown",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Wall 45° (Inverted)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodwallroof45_upsidedown"
+    },
+    {
+      "Prefab": "BFP_FineWoodWindowShutter",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "FineWood Shutter",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodwindowshutter"
+    },
+    {
+      "Prefab": "BFP_FineWoodWolf",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Wolf",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_finewoodwolf"
+    },
+    {
+      "Prefab": "BFP_GlassWindow1",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Glass Window",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 4,
+          "required": "Crystal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_glasswindow1"
+    },
+    {
+      "Prefab": "BFP_GlassWindow3",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "FineWood Glass Window - Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Crystal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_glasswindow2"
+    },
+    {
+      "Prefab": "BFP_HeavyGate",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "FineWood Heavy Gate",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Finewood"
+        },
+        {
+          "amount": 4,
+          "required": "Corewood"
+        },
+        {
+          "amount": 6,
+          "required": "Bronze"
+        },
+        {
+          "amount": 10,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_heavygate"
+    },
+    {
+      "Prefab": "BFP_HorizontalDecoWall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Horizontal DecoWall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_horizontaldecowall"
+    },
+    {
+      "Prefab": "BFP_StepLadder1",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "StepLadder",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stepladder1"
+    },
+    {
+      "Prefab": "BFP_StepLadder2",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Ladder"
+      ],
+      "name": "StepLadder",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stepladder2"
+    },
+    {
+      "Prefab": "BFP_StoneLightPost",
+      "category": "Misc",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Fireplace"
+      ],
+      "name": "Stone Light Post",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Stone"
+        },
+        {
+          "amount": 6,
+          "required": "Coal"
+        },
+        {
+          "amount": 10,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1",
+        "HeatSource"
+      ],
+      "token": "$bfp_stonelightpost"
+    },
+    {
+      "Prefab": "BFP_StoneRoof26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stone Roof 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stoneroof26"
+    },
+    {
+      "Prefab": "BFP_StoneRoof45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stone Roof 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stoneroof45"
+    },
+    {
+      "Prefab": "BFP_StoneRoofICorner26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stone Roof I-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stonerooficorner26"
+    },
+    {
+      "Prefab": "BFP_StoneRoofICorner45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stone Roof I-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stonerooficorner45"
+    },
+    {
+      "Prefab": "BFP_StoneRoofOCorner26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stone Roof O-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stoneroofocorner26"
+    },
+    {
+      "Prefab": "BFP_StoneRoofOCorner45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stone Roof O-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stoneroofocorner45"
+    },
+    {
+      "Prefab": "BFP_StoneRoofTop26",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stone Roof Ridge 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stonerooftop26"
+    },
+    {
+      "Prefab": "BFP_StoneRoofTop45",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stone Roof Ridge 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_stonerooftop45"
+    },
+    {
+      "Prefab": "BFP_ThatchHalfWall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Half Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 4,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_thatchhalfwall"
+    },
+    {
+      "Prefab": "BFP_ThatchQuarterWall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Quater Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_thatchquarterwall"
+    },
+    {
+      "Prefab": "BFP_ThatchWall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        },
+        {
+          "amount": 8,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_thatchwall"
+    },
+    {
+      "Prefab": "BFP_ThatchWindow",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Thatch Window",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 6,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_thatchwindow"
+    },
+    {
+      "Prefab": "BFP_ThatchWindow_Half",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Thatch Window Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        },
+        {
+          "amount": 4,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_thatchwindow_half"
+    },
+    {
+      "Prefab": "BFP_ThatchWindow_Quarter",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Thatch Window Quarter",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Straw"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_thatchwindow_quarter"
+    },
+    {
+      "Prefab": "BFP_TrapDoor",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "TrapDoor"
+      ],
+      "name": "FineWood TrapDoor",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_trapdoor"
+    },
+    {
+      "Prefab": "BFP_Window",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "FineWood Window",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_window"
+    },
+    {
+      "Prefab": "BFP_Window_Half",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "FineWood Window Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_window_half"
+    },
+    {
+      "Prefab": "BFP_Window_Quarter",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "FineWood Window Quarter",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bfp_window_quarter"
+    }
+  ]
+}

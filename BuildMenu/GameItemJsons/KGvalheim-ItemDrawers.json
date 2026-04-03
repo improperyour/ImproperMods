@@ -1,0 +1,130 @@
+{
+  "pieces": [
+    {
+      "Prefab": "kg_ItemDrawerPanel_Marble",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [
+        "DrawerComponent"
+      ],
+      "name": "Marble Item Drawer Panel",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$kg_itemdrawerpanel_marble"
+    },
+    {
+      "Prefab": "kg_ItemDrawerPanel_Stone",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [
+        "DrawerComponent"
+      ],
+      "name": "Stone Item Drawer Panel",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$kg_itemdrawerpanel_stone"
+    },
+    {
+      "Prefab": "kg_ItemDrawerPanel_Wood",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [
+        "DrawerComponent"
+      ],
+      "name": "Wooden Item Drawer Panel",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$kg_itemdrawerpanel_wood"
+    },
+    {
+      "Prefab": "kg_ItemDrawer_Marble",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [
+        "DrawerComponent"
+      ],
+      "name": "Marble Item Drawer",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$kg_itemdrawer_marble"
+    },
+    {
+      "Prefab": "kg_ItemDrawer_NoModel",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [
+        "DrawerComponent"
+      ],
+      "name": "Item Drawer (No Model)",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Greydwarf Eye"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$kg_itemdrawerpanel_nomodel"
+    },
+    {
+      "Prefab": "kg_ItemDrawer_Stone",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [
+        "DrawerComponent"
+      ],
+      "name": "Stone Item Drawer",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$kg_itemdrawer_stone"
+    },
+    {
+      "Prefab": "kg_ItemDrawer_Wood",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [
+        "DrawerComponent"
+      ],
+      "name": "Wooden Item Drawer",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$kg_itemdrawer_wood"
+    }
+  ]
+}

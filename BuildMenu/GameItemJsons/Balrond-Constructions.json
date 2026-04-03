@@ -1,0 +1,6285 @@
+{
+  "pieces": [
+    {
+      "Prefab": "BoneFragmentsFloorl1_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Bone Cube 1x1x1",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Bone Fragments"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bonecube_bal"
+    },
+    {
+      "Prefab": "BoneFragmentsFloorl2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Bone Floor 2x2",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Bone Fragments"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bonecube_2x2_bal"
+    },
+    {
+      "Prefab": "CheeseBlock_bal",
+      "category": 0,
+      "craftingStation": "Cauldron",
+      "interactionHooks": [],
+      "name": "Cheese Block",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Cheat sword"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_cheeseblock_bal"
+    },
+    {
+      "Prefab": "ClayBeam_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Beam 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_claybeam_bal"
+    },
+    {
+      "Prefab": "ClayCube_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Cube",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_claycube_bal"
+    },
+    {
+      "Prefab": "ClayPole_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Pole 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_claypole_bal"
+    },
+    {
+      "Prefab": "ClayWall_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Reinforced Wall 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 4,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_claywall_bal"
+    },
+    {
+      "Prefab": "ClayWall_half_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_claywall_half_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_claywall_half_bal"
+    },
+    {
+      "Prefab": "ClayWall_quarter_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_claywall_quarter_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_claywall_quarter_bal"
+    },
+    {
+      "Prefab": "Clay_arch45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Arch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_clayr_arch_bal"
+    },
+    {
+      "Prefab": "Copper_Wall_Spikes_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Copper Wall Spikes",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 15,
+          "required": "Copper"
+        },
+        {
+          "amount": 18,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_copper_wall_spikes_bal"
+    },
+    {
+      "Prefab": "Piece_hardwood_pillar_arch_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Medium Arch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_pillar_arch_bal"
+    },
+    {
+      "Prefab": "Piece_hardwood_pillar_arch_small_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Small Arch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_pillar_arch_small_bal"
+    },
+    {
+      "Prefab": "Piece_hardwood_pillarbase_medium_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Medium Pillar",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_pillarbase_medium_bal"
+    },
+    {
+      "Prefab": "Piece_hardwood_pillarbase_small_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Small Pillar",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_pillarbase_small_bal"
+    },
+    {
+      "Prefab": "Piece_hardwood_pillarbase_tapered_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Tapered Pillar",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_pillarbase_tapered_bal"
+    },
+    {
+      "Prefab": "Piece_hardwood_pillarbase_tapered_inverted_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Inverted Tapered Pillar",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_pillarbase_tapered_inverted_bal"
+    },
+    {
+      "Prefab": "Piece_hardwood_pillarbeam_medium_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Medium Beam",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_pillarbeam_medium_bal"
+    },
+    {
+      "Prefab": "Piece_hardwood_pillarbeam_small_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Small Beam",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_pillarbeam_small_bal"
+    },
+    {
+      "Prefab": "Yggdrasil_wood_block_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Yggdrasil Eitr-Reinforced Block",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Yggdrasil Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Refined Eitr"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_yggdrasil_wood_block_bal"
+    },
+    {
+      "Prefab": "Yggdrasil_wood_pillar_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Yggdrasil Eitr-Reinforced Pillar",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Yggdrasil Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Refined Eitr"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_yggdrasil_wood_pillar_bal"
+    },
+    {
+      "Prefab": "ashwood_decowall_divider_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Ashwood Angled Decoration",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Ashwood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ashwood_decowall_divider_bal"
+    },
+    {
+      "Prefab": "ashwood_roof26_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_ashwoodroof26_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Ashwood"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ashwoodroof26_bal"
+    },
+    {
+      "Prefab": "ashwood_roof45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_ashwood_roof45_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Ashwood"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ashwood_roof45_bal"
+    },
+    {
+      "Prefab": "ashwood_roof_icorner_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_ashwood_roof_icorner45_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Ashwood"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ashwood_roof_icorner45_bal"
+    },
+    {
+      "Prefab": "ashwood_roof_icorner_left45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_ashwood_roof_icorner_left45_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Ashwood"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ashwood_roof_icorner_left45_bal"
+    },
+    {
+      "Prefab": "ashwood_roof_icorner_right45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_ashwood_roof_icorner_right45_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Ashwood"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ashwood_roof_icorner_right45_bal"
+    },
+    {
+      "Prefab": "ashwood_roof_ocorner_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_ashwood_roof_ocorner45_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Ashwood"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ashwood_roof_ocorner45_bal"
+    },
+    {
+      "Prefab": "ashwood_roof_top45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_ashwood_roof_top45_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Ashwood"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ashwood_roof_top45_bal"
+    },
+    {
+      "Prefab": "ashwood_roof_top_quarter_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Thatch Roof Top Quarter 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_quarter_bal"
+    },
+    {
+      "Prefab": "ashwood_wall_beam_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Ashwood Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Ashwood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ashwoodbeam64_bal"
+    },
+    {
+      "Prefab": "bg_stake_wall_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Big Stake Wall",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bg_stake_wall_bal"
+    },
+    {
+      "Prefab": "bigstonepillar4m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Wide 4m Pillar",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bigstonepillar4m_bal"
+    },
+    {
+      "Prefab": "bigstonepillar4m_reverse_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Wide 4m Pillar Reverse",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bigstonepillar4m_reverse_bal"
+    },
+    {
+      "Prefab": "blackmarble_1x1_enforced_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble 1x1 Enforced",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 1,
+          "required": "Copper Scrap"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_1x1_enforced_bal"
+    },
+    {
+      "Prefab": "blackmarble_2x2_enforced_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Enforced Black Marble",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 2,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble2x2_enforced"
+    },
+    {
+      "Prefab": "blackmarble_2x2x1_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble 2x2x1",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble2x2x1"
+    },
+    {
+      "Prefab": "blackmarble_Wall_Window_2x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "[piece_blackmarble_tile_wall_2x2 window]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_tile_wall_2x2 window"
+    },
+    {
+      "Prefab": "blackmarble_beam_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble 2m Beam",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_beam_bal"
+    },
+    {
+      "Prefab": "blackmarble_columnbase_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Column Base",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_columnbase_bal"
+    },
+    {
+      "Prefab": "blackmarble_columntop_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Column Top",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_columntop_bal"
+    },
+    {
+      "Prefab": "blackmarble_creep_slope_inverted_2x2x1_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Cornice",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_out1"
+    },
+    {
+      "Prefab": "blackmarble_floor4m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble 4x4 Floor",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_floor4m_bal"
+    },
+    {
+      "Prefab": "blackmarble_gate_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_gate_bal"
+    },
+    {
+      "Prefab": "blackmarble_head_big01_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Large Head 1",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_head_big1"
+    },
+    {
+      "Prefab": "blackmarble_head_big02_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Large Head 2",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_head_big2"
+    },
+    {
+      "Prefab": "blackmarble_long_stair_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Long Black Marble Stairs",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 16,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_long_stair_bal"
+    },
+    {
+      "Prefab": "blackmarble_pole_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble 2m Pole",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_pole_bal"
+    },
+    {
+      "Prefab": "blackmarble_roof27_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Roof 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_roof27_bal"
+    },
+    {
+      "Prefab": "blackmarble_slope1x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Slope",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_slope1x2"
+    },
+    {
+      "Prefab": "blackmarble_slope1x2_inverted_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Slope (Inverted)",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_inverted_slope1x2"
+    },
+    {
+      "Prefab": "blackmarble_stair_corner_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Stair Right",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_stair_corner_right"
+    },
+    {
+      "Prefab": "blackmarble_stair_corner_left_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Stair Left",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_stair_corner_left"
+    },
+    {
+      "Prefab": "blackmarble_stair_inner_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "[piece_blackmarble_stair $tag_inner]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_stair $tag_inner"
+    },
+    {
+      "Prefab": "blackmarble_stair_outer_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "[piece_blackmarble_stair $tag_outer]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_stair $tag_outer"
+    },
+    {
+      "Prefab": "blackmarble_stone_ladder_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Black Marble Ladder",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Black Marble"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_blackmarble_stone_ladder_bal"
+    },
+    {
+      "Prefab": "bone_fence_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Bone Fence",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Bone Fragments"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Leather Scraps"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bone_fence_bal"
+    },
+    {
+      "Prefab": "bridge_end_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Bridge End",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 4,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bridge_end_bal"
+    },
+    {
+      "Prefab": "bridge_floor_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Bridge Floor",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 4,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bridge_floor_bal"
+    },
+    {
+      "Prefab": "bronze_gate_left_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Bronze Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Bronze"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bronze_gate_left_bal"
+    },
+    {
+      "Prefab": "bush_roof_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Moss Covered Roof 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bush_roof_bal"
+    },
+    {
+      "Prefab": "bush_roof_icorner_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Moss Covered Roof Corner Inverted 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bush_roof_icorner_bal"
+    },
+    {
+      "Prefab": "bush_roof_ocorner_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Moss Covered Roof Corner 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bush_roof_ocorner_bal"
+    },
+    {
+      "Prefab": "bush_roof_top_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Moss Covered Roof Top",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_bush_roof_top_bal"
+    },
+    {
+      "Prefab": "chitin_wall_spikes_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Chitin Short Wall",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Chitin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_chitin_wall_spikes_bal"
+    },
+    {
+      "Prefab": "clay_celling_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Celling 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_clay_ceiling_bal"
+    },
+    {
+      "Prefab": "clay_floor_2x2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Reinforced Floor 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 4,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_clay_floor_2x2_bal"
+    },
+    {
+      "Prefab": "clay_slab_wall4x4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Wall 4x4",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_clay_slab_wall_4m_bal"
+    },
+    {
+      "Prefab": "clay_stair_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Stairs",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_clay_stair_bal"
+    },
+    {
+      "Prefab": "clayr_arch_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Clay Arch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_clayr_arch_bal"
+    },
+    {
+      "Prefab": "copper_dropgate_large_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "[tag_copperdropgate_large_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Mechanical Spring"
+        },
+        {
+          "amount": 10,
+          "required": "Copper"
+        },
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_copperdropgate_large_bal"
+    },
+    {
+      "Prefab": "coppermarble_1x1_enforced_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "[tag_dvergercopper_1x1_enforced_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 1,
+          "required": "Bronze"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_dvergercopper_1x1_enforced_bal"
+    },
+    {
+      "Prefab": "coppermarble_head1_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Bronze Head 1",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 1,
+          "required": "Bronze"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_bronze_head1"
+    },
+    {
+      "Prefab": "coppermarble_head2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Bronze Head 2",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 1,
+          "required": "Bronze"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_blackmarble_bronze_head2"
+    },
+    {
+      "Prefab": "core_wood_roof26_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Corewood Roof 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 4,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_corewood_roof26_bal"
+    },
+    {
+      "Prefab": "core_wood_stair_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Corewood Stairs",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_core_wood_stair_bal"
+    },
+    {
+      "Prefab": "core_wood_wall_2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Corewood Wall 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_core_wood_wall_2_bal"
+    },
+    {
+      "Prefab": "core_wood_wall_4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Corewood Long Wall",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 4,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_core_wood_wall_4_bal"
+    },
+    {
+      "Prefab": "core_wood_wall_corner_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_core_wood_wall_corner_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_core_wood_wall_corner_bal"
+    },
+    {
+      "Prefab": "core_wood_wall_deco2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Core Wood 2m Grid Wall",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_core_wood_wall_deco2_bal"
+    },
+    {
+      "Prefab": "core_wood_wall_deco4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Core Wood 4m Grid Wall",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 4,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_core_wood_wall_deco4_bal"
+    },
+    {
+      "Prefab": "corewood_gate_large_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Corewood Large Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 16,
+          "required": "Corewood"
+        },
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_corewoodgate_large_bal"
+    },
+    {
+      "Prefab": "crystal_tile_floor_2x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Crystal Floor Tile 2x2",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Crystal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_crystal_tile_floor_2x2_bal"
+    },
+    {
+      "Prefab": "crystal_wall_2x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Crystal Wall 2x2",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Crystal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_crystal_wall_2x2_bal"
+    },
+    {
+      "Prefab": "darkwood_beam_26_deco_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Darkwood Beam 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodbeam_26_deco_bal"
+    },
+    {
+      "Prefab": "darkwood_beam_45_deco_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Darkwood Beam 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodbeam_45_deco_bal"
+    },
+    {
+      "Prefab": "darkwood_beam_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Darkwood Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodbeam_64_bal"
+    },
+    {
+      "Prefab": "darkwood_beam_deco_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Darkwood Beam 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodbeam_deco_bal"
+    },
+    {
+      "Prefab": "darkwood_gate_large_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Large Darkwood Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 30,
+          "required": "Wood"
+        },
+        {
+          "amount": 8,
+          "required": "Iron"
+        },
+        {
+          "amount": 4,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodgate_large_bal"
+    },
+    {
+      "Prefab": "darkwood_pole_deco_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Darkwood Pole 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodpole_deco_bal"
+    },
+    {
+      "Prefab": "darkwood_roof64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Shingle Roof 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodroof64_bal"
+    },
+    {
+      "Prefab": "darkwood_roofPROTOTYPE",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Shingle Roof 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [],
+      "systemEffects": [],
+      "token": "$piece_darkwoodroof26"
+    },
+    {
+      "Prefab": "darkwood_roof_quarter_26_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Shingle Roof Quarter 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodroof26_quarter_bal"
+    },
+    {
+      "Prefab": "darkwood_roof_quarter_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Shingle Roof Quarter 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodroof45_quarter_bal"
+    },
+    {
+      "Prefab": "darkwood_roof_top_cap2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Shingle Roof Top 3-Sided 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodrooftop_cap2_bal"
+    },
+    {
+      "Prefab": "darkwood_roof_top_cap_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Shingle Roof Top Cap 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodrooftop_cap_bal"
+    },
+    {
+      "Prefab": "darkwood_roof_top_center_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Shingle Roof Top Center 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodrooftop_center_bal"
+    },
+    {
+      "Prefab": "darkwood_roof_top_half_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Shingle Roof Top Half 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodroof45_top_half_bal"
+    },
+    {
+      "Prefab": "darkwood_roof_top_half_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Shingle Roof Top Half 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodroof26_top_half_bal"
+    },
+    {
+      "Prefab": "darkwoodwall1m_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Darkwood Wall 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodwall1m_bal"
+    },
+    {
+      "Prefab": "darkwoodwall_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Darkwood Wall 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwoodwall_bal"
+    },
+    {
+      "Prefab": "decowall_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Decor Wall",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_decor_wall_bal"
+    },
+    {
+      "Prefab": "decr_wall_half_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Patterned Half Wall",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_decor_half_wall_bal"
+    },
+    {
+      "Prefab": "dverger_gate_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Old Dvergr Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 6,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Mechanical Spring"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_dv_gate"
+    },
+    {
+      "Prefab": "dvergr_secretdoor_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Black Marble Hidden Door",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 13,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 1,
+          "required": "Mechanical Spring"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_dvergr_secretdoor_bal"
+    },
+    {
+      "Prefab": "emberwood_pillar2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Carved Wood Pillar 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_emberwood_pillar2_bal"
+    },
+    {
+      "Prefab": "emberwood_pillar4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Carved Wood Pillar 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Corewood"
+        },
+        {
+          "amount": 4,
+          "required": "Flint"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_emberwood_pillar4_bal"
+    },
+    {
+      "Prefab": "fineood_wall_roof_26_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Roof Wall 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_fineood_wall_roof_26_bal"
+    },
+    {
+      "Prefab": "finewood_arch_bottom_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Arch Bottom",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_arch_bottom_bal"
+    },
+    {
+      "Prefab": "finewood_arch_top_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Arch Top",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_arch_top_bal"
+    },
+    {
+      "Prefab": "finewood_beam2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Beam 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_beam2_bal"
+    },
+    {
+      "Prefab": "finewood_beam4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Beam 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_beam4_bal"
+    },
+    {
+      "Prefab": "finewood_beam_26_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Beam 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_beam_26_bal"
+    },
+    {
+      "Prefab": "finewood_beam_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Beam 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_beam_45_bal"
+    },
+    {
+      "Prefab": "finewood_beam_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_beam_64_bal"
+    },
+    {
+      "Prefab": "finewood_beam_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Beam 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_beam_bal"
+    },
+    {
+      "Prefab": "finewood_floor1x1_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Floor 1x1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_floor1x1_bal"
+    },
+    {
+      "Prefab": "finewood_floor2x2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Floor 2x2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_floor2x2_bal"
+    },
+    {
+      "Prefab": "finewood_frame_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Frame",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_frame_bal"
+    },
+    {
+      "Prefab": "finewood_pole2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Pole 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_pole2_bal"
+    },
+    {
+      "Prefab": "finewood_pole4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Pole 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_pole4_bal"
+    },
+    {
+      "Prefab": "finewood_pole_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Pole 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_pole_bal"
+    },
+    {
+      "Prefab": "finewood_stair_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Stairs",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_stair_bal"
+    },
+    {
+      "Prefab": "finewood_wall_1x1_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Wall 1x1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_1x1_bal"
+    },
+    {
+      "Prefab": "finewood_wall_1x2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Wall 1x2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_1x2_bal"
+    },
+    {
+      "Prefab": "finewood_wall_2x1_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Wall 2x1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_2x1_bal"
+    },
+    {
+      "Prefab": "finewood_wall_2x2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Wall 2x2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_2x2_bal"
+    },
+    {
+      "Prefab": "finewood_wall_arch_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Wall Arch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_arch_bal"
+    },
+    {
+      "Prefab": "finewood_wall_cross_26_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Cross Beam 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_cross_26_bal"
+    },
+    {
+      "Prefab": "finewood_wall_cross_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Cross Beam 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_cross_45_bal"
+    },
+    {
+      "Prefab": "finewood_wall_cross_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Cross Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_cross_64_bal"
+    },
+    {
+      "Prefab": "finewood_wall_roof_26_upsidedown_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Wall Roof Reverse 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_roof_26_upsidedown_bal"
+    },
+    {
+      "Prefab": "finewood_wall_roof_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Wall Roof 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_roof_45_bal"
+    },
+    {
+      "Prefab": "finewood_wall_roof_45_upsidedown_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Wall Roof Reverse 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_roof_45_upsidedown_bal"
+    },
+    {
+      "Prefab": "finewood_wall_roof_64_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Finewood Wall Roof 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_roof_64_bal"
+    },
+    {
+      "Prefab": "finewood_wall_roof_64_upsidedown_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Finewood Wall Roof Reverse 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_finewood_wall_roof_64_upsidedown_bal"
+    },
+    {
+      "Prefab": "flametalchain_beam2_26_bal",
+      "category": 0,
+      "craftingStation": "Black Forge",
+      "interactionHooks": [],
+      "name": "Flametal Chain Beam 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Flametal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_flametalchain_beam26_bal"
+    },
+    {
+      "Prefab": "flametalchain_beam2_45_bal",
+      "category": 0,
+      "craftingStation": "Black Forge",
+      "interactionHooks": [],
+      "name": "Flametal Chain Beam 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Flametal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_flametalchain_beam45_bal"
+    },
+    {
+      "Prefab": "flametalchain_beam2_bal",
+      "category": 0,
+      "craftingStation": "Black Forge",
+      "interactionHooks": [],
+      "name": "Flametal Chain Beam",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Flametal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_flametalchain_beam_bal"
+    },
+    {
+      "Prefab": "flametalchain_hook_bal",
+      "category": 0,
+      "craftingStation": "Black Forge",
+      "interactionHooks": [],
+      "name": "Flametal Chain Hook Ground",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Flametal"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_flametalchain_hookground_bal"
+    },
+    {
+      "Prefab": "flametalchain_hook_top_bal",
+      "category": 0,
+      "craftingStation": "Black Forge",
+      "interactionHooks": [],
+      "name": "Flametal Chain Hook Ceiling",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Flametal"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_flametalchain_hookcelling_bal"
+    },
+    {
+      "Prefab": "flametalchain_hook_wall_bal",
+      "category": 0,
+      "craftingStation": "Black Forge",
+      "interactionHooks": [],
+      "name": "Flametal Chain Hook Wall",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Flametal"
+        },
+        {
+          "amount": 1,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_flametalchain_hookwall_bal"
+    },
+    {
+      "Prefab": "flametalchain_pole2_bal",
+      "category": 0,
+      "craftingStation": "Black Forge",
+      "interactionHooks": [],
+      "name": "Flametal Chain Pole",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Flametal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_flametalchain_pole_bal"
+    },
+    {
+      "Prefab": "gabro_arch4m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Arch 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 16,
+          "required": "Flint"
+        },
+        {
+          "amount": 4,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_arch4m_bal"
+    },
+    {
+      "Prefab": "gabro_bark_beam45_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "[tag_gabro_bark_beam45_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_beam45_bal"
+    },
+    {
+      "Prefab": "gabro_bark_pillar_empty2m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Cube With Beam",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 2,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_pillar_empty2m_bal"
+    },
+    {
+      "Prefab": "gabro_bark_pillar_empty2m_reverse_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Cube With Beam Reverse",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 2,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_pillar_reverse2m_bal"
+    },
+    {
+      "Prefab": "gabro_bark_pillar_empty2m_side_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Cube With Beam Side",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 2,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_pillar_side2m_bal"
+    },
+    {
+      "Prefab": "gabro_barkwood_beam2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Ancient Bark Beam 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        },
+        {
+          "amount": 1,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_beam2_bal"
+    },
+    {
+      "Prefab": "gabro_barkwood_beam_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Ancient Bark Beam 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        },
+        {
+          "amount": 1,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_beam_bal"
+    },
+    {
+      "Prefab": "gabro_barkwood_pole2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Ancient Bark Pole 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        },
+        {
+          "amount": 1,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_pole2_bal"
+    },
+    {
+      "Prefab": "gabro_barkwood_pole_26_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Ancient Bark Beam 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        },
+        {
+          "amount": 1,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_pole26_bal"
+    },
+    {
+      "Prefab": "gabro_barkwood_pole_45_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Ancient Bark Beam 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        },
+        {
+          "amount": 1,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_pole45_bal"
+    },
+    {
+      "Prefab": "gabro_barkwood_pole_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Ancient Bark Pole 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Flint"
+        },
+        {
+          "amount": 1,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_bark_pole_bal"
+    },
+    {
+      "Prefab": "gabro_beam4_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Beam 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_beam4m_bal"
+    },
+    {
+      "Prefab": "gabro_clolumnbase_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Column Base",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_columnbase_bal"
+    },
+    {
+      "Prefab": "gabro_column_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Column",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Flint"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_column_bal"
+    },
+    {
+      "Prefab": "gabro_columntop_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Column Top",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_columntop_bal"
+    },
+    {
+      "Prefab": "gabro_counter1x1_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Counter",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 2,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_counter_bal"
+    },
+    {
+      "Prefab": "gabro_counter_corner_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Counter Corner",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 2,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_counter_corner_bal"
+    },
+    {
+      "Prefab": "gabro_floor1x1_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Cuba",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        },
+        {
+          "amount": 1,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_cube_bal"
+    },
+    {
+      "Prefab": "gabro_floor2x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Floor 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_floor2m_bal"
+    },
+    {
+      "Prefab": "gabro_floor4x4_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Floor 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 16,
+          "required": "Flint"
+        },
+        {
+          "amount": 4,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_floor4m_bal"
+    },
+    {
+      "Prefab": "gabro_floor_slope26_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Sloop 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_floor_slope_bal"
+    },
+    {
+      "Prefab": "gabro_floor_slope45_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Sloop 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_floor_slope45_bal"
+    },
+    {
+      "Prefab": "gabro_oriel4m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Oriel 4x4",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Flint"
+        },
+        {
+          "amount": 6,
+          "required": "Stone"
+        },
+        {
+          "amount": 3,
+          "required": "Crystal"
+        },
+        {
+          "amount": 8,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_oriel4m_bal"
+    },
+    {
+      "Prefab": "gabro_pass_1x3_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Arch Pass",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Flint"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_pass3m_bal"
+    },
+    {
+      "Prefab": "gabro_pole4_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Pole 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_pole4m_bal"
+    },
+    {
+      "Prefab": "gabro_stair_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Stairs",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_stair_bal"
+    },
+    {
+      "Prefab": "gabro_wall2x1_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Wall 1x2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_wall1x2m_bal"
+    },
+    {
+      "Prefab": "gabro_wall2x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Wall 2x2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_wall2x2m_bal"
+    },
+    {
+      "Prefab": "gabro_wall2x4_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Wall 2x4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Flint"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_wall2x4m_bal"
+    },
+    {
+      "Prefab": "gabro_wall4x4_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Wall 4x4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 16,
+          "required": "Flint"
+        },
+        {
+          "amount": 4,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_wall4x4m_bal"
+    },
+    {
+      "Prefab": "gabro_wall_1x1_thin_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Wall Thin 1x1",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        },
+        {
+          "amount": 1,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_wall_1x1_thin_bal"
+    },
+    {
+      "Prefab": "gabro_window1m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Window 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Flint"
+        },
+        {
+          "amount": 1,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Crystal"
+        },
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_window1m_bal"
+    },
+    {
+      "Prefab": "gabro_window2m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Window 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Crystal"
+        },
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_window2m_bal"
+    },
+    {
+      "Prefab": "gabro_window_deco2m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Window 2m Decorative",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Crystal"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_window_deco2m_bal"
+    },
+    {
+      "Prefab": "gabro_window_glass_3m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Window 3m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Flint"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        },
+        {
+          "amount": 2,
+          "required": "Crystal"
+        },
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_window_3m_bal"
+    },
+    {
+      "Prefab": "gabro_window_large2m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Window 2m Large",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Crystal"
+        },
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_window_large2m_bal"
+    },
+    {
+      "Prefab": "gabro_window_round2m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Window 2m Round",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Crystal"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_window_round2m_bal"
+    },
+    {
+      "Prefab": "gabro_window_triangle2m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Gabro Window 2m Triangle",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Flint"
+        },
+        {
+          "amount": 2,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Crystal"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_gabro_window_triangle2m_bal"
+    },
+    {
+      "Prefab": "giant_metal_gate_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Giant Metal Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 6,
+          "required": "Iron"
+        },
+        {
+          "amount": 1,
+          "required": "Mechanical Spring"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_giant_metal_gate_bal"
+    },
+    {
+      "Prefab": "grausten_round_column_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Round Column",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_round_column_grausten_bal"
+    },
+    {
+      "Prefab": "grausten_stair_corner_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Stair Left Turn",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_grausten_stair_left_bal"
+    },
+    {
+      "Prefab": "grausten_stair_corner_left_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Stair Right Turn",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_grausten_stair_right_bal"
+    },
+    {
+      "Prefab": "grausten_stair_inner_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Stair Corner Inner",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_grausten_stair_corner_inner_bal"
+    },
+    {
+      "Prefab": "grausten_stair_outer_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Stair Corner Outer",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_grausten_stair_corner_outer_bal"
+    },
+    {
+      "Prefab": "hardwood_door_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Hardwood Door",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Scrap Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_hardwood_door_bal"
+    },
+    {
+      "Prefab": "hexwood_floor_4m_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Wood Wall Roof Reverse 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Yggdrasil Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_hexwood_floor4m_bal"
+    },
+    {
+      "Prefab": "hexwood_floor_half_4m_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Wood Wall Roof Reverse 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Yggdrasil Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_hexwood_half_floor4m_bal"
+    },
+    {
+      "Prefab": "iron_beam1_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Beam 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_beam1_bal"
+    },
+    {
+      "Prefab": "iron_beam_26_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Beam 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_beam_26_bal"
+    },
+    {
+      "Prefab": "iron_beam_45_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Beam 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_beam_45_bal"
+    },
+    {
+      "Prefab": "iron_beam_64_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_beam_64_bal"
+    },
+    {
+      "Prefab": "iron_beam_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Trim 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_beam_bal"
+    },
+    {
+      "Prefab": "iron_pole1_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Pole 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_pole1_bal"
+    },
+    {
+      "Prefab": "iron_pole_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Pole 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_pole_bal"
+    },
+    {
+      "Prefab": "iron_trim1_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Trim 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_trim1_bal"
+    },
+    {
+      "Prefab": "iron_trim_1_90_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Trim 1m 90°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Iron Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_trim_1_90_bal"
+    },
+    {
+      "Prefab": "iron_trim_26_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Trim 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Iron Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_trim_26_bal"
+    },
+    {
+      "Prefab": "iron_trim_45_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Trim 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Iron Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_trim_45_bal"
+    },
+    {
+      "Prefab": "iron_trim_90_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Trim 2m 90°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Iron Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_trim_90_bal"
+    },
+    {
+      "Prefab": "iron_trim_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Trim 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Iron Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_iron_trim_bal"
+    },
+    {
+      "Prefab": "leather_roof_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Leather Canopy",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Leather Scraps"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_leather_roof_bal"
+    },
+    {
+      "Prefab": "metalbar_1x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Metal Bar 1x2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Black Marble"
+        },
+        {
+          "amount": 2,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_metalBar1x2_bal"
+    },
+    {
+      "Prefab": "obsidian_tile_floor_2x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "[tag_obsidian_tile_floor_2x2_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Obsidian"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_obsidian_tile_floor_2x2_bal"
+    },
+    {
+      "Prefab": "obsidian_wall_2x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "[tag_obsidian_wall_2x2_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Obsidian"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_obsidian_wall_2x2_bal"
+    },
+    {
+      "Prefab": "piece_grausten_pillar4_tip2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Spiral Pillar Tip",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_pillar4_tip2_bal"
+    },
+    {
+      "Prefab": "piece_grausten_pillar4_tip3_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Curved Pillar Tip",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_pillar4_tip3_bal"
+    },
+    {
+      "Prefab": "piece_grausten_pillar4_tip_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Twisted Pillar Tip",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_pillar4_tip_bal"
+    },
+    {
+      "Prefab": "piece_grausten_pillarbase_twisted_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Twisted Pillar Base",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_pillarbase_twisted_bal"
+    },
+    {
+      "Prefab": "piece_grausten_pillarbase_twisted_reversed_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Twisted Pillar Base",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_pillarbase_twisted_reversed_bal"
+    },
+    {
+      "Prefab": "piece_grausten_reinforced_wall_4x6_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Reinforced Wall 4x6",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 24,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_reinforced_wall_4x6_bal"
+    },
+    {
+      "Prefab": "piece_grausten_roof_45_top_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "[piece_grausten_roof45 $tag_top]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_grausten_roof45 $tag_top"
+    },
+    {
+      "Prefab": "piece_grausten_twist_arch_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Twisted Arch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_twist_arch_bal"
+    },
+    {
+      "Prefab": "piece_grausten_twisted_pillar_small_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Twisted Pillar Small",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_twisted_pillarbase_small_bal"
+    },
+    {
+      "Prefab": "piece_grausten_twisted_pillarbase_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Twisted Pillar",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_twisted_pillarbase_bal"
+    },
+    {
+      "Prefab": "piece_grausten_twisted_pillarbase_small_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Twisted Pillar Base",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_twisted_pillarbottom_small_bal"
+    },
+    {
+      "Prefab": "piece_grausten_twisted_pillartop_small_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Grausten Twisted Pillar Top",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Grausten"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_grausten_twisted_pillartop_small_bal"
+    },
+    {
+      "Prefab": "piece_hardwood_floor2x2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Floor 2x2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_hardwood_floor2x2_bal"
+    },
+    {
+      "Prefab": "piece_hardwood_roof_45_arch_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood-Clay Roof Arch 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_roof_45_arch_bal"
+    },
+    {
+      "Prefab": "piece_hardwood_roof_45_arch_corner2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood-Clay Roof Arch Corner Right 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_roof_45_arch_corner2_bal"
+    },
+    {
+      "Prefab": "piece_hardwood_roof_45_arch_corner_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood-Clay Roof Arch Corner Left 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_roof_45_arch_corner_bal"
+    },
+    {
+      "Prefab": "piece_hardwood_roof_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood-Clay Roof 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_roof_45_bal"
+    },
+    {
+      "Prefab": "piece_hardwood_roof_45_corner2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood-Clay Roof Corner Right 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_roof_45_corner2_bal"
+    },
+    {
+      "Prefab": "piece_hardwood_roof_45_corner_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood-Clay Roof Corner Left 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_roof_45_corner_bal"
+    },
+    {
+      "Prefab": "piece_hardwood_roof_45_top_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood-Clay Roof Top",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_hardwood_roof_45_top_bal"
+    },
+    {
+      "Prefab": "piece_hardwoodwall2m_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Hardwood Wall 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_hardwoodwall2m_bal"
+    },
+    {
+      "Prefab": "piece_iron_fence_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Iron Spike Fence",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Iron Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_iron_fence_bal"
+    },
+    {
+      "Prefab": "piece_iron_fence_small_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Small Iron Spike Fence",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Iron Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_iron_fence_small_bal"
+    },
+    {
+      "Prefab": "piece_sharpstakes_big_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Long Sharpstakes",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_piece_sharpstakes_big_bal"
+    },
+    {
+      "Prefab": "plate_gate_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Black Metal Reinforced Door",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Iron"
+        },
+        {
+          "amount": 4,
+          "required": "Black Metal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_plate_gate_bal"
+    },
+    {
+      "Prefab": "rune_floor_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Runic Floor",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        },
+        {
+          "amount": 4,
+          "required": "Crystal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_rune_floor_bal"
+    },
+    {
+      "Prefab": "spiked_copper_gate_left_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Spiked Copper Gate Left",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_spiked_copper_gate_left_bal"
+    },
+    {
+      "Prefab": "spiked_copper_gate_right_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Spiked Copper Gate Right",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_spiked_copper_gate_right_bal"
+    },
+    {
+      "Prefab": "stone_1x1_enforced_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Cube Enforced",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Copper Scrap"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonereinforced1m_bal"
+    },
+    {
+      "Prefab": "stone_Wall_2x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Wall 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_wall_2x2_bal"
+    },
+    {
+      "Prefab": "stone_arch4m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Arch 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 7,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_arch4m_bal"
+    },
+    {
+      "Prefab": "stone_beam2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Beam 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_beam2_bal"
+    },
+    {
+      "Prefab": "stone_beam_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Beam 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_beam_bal"
+    },
+    {
+      "Prefab": "stone_celling_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Cilling 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Stone"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_celling_bal"
+    },
+    {
+      "Prefab": "stone_circle_arch_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Circle Arche",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonecirclearch_bal"
+    },
+    {
+      "Prefab": "stone_floor4m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Floor 4x4",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_stonefloor4x4"
+    },
+    {
+      "Prefab": "stone_floor_slope45_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Floor Slope 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_floor_slope45_bal"
+    },
+    {
+      "Prefab": "stone_floor_slope_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Floor Slope 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_floor_slope_bal"
+    },
+    {
+      "Prefab": "stone_floor_triangle_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Floor Triangle",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_floor_triangle_bal"
+    },
+    {
+      "Prefab": "stone_floor_trianlge_1x2m_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Triangle Floor 1x2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_floor_slopeside_bal"
+    },
+    {
+      "Prefab": "stone_floor_trianlge_1x2m_reverse_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Triangle Floor 1x2m Reverse",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_floor_slopeside_reverse_bal"
+    },
+    {
+      "Prefab": "stone_frame_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Reinforced Frame",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        },
+        {
+          "amount": 2,
+          "required": "Copper"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonereinforced_frame_bal"
+    },
+    {
+      "Prefab": "stone_long_stair_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Long Stone Stairs",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 16,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_long_stair_bal"
+    },
+    {
+      "Prefab": "stone_pillar6m1_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Pillar 6m Round",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonepillar6m_round_bal"
+    },
+    {
+      "Prefab": "stone_pillar6m3_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Pillar 6m Square",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonepillar6m_square_bal"
+    },
+    {
+      "Prefab": "stone_platform_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Platform",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_platform_bal"
+    },
+    {
+      "Prefab": "stone_pole2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Pole 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_pole2_bal"
+    },
+    {
+      "Prefab": "stone_pole_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Pole 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_pole_bal"
+    },
+    {
+      "Prefab": "stone_railing_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Railing",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_railing_bal"
+    },
+    {
+      "Prefab": "stone_roof27_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Ramp 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_roof27_bal"
+    },
+    {
+      "Prefab": "stone_secretdoor_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Secret Stone Door",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Mechanical Spring"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_secretdoor_bal"
+    },
+    {
+      "Prefab": "stone_slab_wall4x4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stone Slab Wall 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_slab_wall4m_bal"
+    },
+    {
+      "Prefab": "stone_stair_corner_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Stair Corner Right",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonestair_corner_right_bal"
+    },
+    {
+      "Prefab": "stone_stair_corner_left_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Stair Corner Left",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonestair_corner_left_bal"
+    },
+    {
+      "Prefab": "stone_stair_inner_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Stair Inner Corner",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonestair_inner_bal"
+    },
+    {
+      "Prefab": "stone_stair_outer_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Stair Outer Corner",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonestair_outer_bal"
+    },
+    {
+      "Prefab": "stone_stair_railing_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Stairs Railing",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_stair_railing_bal"
+    },
+    {
+      "Prefab": "stone_stair_railing_left_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Stairs Railing Left",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_stair_railing_left_bal"
+    },
+    {
+      "Prefab": "stone_stair_railing_right_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Stairs Railing Right",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_stair_railing_right_bal"
+    },
+    {
+      "Prefab": "stone_stepladder_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Thin Stairs",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_stepladder_bal"
+    },
+    {
+      "Prefab": "stone_trim1_90_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Trim 1m 90°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_trim1_90_bal"
+    },
+    {
+      "Prefab": "stone_trim1_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Trim 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_trim1_bal"
+    },
+    {
+      "Prefab": "stone_trim_26_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Trim 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_trim_26_bal"
+    },
+    {
+      "Prefab": "stone_trim_45_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Trim 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_trim_45_bal"
+    },
+    {
+      "Prefab": "stone_trim_90_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Trim 2m 90°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_trim_90_bal"
+    },
+    {
+      "Prefab": "stone_trim_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Trim 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_trim_bal"
+    },
+    {
+      "Prefab": "stone_window_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Stone Arch Window",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stone_window_3m_bal"
+    },
+    {
+      "Prefab": "stonemoss_tile_floor_2x2_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Mossy Stone Tile 2x2",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Stone"
+        },
+        {
+          "amount": 0,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_stonemoss_tile_floor_2x2_bal"
+    },
+    {
+      "Prefab": "tiledwood_floor_2x2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Decorated Floor Tile 2x2",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_tiledwood_floor_2x2_bal"
+    },
+    {
+      "Prefab": "vigvisir_floor_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Vegvisir Floor",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        },
+        {
+          "amount": 5,
+          "required": "Coal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_vigvisir_floor_bal"
+    },
+    {
+      "Prefab": "wood_arch_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Arch",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_arch_bal"
+    },
+    {
+      "Prefab": "wood_beam4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Beam 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_beam4_bal"
+    },
+    {
+      "Prefab": "wood_beam_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodbeam_64_bal"
+    },
+    {
+      "Prefab": "wood_double_wall_roof_26_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Double Wood Arch Wall 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_double_wall_roof_26_bal"
+    },
+    {
+      "Prefab": "wood_dragon_dark_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_darkwooddragon_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Tar"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_darkwooddragon_bal"
+    },
+    {
+      "Prefab": "wood_fence_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Solid Wooden Fence",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_fence_bal"
+    },
+    {
+      "Prefab": "wood_floor4x4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Floor 4x4",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Wood"
+        },
+        {
+          "amount": 4,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_floor4x4_bal"
+    },
+    {
+      "Prefab": "wood_frame_decorative_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Window Decoration 2x2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_window_decoration_2x2m_bal"
+    },
+    {
+      "Prefab": "wood_frame_window_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Window Grid",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_frame_window_bal"
+    },
+    {
+      "Prefab": "wood_frame_window_half_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Window Decoration 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_window_decoration_2m_bal"
+    },
+    {
+      "Prefab": "wood_gate_cage_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Wood Cage Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_gate_cage_bal"
+    },
+    {
+      "Prefab": "wood_gate_large_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Large Wood Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodgate_large_bal"
+    },
+    {
+      "Prefab": "wood_hidden_gate_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Secret Wooden Door",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_secretdoor_bal"
+    },
+    {
+      "Prefab": "wood_iron_gate_large_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Large Wood Iron Reinforced Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Wood"
+        },
+        {
+          "amount": 3,
+          "required": "Finewood"
+        },
+        {
+          "amount": 44,
+          "required": "Iron Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_ironwoodgate_large_bal"
+    },
+    {
+      "Prefab": "wood_iron_log_beam4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Reinforced Corewood Beam 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_iron_log_beam4_bal"
+    },
+    {
+      "Prefab": "wood_iron_log_pole4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Rinforced Corewood Pole 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_iron_log_pole4_bal"
+    },
+    {
+      "Prefab": "wood_ledge_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Ledge",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_woodledge"
+    },
+    {
+      "Prefab": "wood_log_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Corewood Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodlog64_bal"
+    },
+    {
+      "Prefab": "wood_long_stair_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Long Wood Stairs",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 5,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_long_stair_bal"
+    },
+    {
+      "Prefab": "wood_pillar4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Pillar 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_pillar4_bal"
+    },
+    {
+      "Prefab": "wood_plot_1m_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Plot Fence 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_plot_1_bal"
+    },
+    {
+      "Prefab": "wood_plot_3m_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Plot Fence 3m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_plot_3_bal"
+    },
+    {
+      "Prefab": "wood_plot_gate_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Plot Fence Gate",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 2,
+          "required": "Bronze Nails"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_plot_gate_bal"
+    },
+    {
+      "Prefab": "wood_pole4_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Pole 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_pole4_bal"
+    },
+    {
+      "Prefab": "wood_pole_log1m_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_corewood_pole_1m_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_corewood_pole_1m_bal"
+    },
+    {
+      "Prefab": "wood_railing_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Railing",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_railing_bal"
+    },
+    {
+      "Prefab": "wood_ramp_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Ramp 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_ramp_bal"
+    },
+    {
+      "Prefab": "wood_raven_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_woodraven_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodraven_bal"
+    },
+    {
+      "Prefab": "wood_roof64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodroof64_bal"
+    },
+    {
+      "Prefab": "wood_roof64_corner_bottom_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_woodroof64_corner_bottom_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodroof64_corner_bottom_bal"
+    },
+    {
+      "Prefab": "wood_roof64_corner_top_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_wood_roof64_corner_top_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_roof64_corner_top_bal"
+    },
+    {
+      "Prefab": "wood_roof64_icorner_bottom_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_woodroof64_corner_bottom_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodroof64_corner_bottom_bal"
+    },
+    {
+      "Prefab": "wood_roof_flat_quarter_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Flat 1x1",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_roof_flat_quarter_bal"
+    },
+    {
+      "Prefab": "wood_roof_quad_top64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_wood_roof_quad_top64_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_roof_quad_top64_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_woodrooftop64_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop64_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_cap2_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Top 3-Sided 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_cap2_45_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_cap2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Top 3-Sided 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_cap2_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_cap_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Top Cap 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_cap_45_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_cap_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Top Cap 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_cap_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_center_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Center 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_quad_45_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_center_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Center 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_quad_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_half_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Top Half 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_half_45_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_half_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Top Half 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_half_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_quarter_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Top Quarter 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_quarter_45_bal"
+    },
+    {
+      "Prefab": "wood_roof_top_quarter_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Thatch Roof Top Quarter 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodrooftop_quarter_bal"
+    },
+    {
+      "Prefab": "wood_spiralstair_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_wood_stair_sipiral_left_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_stair_sipiral_left_bal"
+    },
+    {
+      "Prefab": "wood_spiralstair_right_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_wood_stair_sipiral_right_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_stair_sipiral_right_bal"
+    },
+    {
+      "Prefab": "wood_trim1_90_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Trim 1m 90°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_trim1_90_bal"
+    },
+    {
+      "Prefab": "wood_trim1_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Trim 1m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_trim1_bal"
+    },
+    {
+      "Prefab": "wood_trim_26_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Trim 26°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_trim_26_bal"
+    },
+    {
+      "Prefab": "wood_trim_45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Trim 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_trim_45_bal"
+    },
+    {
+      "Prefab": "wood_trim_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_woodtrim_64_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodtrim_64_bal"
+    },
+    {
+      "Prefab": "wood_trim_90_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Trim 2m 90°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_trim_90_bal"
+    },
+    {
+      "Prefab": "wood_trim_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Trim 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_trim_bal"
+    },
+    {
+      "Prefab": "wood_wall_cross_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Cross Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_wall_cross_64_bal"
+    },
+    {
+      "Prefab": "wood_wall_log1m_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_corewood_beam_1m_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_corewood_beam_1m_bal"
+    },
+    {
+      "Prefab": "wood_wall_roof_26to45_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Angled Wall Roof 1m Piece 26° To 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wall_roof26to45_bal"
+    },
+    {
+      "Prefab": "wood_wall_roof_26to45gap2_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Angled Wall Roof 2m Piece 26° To 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wall_roof26to45gap2_bal"
+    },
+    {
+      "Prefab": "wood_wall_roof_26to45gap3_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Angled Wall Roof 3m Piece 26° To 45°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wall_roof26to45gap3_bal"
+    },
+    {
+      "Prefab": "wood_wall_roof_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Wall Roof 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_wall_roof_64_bal"
+    },
+    {
+      "Prefab": "wood_wall_roof_upsidedown_64_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Wall Roof Reverse 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_wood_wall_roof_64_upsidedown_bal"
+    },
+    {
+      "Prefab": "wood_window2m_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Wood Shutter 2m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodshutter2m_bal"
+    },
+    {
+      "Prefab": "wood_windowiron_bal",
+      "category": 0,
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "[tag_woodwindowiron_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [],
+      "systemEffects": [],
+      "token": "$tag_woodwindowiron_bal"
+    },
+    {
+      "Prefab": "woodiron_beam_64_bal",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [],
+      "name": "Wood Iron Beam 64°",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodironbeam_64_bal"
+    },
+    {
+      "Prefab": "woodwall4m_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Wall 4m",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodwall4m_bal"
+    },
+    {
+      "Prefab": "woodwall_1m_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "[tag_woodwall1m_bal]",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodwall1m_bal"
+    },
+    {
+      "Prefab": "woodwall_deco_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Decorative Wood Wall Piece",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woodwall_deco_bal"
+    },
+    {
+      "Prefab": "woven_fence_bal",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Woven Fence",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Wood"
+        },
+        {
+          "amount": 1,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$tag_woven_fence_bal"
+    }
+  ]
+}

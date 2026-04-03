@@ -1,9 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
+using System.Reflection;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
@@ -30,6 +32,9 @@ namespace BuildMenu
         private ConfigEntry<string> _defaultSecondary;
         private ConfigEntry<bool> _logUnknownPieces;
         private ConfigEntry<bool> _debugLogging;
+        private ConfigEntry<bool> _perfLogging;
+        private ConfigEntry<float> _perfLoggingIntervalSeconds;
+        private ConfigEntry<float> _perfWarningThresholdMs;
         private ConfigEntry<KeyboardShortcut> _dumpLibraryShortcut;
         private ConfigEntry<KeyboardShortcut> _primaryUpShortcut;
         private ConfigEntry<KeyboardShortcut> _primaryDownShortcut;
@@ -40,6 +45,9 @@ namespace BuildMenu
         private ConfigEntry<float> _uiOffsetLeft;
         private ConfigEntry<float> _uiOffsetTop;
         private bool _validatedConfiguredPrefabs;
+        private string _verboseLogPath;
+        private readonly object _verboseLogSync = new();
+        private readonly HashSet<string> _loggedUnknownPiecePrefabs = new(StringComparer.OrdinalIgnoreCase);
 
         internal readonly PieceClassificationRegistry Registry = new PieceClassificationRegistry();
         internal readonly HashSet<string> ConfiguredPrefabs = new(StringComparer.OrdinalIgnoreCase);
@@ -52,9 +60,6 @@ namespace BuildMenu
             _enabled = Config.Bind("General", "Enabled", true, "Enable the build menu filter UI.");
             _defaultPrimary = Config.Bind("General", "DefaultPrimaryCategory", "All", "Default left-side category.");
             _defaultSecondary = Config.Bind("General", "DefaultSecondaryCategory", "All", "Default top category.");
-            _logUnknownPieces = Config.Bind("Debug", "LogUnknownPieces", false, "Log pieces that do not have a classification.");
-            _debugLogging = Config.Bind("Debug", "VerboseLogging", true, "Emit diagnostic logging for UI and piece filtering.");
-            _dumpLibraryShortcut = Config.Bind("Debug", "DumpLibraryShortcut", new KeyboardShortcut(KeyCode.F8), "Dump the full build piece library to JSON.");
             _primaryUpShortcut = Config.Bind("Input", "PrimaryUpShortcut", new KeyboardShortcut(KeyCode.W), "Select previous primary category.");
             _primaryDownShortcut = Config.Bind("Input", "PrimaryDownShortcut", new KeyboardShortcut(KeyCode.S), "Select next primary category.");
             _secondaryLeftShortcut = Config.Bind("Input", "SecondaryLeftShortcut", new KeyboardShortcut(KeyCode.A), "Select previous secondary category.");
@@ -63,17 +68,25 @@ namespace BuildMenu
             _pageNextShortcut = Config.Bind("Input", "PageNextShortcut", new KeyboardShortcut(KeyCode.E), "Go to next page.");
             _uiOffsetLeft = Config.Bind("Layout", "UiOffsetLeft", 24f, "Left offset in pixels from the top-left of the build HUD.");
             _uiOffsetTop = Config.Bind("Layout", "UiOffsetTop", 124f, "Top offset in pixels from the top-left of the build HUD.");
+            _logUnknownPieces = Config.Bind("Debug", "LogUnknownPieces", false, "Log pieces that do not have a classification.");
+            _debugLogging = Config.Bind("Debug", "VerboseLogging", false, "Emit diagnostic logging for UI and piece filtering.");
+            _dumpLibraryShortcut = Config.Bind("Debug", "DumpLibraryShortcut", new KeyboardShortcut(KeyCode.F12), "Dump the full build piece library to JSON.");
+            _perfLogging = Config.Bind("Performance", "PerformanceLogging", false, "Emit periodic aggregated timing for BuildMenu hot paths.");
+            _perfLoggingIntervalSeconds = Config.Bind("Performance", "PerformanceLoggingIntervalSeconds", 5f, "How often to emit performance timing summaries.");
+            _perfWarningThresholdMs = Config.Bind("Performance", "PerformanceWarningThresholdMs", 2f, "Tag sections as WARN when average time exceeds this many milliseconds.");
 
+            InitializeVerboseLogFile();
             LoadClassifications();
 
             Harmony = new Harmony(ModGuid);
             Harmony.PatchAll();
 
-            Logger.LogInfo($"{ModName} {ModVersion} loaded");
+            LogInfo($"{ModName} {ModVersion} loaded");
         }
 
         private void OnDestroy()
         {
+            BuildMenuPerformance.Flush(force: true);
             Harmony?.UnpatchSelf();
         }
 
@@ -82,6 +95,9 @@ namespace BuildMenu
         internal string GetDefaultSecondary() => _defaultSecondary.Value;
         internal bool ShouldLogUnknownPieces() => _logUnknownPieces.Value;
         internal bool ShouldDebugLog() => _debugLogging.Value;
+        internal bool ShouldPerfLog() => _perfLogging.Value;
+        internal float GetPerfLogIntervalSeconds() => _perfLoggingIntervalSeconds.Value;
+        internal float GetPerfWarningThresholdMs() => _perfWarningThresholdMs.Value;
         internal KeyboardShortcut GetDumpLibraryShortcut() => _dumpLibraryShortcut.Value;
         internal KeyboardShortcut GetPrimaryUpShortcut() => _primaryUpShortcut.Value;
         internal KeyboardShortcut GetPrimaryDownShortcut() => _primaryDownShortcut.Value;
@@ -93,11 +109,68 @@ namespace BuildMenu
         internal float GetUiOffsetTop() => _uiOffsetTop.Value;
         internal bool HasValidatedConfiguredPrefabs() => _validatedConfiguredPrefabs;
         internal void MarkConfiguredPrefabsValidated() => _validatedConfiguredPrefabs = true;
+        internal void LogInfo(string message)
+        {
+            Logger.LogInfo(message);
+            WriteVerboseLine("INFO", message);
+        }
+
         internal void DebugLog(string message)
         {
             if (_debugLogging.Value)
             {
-                Logger.LogInfo($"[Debug] {message}");
+                WriteVerboseLine("DEBUG", message);
+            }
+        }
+
+        internal void LogUnknownPieceOnce(string prefabName)
+        {
+            if (string.IsNullOrWhiteSpace(prefabName))
+            {
+                return;
+            }
+
+            lock (_loggedUnknownPiecePrefabs)
+            {
+                if (!_loggedUnknownPiecePrefabs.Add(prefabName))
+                {
+                    return;
+                }
+            }
+
+            LogInfo($"No classification for piece: {prefabName}");
+        }
+
+        private void InitializeVerboseLogFile()
+        {
+            var directoryPath = Path.Combine(Paths.ConfigPath, "BuildMenuSorter");
+            Directory.CreateDirectory(directoryPath);
+            _verboseLogPath = Path.Combine(directoryPath, "BuildMenuSorter.log");
+            var sessionLine = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff} [INFO] === Session started {DateTime.Now:yyyy-MM-dd HH:mm:ss.fff} ==={Environment.NewLine}";
+            lock (_verboseLogSync)
+            {
+                File.WriteAllText(_verboseLogPath, sessionLine);
+            }
+        }
+
+        private void WriteVerboseLine(string level, string message)
+        {
+            if (string.IsNullOrWhiteSpace(_verboseLogPath))
+            {
+                return;
+            }
+
+            try
+            {
+                var line = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff} [{level}] {message}";
+                lock (_verboseLogSync)
+                {
+                    File.AppendAllText(_verboseLogPath, line + Environment.NewLine);
+                }
+            }
+            catch
+            {
+                // Ignore file write failures to avoid breaking gameplay.
             }
         }
 
@@ -105,68 +178,84 @@ namespace BuildMenu
         {
             Registry.Clear();
             ConfiguredPrefabs.Clear();
-            var categoryMap = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
-
-            var path = Path.Combine(Paths.ConfigPath, "BuildMenuClassification.json");
-            if (!File.Exists(path))
+            lock (_loggedUnknownPiecePrefabs)
             {
-                throw new FileNotFoundException($"Build menu classification file could not be found: {path}", path);
+                _loggedUnknownPiecePrefabs.Clear();
+            }
+            var categoryMap = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
+            var directoryPath = Path.Combine(Paths.ConfigPath, "BuildMenuSorter");
+            if (!Directory.Exists(directoryPath))
+            {
+                throw new DirectoryNotFoundException($"Build menu classification directory could not be found: {directoryPath}");
             }
 
-            BuildMenuClassificationFile root;
+            var files = Directory
+                .GetFiles(directoryPath, "*.json", SearchOption.TopDirectoryOnly)
+                .OrderBy(path => path, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+            if (files.Count == 0)
+            {
+                throw new FileNotFoundException($"No build menu classification JSON files were found in: {directoryPath}");
+            }
+
             var serializer = new DataContractJsonSerializer(
                 typeof(BuildMenuClassificationFile),
                 new DataContractJsonSerializerSettings
                 {
                     UseSimpleDictionaryFormat = true
                 });
-            using (var stream = File.OpenRead(path))
-            {
-                root = serializer.ReadObject(stream) as BuildMenuClassificationFile;
-            }
-
-            if (root == null)
-            {
-                throw new InvalidDataException($"Build menu classification file could not be parsed: {path}");
-            }
-
             var exactCount = 0;
-            foreach (var secondaryEntry in root.Exact ?? new Dictionary<string, Dictionary<string, List<ExactClassificationEntry>>>())
+            var duplicateCount = 0;
+            foreach (var filePath in files)
             {
-                RegisterCategoryMapping(categoryMap, secondaryEntry.Key, secondaryEntry.Value?.Keys);
-                foreach (var primaryEntry in secondaryEntry.Value ?? new Dictionary<string, List<ExactClassificationEntry>>())
+                BuildMenuClassificationFile root;
+                using (var stream = File.OpenRead(filePath))
                 {
-                    foreach (var entry in primaryEntry.Value ?? new List<ExactClassificationEntry>())
-                    {
-                        if (!string.IsNullOrWhiteSpace(entry?.Prefab))
-                        {
-                            Registry.Register(entry.Prefab, secondaryEntry.Key, primaryEntry.Key);
-                            ConfiguredPrefabs.Add(entry.Prefab);
-                            exactCount++;
-                        }
-                    }
+                    root = serializer.ReadObject(stream) as BuildMenuClassificationFile;
                 }
-            }
 
-            var containsCount = 0;
-            foreach (var secondaryEntry in root.Contains ?? new Dictionary<string, Dictionary<string, List<ContainsClassificationEntry>>>())
-            {
-                RegisterCategoryMapping(categoryMap, secondaryEntry.Key, secondaryEntry.Value?.Keys);
-                foreach (var primaryEntry in secondaryEntry.Value ?? new Dictionary<string, List<ContainsClassificationEntry>>())
+                if (root == null)
                 {
-                    foreach (var entry in primaryEntry.Value ?? new List<ContainsClassificationEntry>())
+                    throw new InvalidDataException($"Build menu classification file could not be parsed: {filePath}");
+                }
+
+                var fileExactCount = 0;
+                var fileDuplicateCount = 0;
+                foreach (var secondaryEntry in root.Exact ?? new Dictionary<string, Dictionary<string, List<ExactClassificationEntry>>>())
+                {
+                    RegisterCategoryMapping(categoryMap, secondaryEntry.Key, secondaryEntry.Value?.Keys);
+                    foreach (var primaryEntry in secondaryEntry.Value ?? new Dictionary<string, List<ExactClassificationEntry>>())
                     {
-                        if (!string.IsNullOrWhiteSpace(entry?.Match))
+                        foreach (var entry in primaryEntry.Value ?? new List<ExactClassificationEntry>())
                         {
-                            Registry.RegisterContains(entry.Match, secondaryEntry.Key, primaryEntry.Key);
-                            containsCount++;
+                            var prefab = entry?.GetPrefab();
+                            if (string.IsNullOrWhiteSpace(prefab))
+                            {
+                                continue;
+                            }
+
+                            ConfiguredPrefabs.Add(prefab);
+                            var source = $"{Path.GetFileName(filePath)} [{secondaryEntry.Key}/{primaryEntry.Key}]";
+                            if (Registry.Register(prefab, secondaryEntry.Key, primaryEntry.Key, source, out var previousSource))
+                            {
+                                exactCount++;
+                                fileExactCount++;
+                            }
+                            else
+                            {
+                                duplicateCount++;
+                                fileDuplicateCount++;
+                                BuildMenuPlugin.Instance.Log.LogWarning($"Duplicate prefab '{prefab}' detected in '{source}' and '{previousSource}'. Marked as conflicted and routed to Unsorted.");
+                            }
                         }
                     }
                 }
+
+                LogInfo($"Loaded classifications from {filePath}. exact={fileExactCount}, conflicts={Registry.GetConflictCount()}, duplicatesSeen={fileDuplicateCount}");
             }
 
             BuildMenuState.ConfigureCategories(categoryMap);
-            DebugLog($"Loaded classifications from {path}. exact={exactCount}, contains={containsCount}");
+            LogInfo($"Loaded classification totals. files={files.Count}, exact={exactCount}, conflicts={Registry.GetConflictCount()}, duplicatesSeen={duplicateCount}");
         }
 
         private static void RegisterCategoryMapping(IDictionary<string, List<string>> categoryMap, string primary, IEnumerable<string> secondaryKeys)
@@ -192,14 +281,116 @@ namespace BuildMenu
         }
     }
 
+    internal static class BuildMenuPerformance
+    {
+        private sealed class SampleBucket
+        {
+            public readonly List<double> Samples = new();
+            public double TotalMs;
+            public double MaxMs;
+            public int OverWarningCount;
+        }
+
+        private static readonly Dictionary<string, SampleBucket> Buckets = new(StringComparer.Ordinal);
+        private static readonly object Sync = new();
+        private static DateTime _windowStartUtc = DateTime.UtcNow;
+
+        public static long Start()
+        {
+            return Stopwatch.GetTimestamp();
+        }
+
+        public static void End(string section, long startTicks)
+        {
+            var plugin = BuildMenuPlugin.Instance;
+            if (plugin == null || !plugin.ShouldPerfLog() || string.IsNullOrWhiteSpace(section))
+            {
+                return;
+            }
+
+            var elapsedMs = (Stopwatch.GetTimestamp() - startTicks) * 1000.0 / Stopwatch.Frequency;
+            var warningThresholdMs = Math.Max(0f, plugin.GetPerfWarningThresholdMs());
+            lock (Sync)
+            {
+                if (!Buckets.TryGetValue(section, out var bucket))
+                {
+                    bucket = new SampleBucket();
+                    Buckets[section] = bucket;
+                }
+
+                bucket.Samples.Add(elapsedMs);
+                bucket.TotalMs += elapsedMs;
+                bucket.MaxMs = Math.Max(bucket.MaxMs, elapsedMs);
+                if (elapsedMs >= warningThresholdMs)
+                {
+                    bucket.OverWarningCount++;
+                }
+            }
+
+            Flush();
+        }
+
+        public static void Flush(bool force = false)
+        {
+            var plugin = BuildMenuPlugin.Instance;
+            if (plugin == null || !plugin.ShouldPerfLog())
+            {
+                return;
+            }
+
+            var intervalSeconds = Math.Max(1f, plugin.GetPerfLogIntervalSeconds());
+            var now = DateTime.UtcNow;
+            List<KeyValuePair<string, SampleBucket>> snapshot;
+            TimeSpan elapsed;
+            lock (Sync)
+            {
+                elapsed = now - _windowStartUtc;
+                if (!force && elapsed.TotalSeconds < intervalSeconds)
+                {
+                    return;
+                }
+
+                if (Buckets.Count == 0)
+                {
+                    _windowStartUtc = now;
+                    return;
+                }
+
+                snapshot = Buckets
+                    .Select(entry => new KeyValuePair<string, SampleBucket>(entry.Key, entry.Value))
+                    .OrderBy(entry => entry.Key, StringComparer.Ordinal)
+                    .ToList();
+
+                Buckets.Clear();
+                _windowStartUtc = now;
+            }
+
+            foreach (var entry in snapshot)
+            {
+                var section = entry.Key;
+                var bucket = entry.Value;
+                var count = bucket.Samples.Count;
+                if (count == 0)
+                {
+                    continue;
+                }
+
+                bucket.Samples.Sort();
+                var averageMs = bucket.TotalMs / count;
+                var p95Ms = bucket.Samples[(int)Math.Floor((count - 1) * 0.95)];
+                var warningRate = bucket.OverWarningCount * 100.0 / count;
+                var level = averageMs >= plugin.GetPerfWarningThresholdMs() ? "WARN" : "INFO";
+                plugin.LogInfo(
+                    $"PERF[{level}] {section}: n={count}, avg={averageMs:F3}ms, p95={p95Ms:F3}ms, max={bucket.MaxMs:F3}ms, overWarn={warningRate:F1}% (window={elapsed.TotalSeconds:F1}s)");
+            }
+        }
+    }
+
     [DataContract]
     internal sealed class BuildMenuClassificationFile
     {
         [DataMember(Name = "exact")]
         public Dictionary<string, Dictionary<string, List<ExactClassificationEntry>>> Exact { get; set; }
-
-        [DataMember(Name = "contains")]
-        public Dictionary<string, Dictionary<string, List<ContainsClassificationEntry>>> Contains { get; set; }
     }
 
     [DataContract]
@@ -208,18 +399,16 @@ namespace BuildMenu
         [DataMember(Name = "Prefab")]
         public string Prefab { get; set; }
 
-        [DataMember(Name = "name")]
-        public string Name { get; set; }
-    }
-
-    [DataContract]
-    internal sealed class ContainsClassificationEntry
-    {
-        [DataMember(Name = "match")]
-        public string Match { get; set; }
+        [DataMember(Name = "prefab")]
+        public string PrefabLower { get; set; }
 
         [DataMember(Name = "name")]
         public string Name { get; set; }
+
+        public string GetPrefab()
+        {
+            return !string.IsNullOrWhiteSpace(Prefab) ? Prefab : PrefabLower;
+        }
     }
 
     [DataContract]
@@ -273,10 +462,12 @@ namespace BuildMenu
     internal static class BuildMenuState
     {
         public const string All = "All";
+        public const string Unsorted = "Unsorted";
         public const int PageSize = 90;
 
         public static string SelectedPrimary = All;
         public static string SelectedSecondary = All;
+        public static string SearchText = string.Empty;
         public static bool Initialized;
         public static int CurrentPage;
 
@@ -289,8 +480,6 @@ namespace BuildMenu
             SecondaryCategories.Clear();
 
             PrimaryCategories.Add(All);
-
-            var allSecondary = new List<string> { All };
             foreach (var entry in categoryMap)
             {
                 if (!PrimaryCategories.Contains(entry.Key))
@@ -305,17 +494,18 @@ namespace BuildMenu
                     {
                         secondary.Add(value);
                     }
-
-                    if (!allSecondary.Contains(value))
-                    {
-                        allSecondary.Add(value);
-                    }
                 }
 
                 SecondaryCategories[entry.Key] = secondary;
             }
 
-            SecondaryCategories[All] = allSecondary;
+            if (!PrimaryCategories.Contains(Unsorted))
+            {
+                PrimaryCategories.Add(Unsorted);
+            }
+
+            SecondaryCategories[All] = new List<string> { All };
+            SecondaryCategories[Unsorted] = new List<string> { All };
             Initialized = false;
             EnsureInitialized();
         }
@@ -396,27 +586,74 @@ namespace BuildMenu
         {
             CurrentPage = Math.Max(0, page);
         }
+
+        public static void SetSearchText(string value)
+        {
+            var normalized = value?.Trim() ?? string.Empty;
+            if (string.Equals(SearchText, normalized, StringComparison.Ordinal))
+            {
+                return;
+            }
+
+            SearchText = normalized;
+            CurrentPage = 0;
+        }
+
+        public static bool IsSearchApplicable(string primary, string secondary)
+        {
+            return string.Equals(secondary, All, StringComparison.OrdinalIgnoreCase);
+        }
+
+        public static bool HasActiveSearch(string primary, string secondary)
+        {
+            return IsSearchApplicable(primary, secondary) && !string.IsNullOrWhiteSpace(SearchText);
+        }
     }
 
     internal sealed class PieceClassificationRegistry
     {
         private readonly Dictionary<string, PieceClassification> _exact = new(StringComparer.OrdinalIgnoreCase);
-        private readonly List<ContainsRule> _contains = new();
+        private readonly Dictionary<string, string> _sources = new(StringComparer.OrdinalIgnoreCase);
+        private readonly HashSet<string> _conflicts = new(StringComparer.OrdinalIgnoreCase);
 
-        public void Register(string pieceName, string primary, string secondary)
+        public bool Register(string pieceName, string primary, string secondary, string source, out string previousSource)
         {
+            previousSource = string.Empty;
+            if (string.IsNullOrWhiteSpace(pieceName))
+            {
+                return false;
+            }
+
+            if (_conflicts.Contains(pieceName))
+            {
+                previousSource = _sources.TryGetValue(pieceName, out var conflictedSource) ? conflictedSource : "<conflicted>";
+                return false;
+            }
+
+            if (_exact.ContainsKey(pieceName))
+            {
+                previousSource = _sources.TryGetValue(pieceName, out var existingSource) ? existingSource : "<unknown>";
+                _exact.Remove(pieceName);
+                _conflicts.Add(pieceName);
+                _sources[pieceName] = $"{previousSource}, {source}";
+                return false;
+            }
+
             _exact[pieceName] = new PieceClassification(primary, secondary);
-        }
-
-        public void RegisterContains(string fragment, string primary, string secondary)
-        {
-            _contains.Add(new ContainsRule(fragment, new PieceClassification(primary, secondary)));
+            _sources[pieceName] = source ?? string.Empty;
+            return true;
         }
 
         public void Clear()
         {
             _exact.Clear();
-            _contains.Clear();
+            _sources.Clear();
+            _conflicts.Clear();
+        }
+
+        public int GetConflictCount()
+        {
+            return _conflicts.Count;
         }
 
         public bool TryGetClassification(GameObject piecePrefab, out PieceClassification classification)
@@ -428,36 +665,17 @@ namespace BuildMenu
             }
 
             var stableName = Utils.GetPrefabName(piecePrefab);
+            if (!string.IsNullOrEmpty(stableName) && _conflicts.Contains(stableName))
+            {
+                return false;
+            }
+
             if (!string.IsNullOrEmpty(stableName) && _exact.TryGetValue(stableName, out classification))
             {
                 return true;
             }
 
-            if (!string.IsNullOrEmpty(stableName))
-            {
-                foreach (var rule in _contains)
-                {
-                    if (stableName.IndexOf(rule.Fragment, StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        classification = rule.Classification;
-                        return true;
-                    }
-                }
-            }
-
             return false;
-        }
-
-        private struct ContainsRule
-        {
-            public string Fragment { get; }
-            public PieceClassification Classification { get; }
-
-            public ContainsRule(string fragment, PieceClassification classification)
-            {
-                Fragment = fragment;
-                Classification = classification;
-            }
         }
     }
 
@@ -590,7 +808,7 @@ namespace BuildMenu
 
                 foreach (var piece in category)
                 {
-                    if (piece != null && Matches(piece.gameObject, primary, secondary))
+                    if (piece != null && Matches(piece.gameObject, primary, secondary, applySearch: false))
                     {
                         filtered.Add(piece);
                     }
@@ -629,28 +847,32 @@ namespace BuildMenu
 
         public static bool Matches(GameObject piece)
         {
-            return Matches(piece, BuildMenuState.SelectedPrimary, BuildMenuState.SelectedSecondary);
+            return Matches(piece, BuildMenuState.SelectedPrimary, BuildMenuState.SelectedSecondary, applySearch: true);
         }
 
-        private static bool Matches(GameObject piece, string selectedPrimary, string selectedSecondary)
+        private static bool Matches(GameObject piece, string selectedPrimary, string selectedSecondary, bool applySearch)
         {
             var registry = BuildMenuPlugin.Instance.Registry;
             if (!registry.TryGetClassification(piece, out var classification))
             {
                 if (BuildMenuPlugin.Instance.ShouldLogUnknownPieces())
                 {
-                    BuildMenuPlugin.Instance.Log.LogInfo($"No classification for piece: {Utils.GetPrefabName(piece)}");
+                    BuildMenuPlugin.Instance.LogUnknownPieceOnce(Utils.GetPrefabName(piece));
                 }
 
-                return string.Equals(selectedPrimary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase)
-                       && string.Equals(selectedSecondary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase);
+                var isAllAll = string.Equals(selectedPrimary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase)
+                               && string.Equals(selectedSecondary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase);
+                var isUnsorted = string.Equals(selectedPrimary, BuildMenuState.Unsorted, StringComparison.OrdinalIgnoreCase)
+                                 && string.Equals(selectedSecondary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase);
+                return (isAllAll || isUnsorted) && SearchMatches(piece, selectedPrimary, selectedSecondary, applySearch);
             }
 
             if (string.Equals(selectedPrimary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase))
             {
-                return string.Equals(selectedSecondary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase)
+                var categoryMatch = string.Equals(selectedSecondary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase)
                        || string.Equals(classification.Secondary, selectedSecondary, StringComparison.OrdinalIgnoreCase)
                        || string.Equals(classification.Secondary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase);
+                return categoryMatch && SearchMatches(piece, selectedPrimary, selectedSecondary, applySearch);
             }
 
             if (!string.Equals(classification.Primary, selectedPrimary, StringComparison.OrdinalIgnoreCase))
@@ -660,11 +882,30 @@ namespace BuildMenu
 
             if (string.Equals(selectedSecondary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase))
             {
+                return SearchMatches(piece, selectedPrimary, selectedSecondary, applySearch);
+            }
+
+            var secondaryMatch = string.Equals(classification.Secondary, selectedSecondary, StringComparison.OrdinalIgnoreCase)
+                                 || string.Equals(classification.Secondary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase);
+            return secondaryMatch && SearchMatches(piece, selectedPrimary, selectedSecondary, applySearch);
+        }
+
+        private static bool SearchMatches(GameObject piece, string selectedPrimary, string selectedSecondary, bool applySearch)
+        {
+            if (!applySearch || !BuildMenuState.HasActiveSearch(selectedPrimary, selectedSecondary))
+            {
                 return true;
             }
 
-            return string.Equals(classification.Secondary, selectedSecondary, StringComparison.OrdinalIgnoreCase)
-                   || string.Equals(classification.Secondary, BuildMenuState.All, StringComparison.OrdinalIgnoreCase);
+            var search = BuildMenuState.SearchText;
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                return true;
+            }
+
+            var haystack = Utils.GetSearchableText(piece);
+            return !string.IsNullOrWhiteSpace(haystack)
+                   && haystack.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0;
         }
     }
 
@@ -674,6 +915,7 @@ namespace BuildMenu
         private const string PrimaryColumnName = "PrimaryColumn";
         private const string SecondaryRowName = "SecondaryRow";
         private const string PagingRowName = "PagingRow";
+        private const string SearchRowName = "SearchRow";
         private const float PrimaryButtonHeight = 33f;
         private const float PrimaryPanelWidth = 120f;
         private const float PrimaryLayoutSpacing = 6f;
@@ -684,11 +926,14 @@ namespace BuildMenu
         private const int SecondaryLayoutPadding = 6;
         private const float SecondaryPanelX = 136f;
         private const float SecondaryPanelMinWidth = 280f;
+        private const float SearchInputWidth = 200f;
 
         private static GameObject _root;
         private static GameObject _primaryColumn;
         private static GameObject _secondaryRow;
         private static GameObject _pagingRow;
+        private static GameObject _searchRow;
+        private static InputField _searchInput;
         private static Hud _hud;
         private static bool? _lastRootActive;
         private static bool? _lastBuildMode;
@@ -761,6 +1006,8 @@ namespace BuildMenu
             _primaryColumn = null;
             _secondaryRow = null;
             _pagingRow = null;
+            _searchRow = null;
+            _searchInput = null;
             _hud = null;
         }
 
@@ -830,6 +1077,18 @@ namespace BuildMenu
                 return false;
             }
 
+            if (_searchInput != null && _searchInput.isFocused)
+            {
+                var pressedWhileTyping = IsNavigationInputPressed();
+                if (pressedWhileTyping)
+                {
+                    Utils.ConsumeNavigationInput();
+                    return true;
+                }
+
+                return false;
+            }
+
             var primaryUp = BuildMenuPlugin.Instance.GetPrimaryUpShortcut();
             var primaryDown = BuildMenuPlugin.Instance.GetPrimaryDownShortcut();
             var secondaryLeft = BuildMenuPlugin.Instance.GetSecondaryLeftShortcut();
@@ -888,6 +1147,11 @@ namespace BuildMenu
             }
 
             return false;
+        }
+
+        public static bool IsSearchFocused()
+        {
+            return _root != null && _root.activeSelf && _searchInput != null && _searchInput.isFocused;
         }
 
         public static bool IsNavigationInputPressed()
@@ -961,7 +1225,7 @@ namespace BuildMenu
             }
 
             BuildMenuPlugin.Instance.DebugLog($"Build piece dump written to {path}");
-            BuildMenuPlugin.Instance.Log.LogInfo($"Dumped {entries.Count} build pieces to {path}");
+            BuildMenuPlugin.Instance.LogInfo($"Dumped {entries.Count} build pieces to {path}");
         }
 
         private static void CreateRoot(Hud hud)
@@ -999,6 +1263,11 @@ namespace BuildMenu
             primaryLayout.padding = new RectOffset(PrimaryLayoutPadding, PrimaryLayoutPadding, PrimaryLayoutPadding, PrimaryLayoutPadding);
 
             _secondaryRow = CreatePanel(SecondaryRowName, _root.transform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(SecondaryPanelX, 0f), new Vector2(GetSecondaryPanelWidth(), 52f));
+            var secondaryBackground = _secondaryRow.GetComponent<Image>();
+            if (secondaryBackground != null)
+            {
+                secondaryBackground.enabled = false;
+            }
             var secondaryLayout = _secondaryRow.AddComponent<HorizontalLayoutGroup>();
             secondaryLayout.childControlHeight = true;
             secondaryLayout.childControlWidth = false;
@@ -1008,6 +1277,11 @@ namespace BuildMenu
             secondaryLayout.padding = new RectOffset(SecondaryLayoutPadding, SecondaryLayoutPadding, SecondaryLayoutPadding, SecondaryLayoutPadding);
 
             _pagingRow = CreatePanel(PagingRowName, _root.transform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(SecondaryPanelX, -60f), new Vector2(GetSecondaryPanelWidth(), 40f));
+            var pagingBackground = _pagingRow.GetComponent<Image>();
+            if (pagingBackground != null)
+            {
+                pagingBackground.enabled = false;
+            }
             var pagingLayout = _pagingRow.AddComponent<HorizontalLayoutGroup>();
             pagingLayout.childControlHeight = true;
             pagingLayout.childControlWidth = false;
@@ -1020,6 +1294,14 @@ namespace BuildMenu
             CreateLabel("PageInfo", _pagingRow.transform, "Page 1/1").name = "PageInfo";
             CreateButton(_pagingRow.transform, "Next", 78f, 28f, () => StepPage(1)).name = "PageNext";
 
+            _searchRow = CreatePanel(SearchRowName, _root.transform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(SecondaryPanelX, -108f), new Vector2(GetSecondaryPanelWidth(), 36f));
+            var searchBackground = _searchRow.GetComponent<Image>();
+            if (searchBackground != null)
+            {
+                searchBackground.enabled = false;
+            }
+            _searchInput = CreateSearchInput(_searchRow.transform, BuildMenuState.SearchText);
+
             var title = CreateLabel("Title", _root.transform, "Build Filters");
             var titleRect = title.GetComponent<RectTransform>();
             titleRect.anchorMin = new Vector2(0f, 1f);
@@ -1027,6 +1309,99 @@ namespace BuildMenu
             titleRect.pivot = new Vector2(0f, 1f);
             titleRect.anchoredPosition = new Vector2(SecondaryPanelX, 24f);
             titleRect.sizeDelta = new Vector2(300f, 24f);
+        }
+
+        private static InputField CreateSearchInput(Transform parent, string initialValue)
+        {
+            var inputObject = new GameObject("SearchInput", typeof(RectTransform), typeof(Image), typeof(InputField));
+            inputObject.transform.SetParent(parent, false);
+            var inputRect = inputObject.GetComponent<RectTransform>();
+            inputRect.anchorMin = new Vector2(0f, 0.5f);
+            inputRect.anchorMax = new Vector2(0f, 0.5f);
+            inputRect.pivot = new Vector2(0f, 0.5f);
+            inputRect.anchoredPosition = new Vector2(8f, 0f);
+            inputRect.sizeDelta = new Vector2(SearchInputWidth, 26f);
+
+            var background = inputObject.GetComponent<Image>();
+            background.color = new Color(0.10f, 0.10f, 0.10f, 0.92f);
+
+            var input = inputObject.GetComponent<InputField>();
+            input.lineType = InputField.LineType.SingleLine;
+
+            var textObject = new GameObject("Text", typeof(RectTransform), typeof(Text));
+            textObject.transform.SetParent(inputObject.transform, false);
+            var textRect = textObject.GetComponent<RectTransform>();
+            textRect.anchorMin = Vector2.zero;
+            textRect.anchorMax = Vector2.one;
+            textRect.offsetMin = new Vector2(8f, 4f);
+            textRect.offsetMax = new Vector2(-28f, -4f);
+            var text = textObject.GetComponent<Text>();
+            text.font = GetUIFont();
+            text.fontSize = 16;
+            text.alignment = TextAnchor.MiddleLeft;
+            text.color = Color.white;
+            text.supportRichText = false;
+
+            var placeholderObject = new GameObject("Placeholder", typeof(RectTransform), typeof(Text));
+            placeholderObject.transform.SetParent(inputObject.transform, false);
+            var placeholderRect = placeholderObject.GetComponent<RectTransform>();
+            placeholderRect.anchorMin = Vector2.zero;
+            placeholderRect.anchorMax = Vector2.one;
+            placeholderRect.offsetMin = new Vector2(8f, 4f);
+            placeholderRect.offsetMax = new Vector2(-28f, -4f);
+            var placeholderText = placeholderObject.GetComponent<Text>();
+            placeholderText.font = GetUIFont();
+            placeholderText.fontSize = 16;
+            placeholderText.alignment = TextAnchor.MiddleLeft;
+            placeholderText.color = new Color(0.72f, 0.72f, 0.72f, 0.85f);
+            placeholderText.supportRichText = false;
+            placeholderText.text = "Search by name...";
+
+            input.textComponent = text;
+            input.placeholder = placeholderText;
+            input.SetTextWithoutNotify(initialValue ?? string.Empty);
+            input.onValueChanged.AddListener(OnSearchValueChanged);
+
+            var clearButtonObject = new GameObject("ClearSearch", typeof(RectTransform), typeof(Image), typeof(Button));
+            clearButtonObject.transform.SetParent(inputObject.transform, false);
+            var clearRect = clearButtonObject.GetComponent<RectTransform>();
+            clearRect.anchorMin = new Vector2(1f, 0.5f);
+            clearRect.anchorMax = new Vector2(1f, 0.5f);
+            clearRect.pivot = new Vector2(1f, 0.5f);
+            clearRect.anchoredPosition = new Vector2(-4f, 0f);
+            clearRect.sizeDelta = new Vector2(18f, 18f);
+
+            var clearImage = clearButtonObject.GetComponent<Image>();
+            clearImage.color = new Color(0.25f, 0.25f, 0.25f, 0.95f);
+
+            var clearTextObject = new GameObject("Text", typeof(RectTransform), typeof(Text));
+            clearTextObject.transform.SetParent(clearButtonObject.transform, false);
+            var clearTextRect = clearTextObject.GetComponent<RectTransform>();
+            clearTextRect.anchorMin = Vector2.zero;
+            clearTextRect.anchorMax = Vector2.one;
+            clearTextRect.offsetMin = Vector2.zero;
+            clearTextRect.offsetMax = Vector2.zero;
+            var clearText = clearTextObject.GetComponent<Text>();
+            clearText.font = GetUIFont();
+            clearText.fontSize = 14;
+            clearText.alignment = TextAnchor.MiddleCenter;
+            clearText.color = Color.white;
+            clearText.text = "X";
+
+            var clearButton = clearButtonObject.GetComponent<Button>();
+            clearButton.onClick.AddListener(() =>
+            {
+                input.SetTextWithoutNotify(string.Empty);
+                OnSearchValueChanged(string.Empty);
+            });
+            return input;
+        }
+
+        private static void OnSearchValueChanged(string value)
+        {
+            BuildMenuState.SetSearchText(value);
+            RefreshPagingState();
+            RefreshPieceSelection();
         }
 
         private static GameObject CreatePanel(string name, Transform parent, Vector2 anchorMin, Vector2 anchorMax, Vector2 pivot, Vector2 anchoredPosition, Vector2 size)
@@ -1236,7 +1611,30 @@ namespace BuildMenu
                 SetButtonVisual(child.gameObject, isSelected);
             }
 
+            RefreshSearchState();
             RefreshPagingState();
+        }
+
+        private static void RefreshSearchState()
+        {
+            if (_searchRow == null)
+            {
+                return;
+            }
+
+            var shouldShow = _root != null
+                             && _root.activeSelf
+                             && BuildMenuState.IsSearchApplicable(BuildMenuState.SelectedPrimary, BuildMenuState.SelectedSecondary);
+            _searchRow.SetActive(shouldShow);
+
+            if (_searchInput != null)
+            {
+                var expected = BuildMenuState.SearchText ?? string.Empty;
+                if (!string.Equals(_searchInput.text, expected, StringComparison.Ordinal))
+                {
+                    _searchInput.SetTextWithoutNotify(expected);
+                }
+            }
         }
 
         private static void SetButtonVisual(GameObject buttonObject, bool selected)
@@ -1318,12 +1716,22 @@ namespace BuildMenu
             var buildPieces = Utils.GetBuildPiecesTable(player);
             if (buildPieces != null)
             {
+                var selectedBefore = Utils.GetSelectedBuildPiecePrefab(player);
+                var selectedBeforeName = Utils.GetPrefabName(selectedBefore);
+                var selectedBeforeIndex = Utils.GetPieceTableSelectedPieceIndex(buildPieces);
                 Utils.InvokePlayerSetBuildCategory(player, 0);
                 BuildMenuPlugin.Instance.DebugLog($"Refreshing piece selection for category={Utils.InvokePieceTableGetSelectedCategory(buildPieces)}");
                 Utils.InvokeUpdateAvailablePiecesList(player);
                 BuildMenuPatches.ApplyFilteredBuildPieces(player);
                 Utils.InvokePlayerSetSelectedPiece(player, Vector2Int.zero);
+                var selectedAfterSetIndex = Utils.GetPieceTableSelectedPieceIndex(buildPieces);
+                var selectedAfterSet = Utils.GetSelectedBuildPiecePrefab(player);
+                var selectedAfterSetName = Utils.GetPrefabName(selectedAfterSet);
                 Utils.InvokeHudUpdateBuild(_hud, player, true);
+                var selectedAfterHud = Utils.GetSelectedBuildPiecePrefab(player);
+                var selectedAfterHudName = Utils.GetPrefabName(selectedAfterHud);
+                BuildMenuPlugin.Instance.DebugLog(
+                    $"RefreshPieceSelection trace. before={selectedBeforeName}@{selectedBeforeIndex}, afterSetSelected={selectedAfterSetName}@{selectedAfterSetIndex}, afterHudUpdate={selectedAfterHudName}@{Utils.GetPieceTableSelectedPieceIndex(buildPieces)}");
             }
         }
 
@@ -1427,13 +1835,52 @@ namespace BuildMenu
                     var tabRect = tab.GetComponent<RectTransform>();
                     if (tabRect != null && preferredLabelWidth > 0f)
                     {
-                        var size = tabRect.sizeDelta;
-                        size.x = Math.Max(size.x, preferredLabelWidth + 24f);
-                        tabRect.sizeDelta = size;
+                        var requiredWidth = preferredLabelWidth + 24f;
+                        ApplyTabWidth(tab, requiredWidth);
                     }
                 }
             }
 
+        }
+
+        private static void ApplyTabWidth(GameObject tab, float requiredWidth)
+        {
+            if (tab == null || requiredWidth <= 0f)
+            {
+                return;
+            }
+
+            var layout = tab.GetComponent<LayoutElement>() ?? tab.AddComponent<LayoutElement>();
+            layout.minWidth = Math.Max(layout.minWidth, requiredWidth);
+            layout.preferredWidth = Math.Max(layout.preferredWidth, requiredWidth);
+
+            var tabRect = tab.GetComponent<RectTransform>();
+            if (tabRect != null)
+            {
+                var size = tabRect.sizeDelta;
+                size.x = Math.Max(size.x, requiredWidth);
+                tabRect.sizeDelta = size;
+            }
+
+            foreach (var image in tab.GetComponentsInChildren<Image>(true))
+            {
+                var rect = image.rectTransform;
+                if (rect == null)
+                {
+                    continue;
+                }
+
+                // ReSharper disable once CompareOfFloatsByEqualityOperator
+                var widthStretched = rect.anchorMin.x != rect.anchorMax.x;
+                if (widthStretched)
+                {
+                    continue;
+                }
+
+                var size = rect.sizeDelta;
+                size.x = Math.Max(size.x, requiredWidth);
+                rect.sizeDelta = size;
+            }
         }
 
         private static void RefreshVisibleCategories()
@@ -1508,6 +1955,11 @@ namespace BuildMenu
     internal static class BuildMenuPatches
     {
         private static string _lastUpdateBuildSignature;
+        private static string _lastSelectedPieceSignature;
+        private static string _lastSelectionMappingSignature;
+        private static string _preferredPlacementPrefab;
+        private static bool _knownDataDirty;
+        private static string _knownDataDirtyReason;
         private static List<List<Piece>> _originalAvailablePieces;
         private static PieceTable _filteredPieceTable;
 
@@ -1526,36 +1978,78 @@ namespace BuildMenu
                 return;
             }
 
-            BuildMenuUI.EnsureUI(__instance);
-            var player = Player.m_localPlayer;
-            if (player != null)
+            var totalStart = BuildMenuPerformance.Start();
+            try
             {
-                ValidateConfiguredPrefabs(player);
-                if (Utils.InvokeHudIsPieceSelectionVisible())
+                var ensureUiStart = BuildMenuPerformance.Start();
+                BuildMenuUI.EnsureUI(__instance);
+                BuildMenuPerformance.End("BuildMenuUI.EnsureUI", ensureUiStart);
+
+                var player = Player.m_localPlayer;
+                if (player != null)
                 {
-                    ApplyFilteredBuildPieces(player);
+                    if (_knownDataDirty)
+                    {
+                        Utils.InvokeUpdateAvailablePiecesList(player);
+                        _filteredPieceTable = null;
+                        _originalAvailablePieces = null;
+                        BuildMenuPlugin.Instance.DebugLog($"Known data refresh applied. reason={_knownDataDirtyReason ?? "<unknown>"}");
+                        _knownDataDirty = false;
+                        _knownDataDirtyReason = null;
+                    }
+
+                    ValidateConfiguredPrefabs(player);
+                    var inPlaceMode = Utils.InvokePlayerInPlaceMode(player);
+                    if (inPlaceMode)
+                    {
+                        if (Utils.InvokeHudIsPieceSelectionVisible())
+                        {
+                            ApplyFilteredBuildPieces(player);
+                            LogSelectedBuildPiece(player);
+                        }
+                        else
+                        {
+                            EnsurePreferredPlacementSelection(player);
+                        }
+                    }
+                    else
+                    {
+                        RestoreFilteredBuildPieces(player);
+                        _lastSelectedPieceSignature = null;
+                        _preferredPlacementPrefab = null;
+                    }
                 }
-                else
-                {
-                    RestoreFilteredBuildPieces();
-                }
+
+                var handleInputStart = BuildMenuPerformance.Start();
+                BuildMenuUI.HandleInput();
+                BuildMenuPerformance.End("BuildMenuUI.HandleInput", handleInputStart);
             }
-            BuildMenuUI.HandleInput();
+            finally
+            {
+                BuildMenuPerformance.End("Hud.Update.Postfix.Total", totalStart);
+            }
         }
-        // ReSharper enable InconsistentNaming
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(Player), "Update")]
-        // ReSharper disable InconsistentNaming
-        private static void Player_Update_Prefix(Player __instance)
+        private static bool Player_Update_Prefix(Player __instance)
         {
             if (!ShouldRun() || __instance != Player.m_localPlayer)
             {
-                return;
+                return true;
             }
+
+            if (BuildMenuUI.IsSearchFocused())
+            {
+                Utils.ConsumeNavigationInput();
+                return false;
+            }
+
+            var navigationStart = BuildMenuPerformance.Start();
             BuildMenuUI.TryHandleNavigationInput();
+            BuildMenuPerformance.End("BuildMenuUI.TryHandleNavigationInput", navigationStart);
+            return true;
         }
-        // ReSharper enable InconsistentNaming
 
         private static void ValidateConfiguredPrefabs(Player player)
         {
@@ -1581,7 +2075,7 @@ namespace BuildMenu
             {
                 if (!knownPrefabs.Contains(configuredPrefab))
                 {
-                    BuildMenuPlugin.Instance.Log.LogWarning($"Configured Prefab '{configuredPrefab}' was not found in the known build Prefab library.");
+                    BuildMenuPlugin.Instance.DebugLog($"Configured Prefab '{configuredPrefab}' was not found in the known build Prefab library.");
                 }
             }
 
@@ -1597,17 +2091,32 @@ namespace BuildMenu
                 return;
             }
 
-            RestoreFilteredBuildPieces();
+            var player = Player.m_localPlayer;
+            var inPlaceMode = player != null && Utils.InvokePlayerInPlaceMode(player);
+            if (!inPlaceMode)
+            {
+                RestoreFilteredBuildPieces(player);
+                _lastSelectedPieceSignature = null;
+                _preferredPlacementPrefab = null;
+            }
             BuildMenuPlugin.Instance.DebugLog("Hud.HidePieceSelection postfix fired");
             BuildMenuUI.DestroyUI();
         }
 
+        internal static void MarkKnownDataDirty(string reason)
+        {
+            _knownDataDirty = true;
+            _knownDataDirtyReason = reason;
+        }
+
         internal static void ApplyFilteredBuildPieces(Player player)
         {
+            var perfStart = BuildMenuPerformance.Start();
             var buildPieces = player != null ? Utils.GetBuildPiecesTable(player) : null;
             var availablePieces = buildPieces != null ? Utils.GetAvailablePieceCategories(buildPieces) : null;
             if (!ShouldRun() || player == null || player != Player.m_localPlayer || buildPieces == null || availablePieces == null)
             {
+                BuildMenuPerformance.End("ApplyFilteredBuildPieces", perfStart);
                 return;
             }
 
@@ -1622,30 +2131,85 @@ namespace BuildMenu
                 var sourcePieces = _originalAvailablePieces ?? Utils.ClonePieceCategories(availablePieces);
                 var beforePieceCount = sourcePieces.Sum(category => category?.Count ?? 0);
                 var selectedCategoryIndex = Utils.GetPieceTableSelectedCategoryIndex(buildPieces);
-                Utils.SetAvailablePieceCategories(buildPieces, BuildMenuLogic.ProjectFilteredToSelectedCategory(sourcePieces, selectedCategoryIndex));
-                var afterPieceCount = Utils.GetAvailablePieceCategories(buildPieces).Sum(category => category?.Count ?? 0);
+                var selectedBeforeIndex = Utils.GetPieceTableSelectedPieceIndex(buildPieces);
+                var selectedBeforePrefab = Utils.GetSelectedBuildPiecePrefab(player);
+                var selectedBeforePrefabName = Utils.GetPrefabName(selectedBeforePrefab);
+                var projected = BuildMenuLogic.ProjectFilteredToSelectedCategory(sourcePieces, selectedCategoryIndex);
+                Utils.SetAvailablePieceCategories(buildPieces, projected);
+                var availableAfter = Utils.GetAvailablePieceCategories(buildPieces);
+
+                var afterPieceCount = availableAfter.Sum(category => category?.Count ?? 0);
+                var selectedAfterIndex = Utils.GetPieceTableSelectedPieceIndex(buildPieces);
+                var selectedAfterPrefab = Utils.GetSelectedBuildPiecePrefab(player);
+                var selectedAfterPrefabName = Utils.GetPrefabName(selectedAfterPrefab);
+                if (!string.IsNullOrWhiteSpace(selectedBeforePrefabName)
+                    && !string.Equals(selectedBeforePrefabName, selectedAfterPrefabName, StringComparison.OrdinalIgnoreCase))
+                {
+                    var reapplied = Utils.TrySelectPieceByPrefab(player, selectedBeforePrefabName);
+                    if (reapplied)
+                    {
+                        selectedAfterPrefab = Utils.GetSelectedBuildPiecePrefab(player);
+                        selectedAfterPrefabName = Utils.GetPrefabName(selectedAfterPrefab);
+                        if (!Utils.InvokeHudIsPieceSelectionVisible())
+                        {
+                            Utils.RefreshPlacementGhost(player);
+                        }
+                    }
+                }
+
                 var signature = $"{beforePieceCount}->{afterPieceCount}|{BuildMenuState.SelectedPrimary}|{BuildMenuState.SelectedSecondary}|{selectedCategoryIndex}";
                 if (!string.Equals(signature, _lastUpdateBuildSignature, StringComparison.Ordinal))
                 {
                     BuildMenuPlugin.Instance.DebugLog($"Hud.UpdateBuild prefix fired. pieces {beforePieceCount}->{afterPieceCount}, primary={BuildMenuState.SelectedPrimary}, secondary={BuildMenuState.SelectedSecondary}, selectedCategoryIndex={selectedCategoryIndex}");
                     _lastUpdateBuildSignature = signature;
                 }
+
+                if (BuildMenuPlugin.Instance.ShouldDebugLog())
+                {
+                    var beforePrefabName = selectedBeforePrefabName;
+                    var afterPrefabName = selectedAfterPrefabName;
+                    var projectedSlice = Utils.DescribeCategorySlice(projected, selectedCategoryIndex, 20);
+                    var availableSlice = Utils.DescribeCategorySlice(availableAfter, selectedCategoryIndex, 20);
+                    var mappingSignature = $"{selectedCategoryIndex}|{selectedBeforeIndex}|{selectedAfterIndex}|{beforePrefabName}|{afterPrefabName}|{projectedSlice}|{availableSlice}";
+                    var meaningfulChange = selectedBeforeIndex != selectedAfterIndex
+                                           || !string.Equals(beforePrefabName, afterPrefabName, StringComparison.OrdinalIgnoreCase);
+                    if (meaningfulChange && !string.Equals(mappingSignature, _lastSelectionMappingSignature, StringComparison.Ordinal))
+                    {
+                        _lastSelectionMappingSignature = mappingSignature;
+                        BuildMenuPlugin.Instance.DebugLog(
+                            $"Selection mapping trace. catIndex={selectedCategoryIndex}, selectedBeforeIndex={selectedBeforeIndex}, selectedAfterIndex={selectedAfterIndex}, selectedBeforePrefab={beforePrefabName}, selectedAfterPrefab={afterPrefabName}, projectedSlice={projectedSlice}, availableSlice={availableSlice}");
+                    }
+                }
             }
             catch (Exception ex)
             {
                 BuildMenuPlugin.Instance.Log.LogError($"Failed to apply filtered build pieces: {ex}");
             }
+            finally
+            {
+                BuildMenuPerformance.End("ApplyFilteredBuildPieces", perfStart);
+            }
         }
 
-        internal static void RestoreFilteredBuildPieces()
+        internal static void RestoreFilteredBuildPieces(Player player = null)
         {
+            var selectedPrefabName = player != null
+                ? Utils.GetPrefabName(Utils.GetSelectedBuildPiecePrefab(player))
+                : string.Empty;
+
             if (_filteredPieceTable != null && _originalAvailablePieces != null)
             {
                 Utils.SetAvailablePieceCategories(_filteredPieceTable, _originalAvailablePieces);
             }
 
+            if (player != null && !string.IsNullOrWhiteSpace(selectedPrefabName))
+            {
+                Utils.TrySelectPieceByPrefab(player, selectedPrefabName);
+            }
+
             _filteredPieceTable = null;
             _originalAvailablePieces = null;
+            _lastSelectionMappingSignature = null;
         }
 
         internal static List<List<Piece>> GetSourceAvailablePieces(PieceTable pieceTable)
@@ -1660,57 +2224,265 @@ namespace BuildMenu
                 : Utils.GetAvailablePieceCategories(pieceTable);
         }
 
+        private static void LogSelectedBuildPiece(Player player)
+        {
+            var selectedPrefab = Utils.GetSelectedBuildPiecePrefab(player);
+            if (!selectedPrefab)
+            {
+                return;
+            }
+
+            var prefab = Utils.GetPrefabName(selectedPrefab);
+            if (string.IsNullOrWhiteSpace(prefab))
+            {
+                return;
+            }
+
+            var signature = $"{prefab}|{BuildMenuState.SelectedPrimary}|{BuildMenuState.SelectedSecondary}|{BuildMenuState.CurrentPage}";
+            if (string.Equals(signature, _lastSelectedPieceSignature, StringComparison.Ordinal))
+            {
+                return;
+            }
+
+            _lastSelectedPieceSignature = signature;
+            _preferredPlacementPrefab = prefab;
+            var displayName = Utils.GetDisplayName(selectedPrefab);
+            var token = Utils.GetRawDisplayToken(selectedPrefab);
+            var category = Utils.GetPieceCategory(selectedPrefab);
+            var craftingStation = Utils.GetCraftingStationName(selectedPrefab);
+            var systemEffects = string.Join(", ", Utils.GetSystemEffects(selectedPrefab));
+            var interactionHooks = string.Join(", ", Utils.GetInteractionHooks(selectedPrefab));
+            var required = string.Join(", ", Utils.GetRequiredItemNames(selectedPrefab).Select(req => $"{req.Required}:{req.Amount}"));
+
+            BuildMenuPlugin.Instance.DebugLog(
+                $"Build picker selection changed. prefab={prefab}, name={displayName}, token={token}, category={category}, craftingStation={craftingStation}, systemEffects=[{systemEffects}], interactionHooks=[{interactionHooks}], required=[{required}]");
+        }
+
+        internal static string GetPreferredPlacementPrefab()
+        {
+            return _preferredPlacementPrefab;
+        }
+
+        private static void EnsurePreferredPlacementSelection(Player player)
+        {
+            var preferred = _preferredPlacementPrefab;
+            if (string.IsNullOrWhiteSpace(preferred))
+            {
+                return;
+            }
+
+            var current = Utils.GetPrefabName(Utils.GetSelectedBuildPiecePrefab(player));
+            if (string.Equals(current, preferred, StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+            var reapplied = Utils.TrySelectPieceByPrefab(player, preferred);
+            if (reapplied)
+            {
+                BuildMenuPlugin.Instance.DebugLog($"Hidden-mode selection lock applied. preferred={preferred}, previous={current}");
+            }
+        }
+
+    }
+
+    [HarmonyPatch]
+    internal static class BuildMenuKnownDataPatches
+    {
+        private static List<MethodBase> _targets;
+
+        private static readonly string[] CandidateMethodNames =
+        {
+            "AddKnownItem",
+            "AddKnownMaterial",
+            "AddKnownRecipe",
+            "AddKnownPiece",
+            "AddKnownStation",
+            "UpdateKnownRecipes"
+        };
+
+        // ReSharper disable InconsistentNaming
+        [HarmonyPrepare]
+        private static bool Prepare()
+        {
+            _targets = AccessTools.GetDeclaredMethods(typeof(Player))
+                .Where(method => CandidateMethodNames.Contains(method.Name, StringComparer.Ordinal))
+                .Cast<MethodBase>()
+                .ToList();
+
+            if (_targets.Count == 0)
+            {
+                BuildMenuPlugin.Instance?.Log.LogWarning("No compatible Player known-data methods found; unlock-triggered build refresh is disabled.");
+                return false;
+            }
+
+            BuildMenuPlugin.Instance?.DebugLog($"Known-data refresh hooks attached to: {string.Join(", ", _targets.Select(target => target.Name).Distinct().OrderBy(name => name, StringComparer.Ordinal))}");
+            return true;
+        }
+
+        private static IEnumerable<MethodBase> TargetMethods()
+        {
+            return _targets ?? Enumerable.Empty<MethodBase>();
+        }
+
+        [HarmonyPostfix]
+        private static void Postfix(Player __instance, MethodBase __originalMethod)
+        {
+            if (BuildMenuPlugin.Instance == null || __instance != Player.m_localPlayer || !BuildMenuPlugin.Instance.IsEnabled())
+            {
+                return;
+            }
+
+            BuildMenuPatches.MarkKnownDataDirty(__originalMethod?.Name ?? "KnownDataChanged");
+        }
+        // ReSharper enable InconsistentNaming
+    }
+
+    [HarmonyPatch]
+    internal static class BuildPlacementPatches
+    {
+        private static readonly HashSet<string> CandidateNames = new(StringComparer.Ordinal)
+        {
+            "PlacePiece",
+            "TryPlacePiece"
+        };
+
+        private static readonly HashSet<string> LoggedTargets = new(StringComparer.Ordinal);
+
+        // ReSharper disable once UnusedMember.Local
+        private static IEnumerable<MethodBase> TargetMethods()
+        {
+            var methods = AccessTools.GetDeclaredMethods(typeof(Player))
+                .Where(method => CandidateNames.Contains(method.Name))
+                .Cast<MethodBase>()
+                .ToList();
+
+            foreach (var method in methods)
+            {
+                if (LoggedTargets.Add(method.ToString()))
+                {
+                    BuildMenuPlugin.Instance?.DebugLog($"Placement tracing attached to: {method.DeclaringType?.Name}.{method}");
+                }
+            }
+
+            return methods;
+        }
+
+        // ReSharper disable once UnusedMember.Local
+        private static void Prefix(Player __instance, MethodBase __originalMethod, object[] __args)
+        {
+            if (BuildMenuPlugin.Instance == null || __instance != Player.m_localPlayer || !BuildMenuPlugin.Instance.IsEnabled())
+            {
+                return;
+            }
+
+            var selected = Utils.GetSelectedBuildPiecePrefab(__instance);
+            var selectedPrefab = Utils.GetPrefabName(selected);
+            var argPrefab = Utils.GetPlacementArgPrefab(__args);
+            var originalArgPrefab = argPrefab;
+            if (string.Equals(__originalMethod?.Name, "TryPlacePiece", StringComparison.Ordinal)
+                || string.Equals(__originalMethod?.Name, "PlacePiece", StringComparison.Ordinal))
+            {
+                var preferredPrefab = BuildMenuPatches.GetPreferredPlacementPrefab();
+                if (!string.IsNullOrWhiteSpace(preferredPrefab)
+                    && !string.Equals(argPrefab, preferredPrefab, StringComparison.OrdinalIgnoreCase))
+                {
+                    var preferredPiece = Utils.GetPieceByPrefabForPlayer(__instance, preferredPrefab);
+                    if (preferredPiece != null && __args != null && __args.Length > 0)
+                    {
+                        Utils.TrySelectPieceByPrefab(__instance, preferredPrefab);
+                        __args[0] = preferredPiece;
+                        argPrefab = preferredPrefab;
+                        selectedPrefab = preferredPrefab;
+                        BuildMenuPlugin.Instance.DebugLog($"Placement override applied. method={__originalMethod.Name}, preferred={preferredPrefab}, incoming={originalArgPrefab}");
+                    }
+                }
+            }
+            var argSummary = Utils.DescribePlacementArgs(__args);
+            BuildMenuPlugin.Instance.DebugLog(
+                $"Placement prefix: method={__originalMethod?.Name}, selected={selectedPrefab}, argPrefab={argPrefab}, args={argSummary}, primary={BuildMenuState.SelectedPrimary}, secondary={BuildMenuState.SelectedSecondary}, page={BuildMenuState.CurrentPage}");
+        }
+
+        // ReSharper disable once UnusedMember.Local
+        private static void Postfix(Player __instance, MethodBase __originalMethod, object[] __args)
+        {
+            if (BuildMenuPlugin.Instance == null || __instance != Player.m_localPlayer || !BuildMenuPlugin.Instance.IsEnabled())
+            {
+                return;
+            }
+
+            var selectedAfter = Utils.GetSelectedBuildPiecePrefab(__instance);
+            var selectedAfterPrefab = Utils.GetPrefabName(selectedAfter);
+            BuildMenuPlugin.Instance.DebugLog(
+                $"Placement postfix: method={__originalMethod?.Name}, selectedAfter={selectedAfterPrefab}, args={Utils.DescribePlacementArgs(__args)}");
+
+            // No post-place reselection/ghost manipulation here. In this Valheim version,
+            // forcing selection after TryPlacePiece causes a preview desync (coin/sap drift).
+        }
+        // ReSharper enable InconsistentNaming
     }
 
     internal static class Utils
     {
-        private static readonly System.Reflection.FieldInfo BuildPiecesField = AccessTools.Field(typeof(Player), "m_buildPieces");
-        private static readonly System.Reflection.FieldInfo PieceResourcesField = AccessTools.Field(typeof(Piece), "m_resources");
+        private static readonly FieldInfo BuildPiecesField = AccessTools.Field(typeof(Player), "m_buildPieces");
+        private static readonly FieldInfo PieceResourcesField = AccessTools.Field(typeof(Piece), "m_resources");
         private static readonly Type PieceRequirementType = AccessTools.TypeByName("Piece+Requirement");
-        private static readonly System.Reflection.FieldInfo RequirementResItemField = PieceRequirementType != null
+        private static readonly FieldInfo RequirementResItemField = PieceRequirementType != null
             ? AccessTools.Field(PieceRequirementType, "m_resItem")
             : null;
-        private static readonly System.Reflection.FieldInfo RequirementAmountField = PieceRequirementType != null
+        private static readonly FieldInfo RequirementAmountField = PieceRequirementType != null
             ? AccessTools.Field(PieceRequirementType, "m_amount")
             : null;
-        private static readonly System.Reflection.FieldInfo ItemDropItemDataField = AccessTools.Field(typeof(ItemDrop), "m_itemData");
-        private static readonly System.Reflection.FieldInfo ItemSharedDataField = AccessTools.Field(typeof(ItemDrop.ItemData), "m_shared");
-        private static readonly System.Reflection.FieldInfo SharedNameField = ItemSharedDataField != null
+        private static readonly FieldInfo ItemDropItemDataField = AccessTools.Field(typeof(ItemDrop), "m_itemData");
+        private static readonly FieldInfo ItemSharedDataField = AccessTools.Field(typeof(ItemDrop.ItemData), "m_shared");
+        private static readonly FieldInfo SharedNameField = ItemSharedDataField != null
             ? AccessTools.Field(ItemSharedDataField.FieldType, "m_name")
             : null;
-        private static readonly System.Reflection.FieldInfo SharedBuildPiecesField = ItemSharedDataField != null
+        private static readonly FieldInfo SharedBuildPiecesField = ItemSharedDataField != null
             ? AccessTools.Field(ItemSharedDataField.FieldType, "m_buildPieces")
             : null;
-        private static readonly System.Reflection.FieldInfo AvailablePiecesField = AccessTools.Field(typeof(PieceTable), "m_availablePieces");
-        private static readonly System.Reflection.FieldInfo PieceTablePiecesField = AccessTools.Field(typeof(PieceTable), "m_pieces");
-        private static readonly System.Reflection.FieldInfo HudBuildHudField = AccessTools.Field(typeof(Hud), "m_buildHud");
-        private static readonly System.Reflection.FieldInfo HudPieceSelectionWindowField = AccessTools.Field(typeof(Hud), "m_pieceSelectionWindow");
-        private static readonly System.Reflection.FieldInfo HudPieceCategoryTabsField = AccessTools.Field(typeof(Hud), "m_pieceCategoryTabs");
-        private static readonly System.Reflection.FieldInfo PieceNameField = AccessTools.Field(typeof(Piece), "m_name");
-        private static readonly System.Reflection.FieldInfo PieceCategoryField = AccessTools.Field(typeof(Piece), "m_category");
-        private static readonly System.Reflection.FieldInfo PieceCraftingStationField = AccessTools.Field(typeof(Piece), "m_craftingStation");
-        private static readonly System.Reflection.FieldInfo PieceComfortField = AccessTools.Field(typeof(Piece), "m_comfort");
-        private static readonly System.Reflection.FieldInfo PieceTableNameField = AccessTools.Field(typeof(PieceTable), "m_name");
-        private static readonly System.Reflection.FieldInfo CraftingStationNameField = AccessTools.Field(typeof(CraftingStation), "m_name");
-        private static readonly System.Reflection.MethodInfo PieceGetHoverNameMethod =
+        private static readonly FieldInfo AvailablePiecesField = AccessTools.Field(typeof(PieceTable), "m_availablePieces");
+        private static readonly FieldInfo PieceTablePiecesField = AccessTools.Field(typeof(PieceTable), "m_pieces");
+        private static readonly FieldInfo HudBuildHudField = AccessTools.Field(typeof(Hud), "m_buildHud");
+        private static readonly FieldInfo HudPieceSelectionWindowField = AccessTools.Field(typeof(Hud), "m_pieceSelectionWindow");
+        private static readonly FieldInfo HudPieceCategoryTabsField = AccessTools.Field(typeof(Hud), "m_pieceCategoryTabs");
+        private static readonly FieldInfo PieceNameField = AccessTools.Field(typeof(Piece), "m_name");
+        private static readonly FieldInfo PieceCategoryField = AccessTools.Field(typeof(Piece), "m_category");
+        private static readonly FieldInfo PieceCraftingStationField = AccessTools.Field(typeof(Piece), "m_craftingStation");
+        private static readonly FieldInfo PieceComfortField = AccessTools.Field(typeof(Piece), "m_comfort");
+        private static readonly FieldInfo PieceTableNameField = AccessTools.Field(typeof(PieceTable), "m_name");
+        private static readonly FieldInfo CraftingStationNameField = AccessTools.Field(typeof(CraftingStation), "m_name");
+        private static readonly MethodInfo PieceGetHoverNameMethod =
             typeof(Piece).GetMethod("GetHoverName",
-                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
-        private static readonly System.Reflection.MethodInfo UpdateAvailablePiecesListMethod = AccessTools.Method(typeof(Player), "UpdateAvailablePiecesList");
-        private static readonly System.Reflection.MethodInfo HudUpdateBuildMethod = AccessTools.Method(typeof(Hud), "UpdateBuild");
-        private static readonly System.Reflection.MethodInfo PlayerInPlaceModeMethod = AccessTools.Method(typeof(Player), "InPlaceMode");
-        private static readonly System.Reflection.MethodInfo PlayerSetBuildCategoryMethod = AccessTools.Method(typeof(Player), "SetBuildCategory");
-        private static readonly System.Reflection.MethodInfo PlayerSetSelectedPieceMethod = AccessTools.Method(typeof(Player), "SetSelectedPiece", new[] { typeof(Vector2Int) });
-        private static readonly System.Reflection.MethodInfo HudIsPieceSelectionVisibleMethod = AccessTools.Method(typeof(Hud), "IsPieceSelectionVisible");
-        private static readonly System.Reflection.MethodInfo PieceTableGetSelectedCategoryMethod = AccessTools.Method(typeof(PieceTable), "GetSelectedCategory");
-        private static readonly System.Reflection.MethodInfo HumanoidGetRightItemMethod = AccessTools.Method(typeof(Humanoid), "GetRightItem");
-        private static readonly System.Reflection.MethodInfo HumanoidGetInventoryMethod = AccessTools.Method(typeof(Humanoid), "GetInventory");
-        private static readonly System.Reflection.MethodInfo InventoryGetAllItemsMethod = AccessTools.Method(typeof(Inventory), "GetAllItems");
+                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+        private static readonly MethodInfo UpdateAvailablePiecesListMethod = AccessTools.Method(typeof(Player), "UpdateAvailablePiecesList");
+        private static readonly MethodInfo HudUpdateBuildMethod = AccessTools.Method(typeof(Hud), "UpdateBuild");
+        private static readonly MethodInfo PlayerInPlaceModeMethod = AccessTools.Method(typeof(Player), "InPlaceMode");
+        private static readonly MethodInfo PlayerSetBuildCategoryMethod = AccessTools.Method(typeof(Player), "SetBuildCategory");
+        private static readonly MethodInfo PlayerSetSelectedPieceMethod = AccessTools.Method(typeof(Player), "SetSelectedPiece", new[] { typeof(Vector2Int) });
+        private static readonly MethodInfo HudIsPieceSelectionVisibleMethod = AccessTools.Method(typeof(Hud), "IsPieceSelectionVisible");
+        private static readonly MethodInfo PieceTableGetSelectedCategoryMethod = AccessTools.Method(typeof(PieceTable), "GetSelectedCategory");
+        private static readonly MethodInfo PieceTableGetSelectedPrefabMethod =
+            typeof(PieceTable).GetMethod("GetSelectedPrefab", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        private static readonly MethodInfo PieceTableGetSelectedPieceMethod =
+            typeof(PieceTable).GetMethod("GetSelectedPiece", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        private static readonly FieldInfo PieceTableSelectedPieceField = AccessTools.Field(typeof(PieceTable), "m_selectedPiece");
+        private static readonly MethodInfo PlayerUpdatePlacementGhostMethod = GetNoArgMethod(typeof(Player), "UpdatePlacementGhost");
+        private static readonly MethodInfo PlayerSetupPlacementGhostNoArgMethod =
+            GetNoArgMethod(typeof(Player), "SetupPlacementGhost");
+        private static readonly MethodInfo PlayerSetupPlacementGhostPieceMethod =
+            GetSingleArgMethod(typeof(Player), "SetupPlacementGhost", typeof(Piece));
+        private static readonly MethodInfo PlayerSetupPlacementGhostPrefabMethod =
+            GetSingleArgMethod(typeof(Player), "SetupPlacementGhost", typeof(GameObject));
+        private static readonly MethodInfo HumanoidGetRightItemMethod = AccessTools.Method(typeof(Humanoid), "GetRightItem");
+        private static readonly MethodInfo HumanoidGetInventoryMethod = AccessTools.Method(typeof(Humanoid), "GetInventory");
+        private static readonly MethodInfo InventoryGetAllItemsMethod = AccessTools.Method(typeof(Inventory), "GetAllItems");
         private static readonly Type ZInputType = AccessTools.TypeByName("ZInput");
-        private static readonly System.Reflection.MethodInfo ZInputResetMethod = GetNoArgMethod(ZInputType, "Reset");
-        private static readonly System.Reflection.MethodInfo ZInputResetButtonStatusNoArgMethod = GetNoArgMethod(ZInputType, "ResetButtonStatus");
-        private static readonly System.Reflection.MethodInfo ZInputResetButtonStatusStringMethod = GetSingleStringArgMethod(ZInputType, "ResetButtonStatus");
-        private static readonly System.Reflection.FieldInfo ZInputInstanceField = GetZInputSingletonField(ZInputType);
-        private static readonly System.Reflection.PropertyInfo ZInputInstanceProperty = GetZInputSingletonProperty(ZInputType);
+        private static readonly MethodInfo ZInputResetMethod = GetNoArgMethod(ZInputType, "Reset");
+        private static readonly MethodInfo ZInputResetButtonStatusNoArgMethod = GetNoArgMethod(ZInputType, "ResetButtonStatus");
+        private static readonly MethodInfo ZInputResetButtonStatusStringMethod = GetSingleStringArgMethod(ZInputType, "ResetButtonStatus");
+        private static readonly FieldInfo ZInputInstanceField = GetZInputSingletonField(ZInputType);
+        private static readonly PropertyInfo ZInputInstanceProperty = GetZInputSingletonProperty(ZInputType);
         private static readonly string[] ZInputMovementActions =
         {
             "Forward",
@@ -1732,6 +2504,7 @@ namespace BuildMenu
         private static readonly Type SignType = AccessTools.TypeByName("Sign");
         private static readonly Type PickableType = AccessTools.TypeByName("Pickable");
         private static readonly Type ShipType = AccessTools.TypeByName("Ship");
+        private static readonly Dictionary<string, string> SearchTextCache = new(StringComparer.OrdinalIgnoreCase);
 
         public static PieceTable GetBuildPiecesTable(Player player)
         {
@@ -1948,6 +2721,356 @@ namespace BuildMenu
             return value != null ? Convert.ToInt32(value) : -1;
         }
 
+        public static Vector2Int GetPieceTableSelectedPieceIndex(PieceTable pieceTable)
+        {
+            if (pieceTable == null || PieceTableSelectedPieceField == null)
+            {
+                return new Vector2Int(-1, -1);
+            }
+
+            try
+            {
+                var value = PieceTableSelectedPieceField.GetValue(pieceTable);
+                if (value is Vector2Int vector)
+                {
+                    return vector;
+                }
+            }
+            catch
+            {
+                // ignored
+            }
+
+            return new Vector2Int(-1, -1);
+        }
+
+        public static string DescribeCategorySlice(IReadOnlyList<List<Piece>> categories, int categoryIndex, int maxCount)
+        {
+            if (categories == null)
+            {
+                return "<null categories>";
+            }
+
+            if (categoryIndex < 0 || categoryIndex >= categories.Count)
+            {
+                return $"<invalid category {categoryIndex}>";
+            }
+
+            var category = categories[categoryIndex];
+            if (category == null)
+            {
+                return "<null category>";
+            }
+
+            var take = Math.Max(0, maxCount);
+            var prefabs = new List<string>();
+            for (var i = 0; i < category.Count && i < take; ++i)
+            {
+                var piece = category[i];
+                prefabs.Add(piece ? GetPrefabName(piece.gameObject) : "<null>");
+            }
+
+            return $"count={category.Count}, first={string.Join("|", prefabs)}";
+        }
+
+        public static bool TrySelectPieceByPrefab(Player player, string prefabName)
+        {
+            if (player == null || string.IsNullOrWhiteSpace(prefabName))
+            {
+                return false;
+            }
+
+            var pieceTable = GetBuildPiecesTable(player);
+            var categories = pieceTable != null ? GetAvailablePieceCategories(pieceTable) : null;
+            if (categories == null)
+            {
+                return false;
+            }
+
+            for (var categoryIndex = 0; categoryIndex < categories.Count; ++categoryIndex)
+            {
+                var category = categories[categoryIndex];
+                if (category == null)
+                {
+                    continue;
+                }
+
+                for (var pieceIndex = 0; pieceIndex < category.Count; ++pieceIndex)
+                {
+                    var piece = category[pieceIndex];
+                    if (!piece)
+                    {
+                        continue;
+                    }
+
+                    if (!string.Equals(GetPrefabName(piece.gameObject), prefabName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        continue;
+                    }
+
+                    InvokePlayerSetBuildCategory(player, categoryIndex);
+                    InvokePlayerSetSelectedPiece(player, new Vector2Int(pieceIndex, 0));
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static Piece GetPieceByPrefabForPlayer(Player player, string prefabName)
+        {
+            if (player == null || string.IsNullOrWhiteSpace(prefabName))
+            {
+                return null;
+            }
+
+            var pieceTable = GetBuildPiecesTable(player);
+            var categories = pieceTable != null ? GetAvailablePieceCategories(pieceTable) : null;
+            if (categories != null)
+            {
+                foreach (var category in categories)
+                {
+                    if (category == null)
+                    {
+                        continue;
+                    }
+
+                    foreach (var piece in category)
+                    {
+                        if (piece != null && string.Equals(GetPrefabName(piece.gameObject), prefabName, StringComparison.OrdinalIgnoreCase))
+                        {
+                            return piece;
+                        }
+                    }
+                }
+            }
+
+            var allPieces = GetAllBuildPiecesForPlayer(player);
+            var match = allPieces?.FirstOrDefault(obj =>
+                obj && string.Equals(GetPrefabName(obj), prefabName, StringComparison.OrdinalIgnoreCase));
+            return match ? match.GetComponent<Piece>() : null;
+        }
+
+        public static string DescribePlacementArgs(object[] args)
+        {
+            if (args == null || args.Length == 0)
+            {
+                return "<none>";
+            }
+
+            var parts = new List<string>(args.Length);
+            for (var i = 0; i < args.Length; ++i)
+            {
+                var arg = args[i];
+                parts.Add($"arg{i}={DescribePlacementArg(arg)}");
+            }
+
+            return string.Join(", ", parts);
+        }
+
+        public static string GetPlacementArgPrefab(object[] args)
+        {
+            if (args == null)
+            {
+                return string.Empty;
+            }
+
+            foreach (var arg in args)
+            {
+                if (arg is Piece piece && piece)
+                {
+                    return GetPrefabName(piece.gameObject);
+                }
+
+                if (arg is GameObject gameObject && gameObject)
+                {
+                    return GetPrefabName(gameObject);
+                }
+            }
+
+            return string.Empty;
+        }
+
+        public static string DescribeResult(object result)
+        {
+            return result == null ? "<null>" : $"{result} ({result.GetType().Name})";
+        }
+
+        public static bool RefreshPlacementGhost(Player player)
+        {
+            if (player == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                if (PlayerUpdatePlacementGhostMethod != null)
+                {
+                    PlayerUpdatePlacementGhostMethod.Invoke(player, null);
+                    return true;
+                }
+
+                var selectedPrefab = GetSelectedBuildPiecePrefab(player);
+                var selectedPiece = selectedPrefab ? selectedPrefab.GetComponent<Piece>() : null;
+                if (PlayerSetupPlacementGhostPrefabMethod != null && selectedPrefab != null)
+                {
+                    PlayerSetupPlacementGhostPrefabMethod.Invoke(player, new object[] { selectedPrefab });
+                    return true;
+                }
+
+                if (PlayerSetupPlacementGhostPieceMethod != null && selectedPiece != null)
+                {
+                    PlayerSetupPlacementGhostPieceMethod.Invoke(player, new object[] { selectedPiece });
+                    return true;
+                }
+
+                if (PlayerSetupPlacementGhostNoArgMethod != null)
+                {
+                    PlayerSetupPlacementGhostNoArgMethod.Invoke(player, null);
+                    return true;
+                }
+
+                foreach (var method in typeof(Player).GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance))
+                {
+                    if (!string.Equals(method.Name, "SetupPlacementGhost", StringComparison.Ordinal))
+                    {
+                        continue;
+                    }
+
+                    var parameters = method.GetParameters();
+                    if (parameters.Length == 0)
+                    {
+                        method.Invoke(player, null);
+                        return true;
+                    }
+
+                    if (parameters.Length == 1)
+                    {
+                        var parameterType = parameters[0].ParameterType;
+                        if (selectedPrefab != null && parameterType.IsInstanceOfType(selectedPrefab))
+                        {
+                            method.Invoke(player, new object[] { selectedPrefab });
+                            return true;
+                        }
+
+                        if (selectedPiece != null && parameterType.IsInstanceOfType(selectedPiece))
+                        {
+                            method.Invoke(player, new object[] { selectedPiece });
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                BuildMenuPlugin.Instance?.DebugLog($"RefreshPlacementGhost failed: {ex.Message}");
+            }
+
+            return false;
+        }
+
+        private static string DescribePlacementArg(object arg)
+        {
+            if (arg == null)
+            {
+                return "<null>";
+            }
+
+            if (arg is Piece piece)
+            {
+                return $"Piece:{GetPrefabName(piece.gameObject)}";
+            }
+
+            if (arg is GameObject gameObject)
+            {
+                return $"GameObject:{GetPrefabName(gameObject)}";
+            }
+
+            if (arg is Component component)
+            {
+                return $"{component.GetType().Name}:{GetPrefabName(component.gameObject)}";
+            }
+
+            return $"{arg} ({arg.GetType().Name})";
+        }
+
+        public static GameObject GetSelectedBuildPiecePrefab(Player player)
+        {
+            var pieceTable = GetBuildPiecesTable(player);
+            if (pieceTable == null)
+            {
+                return null;
+            }
+
+            if (PieceTableGetSelectedPrefabMethod != null)
+            {
+                try
+                {
+                    var selectedPrefab = PieceTableGetSelectedPrefabMethod.Invoke(pieceTable, null) as GameObject;
+                    if (selectedPrefab)
+                    {
+                        return selectedPrefab;
+                    }
+                }
+                catch
+                {
+                    // Ignore and fallback to other strategies.
+                }
+            }
+
+            if (PieceTableGetSelectedPieceMethod != null)
+            {
+                try
+                {
+                    var selectedPiece = PieceTableGetSelectedPieceMethod.Invoke(pieceTable, null);
+                    if (selectedPiece is Piece piece && piece)
+                    {
+                        return piece.gameObject;
+                    }
+                }
+                catch
+                {
+                    // Ignore and fallback to list indexing.
+                }
+            }
+
+            var categories = GetAvailablePieceCategories(pieceTable);
+            if (categories == null || categories.Count == 0)
+            {
+                return null;
+            }
+
+            var selectedCategoryIndex = GetPieceTableSelectedCategoryIndex(pieceTable);
+            if (selectedCategoryIndex < 0 || selectedCategoryIndex >= categories.Count)
+            {
+                selectedCategoryIndex = 0;
+            }
+
+            var selectedCategory = categories[selectedCategoryIndex];
+            if (selectedCategory == null || selectedCategory.Count == 0 || PieceTableSelectedPieceField == null)
+            {
+                return null;
+            }
+
+            try
+            {
+                var selectedPieceValue = PieceTableSelectedPieceField.GetValue(pieceTable);
+                if (selectedPieceValue is Vector2Int selectedPiece)
+                {
+                    var index = Mathf.Clamp(selectedPiece.x, 0, selectedCategory.Count - 1);
+                    var piece = selectedCategory[index];
+                    return piece ? piece.gameObject : null;
+                }
+            }
+            catch
+            {
+                // Ignore and return null.
+            }
+
+            return null;
+        }
+
         public static string GetPrefabName(GameObject obj)
         {
             if (!obj)
@@ -1963,6 +3086,32 @@ namespace BuildMenu
             }
 
             return name.Trim();
+        }
+
+        public static string GetSearchableText(GameObject obj)
+        {
+            if (!obj)
+            {
+                return string.Empty;
+            }
+
+            var prefab = GetPrefabName(obj);
+            if (string.IsNullOrWhiteSpace(prefab))
+            {
+                return string.Empty;
+            }
+
+            if (SearchTextCache.TryGetValue(prefab, out var cached))
+            {
+                return cached;
+            }
+
+            var display = GetDisplayName(obj);
+            var token = GetRawDisplayToken(obj);
+            var combined = $"{display} {HumanizeToken(token)} {prefab}".Trim();
+            var normalized = combined.ToLowerInvariant();
+            SearchTextCache[prefab] = normalized;
+            return normalized;
         }
 
         public static void ConsumeNavigationInput()
@@ -2049,34 +3198,44 @@ namespace BuildMenu
             return null;
         }
 
-        private static System.Reflection.MethodInfo GetNoArgMethod(Type type, string methodName)
+        private static MethodInfo GetNoArgMethod(Type type, string methodName)
         {
             return type?.GetMethod(
                 methodName,
-                System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Instance,
+                BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance,
                 null,
                 Type.EmptyTypes,
                 null);
         }
 
-        private static System.Reflection.MethodInfo GetSingleStringArgMethod(Type type, string methodName)
+        private static MethodInfo GetSingleStringArgMethod(Type type, string methodName)
         {
             return type?.GetMethod(
                 methodName,
-                System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Instance,
+                BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance,
                 null,
                 new[] { typeof(string) },
                 null);
         }
 
-        private static System.Reflection.FieldInfo GetZInputSingletonField(Type type)
+        private static MethodInfo GetSingleArgMethod(Type type, string methodName, Type argType)
+        {
+            return type?.GetMethod(
+                methodName,
+                BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance,
+                null,
+                new[] { argType },
+                null);
+        }
+
+        private static FieldInfo GetZInputSingletonField(Type type)
         {
             if (type == null)
             {
                 return null;
             }
 
-            var flags = System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static;
+            var flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static;
             var preferred = type.GetField("instance", flags)
                             ?? type.GetField("Instance", flags)
                             ?? type.GetField("m_instance", flags)
@@ -2097,14 +3256,14 @@ namespace BuildMenu
             return null;
         }
 
-        private static System.Reflection.PropertyInfo GetZInputSingletonProperty(Type type)
+        private static PropertyInfo GetZInputSingletonProperty(Type type)
         {
             if (type == null)
             {
                 return null;
             }
 
-            var flags = System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static;
+            var flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static;
             var preferred = type.GetProperty("instance", flags)
                             ?? type.GetProperty("Instance", flags)
                             ?? type.GetProperty("m_instance", flags)

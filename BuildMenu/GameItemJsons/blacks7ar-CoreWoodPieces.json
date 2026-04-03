@@ -1,0 +1,622 @@
+{
+  "pieces": [
+    {
+      "Prefab": "BCW_CoreWoodWall",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Wall (Vertical)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewoodwall"
+    },
+    {
+      "Prefab": "BCW_CoreWoodWall1",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Wall (Horizontal)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewoodwall1"
+    },
+    {
+      "Prefab": "BCW_CoreWood_DrawBridgeNarrow",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Draw Bridge Narrow",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_drawbridgenarrow"
+    },
+    {
+      "Prefab": "BCW_CoreWood_DrawBridgeNarrowTall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Draw Bridge Narrow (Tall)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 9,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_drawbridgenarrowtall"
+    },
+    {
+      "Prefab": "BCW_CoreWood_DrawBridgeWide",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Draw Bridge Wide",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 16,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_drawbridgewide"
+    },
+    {
+      "Prefab": "BCW_CoreWood_DrawBridgeWideTall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Draw Bridge Wide (Tall)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 18,
+          "required": "Corewood"
+        },
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_drawbridgewidetall"
+    },
+    {
+      "Prefab": "BCW_CoreWood_Fence1",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Fence",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_fence1"
+    },
+    {
+      "Prefab": "BCW_CoreWood_Fence2",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Fence",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_fence2"
+    },
+    {
+      "Prefab": "BCW_CoreWood_FenceGate",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "CoreWood Fence Gate",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_fencegate"
+    },
+    {
+      "Prefab": "BCW_CoreWood_FencePillar",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Fence Pillar",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_fencepillar"
+    },
+    {
+      "Prefab": "BCW_CoreWood_Floor",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Floor",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_floor"
+    },
+    {
+      "Prefab": "BCW_CoreWood_Gate",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "CoreWood Gate",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Corewood"
+        },
+        {
+          "amount": 3,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_gate"
+    },
+    {
+      "Prefab": "BCW_CoreWood_HalfWall",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Half Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 1,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_halfwall"
+    },
+    {
+      "Prefab": "BCW_CoreWood_PalisadeFence",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Palisade Fence",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_palisadefence"
+    },
+    {
+      "Prefab": "BCW_CoreWood_PalisadeFenceTall",
+      "category": "10",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Palisade Fence (Tall)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_palisadefencetall"
+    },
+    {
+      "Prefab": "BCW_CoreWood_Roof26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Roof 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_roof26"
+    },
+    {
+      "Prefab": "BCW_CoreWood_Roof45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Roof 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_roof45"
+    },
+    {
+      "Prefab": "BCW_CoreWood_RoofICorner26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood I-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_rooficorner26"
+    },
+    {
+      "Prefab": "BCW_CoreWood_RoofICorner45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood I-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_rooficorner45"
+    },
+    {
+      "Prefab": "BCW_CoreWood_RoofOCorner26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood O-Corner 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_roofocorner26"
+    },
+    {
+      "Prefab": "BCW_CoreWood_RoofOCorner45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood O-Corner 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_roofocorner45"
+    },
+    {
+      "Prefab": "BCW_CoreWood_RoofTop26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Roof Top 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_rooftop26"
+    },
+    {
+      "Prefab": "BCW_CoreWood_RoofTop45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Roof Top 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_rooftop45"
+    },
+    {
+      "Prefab": "BCW_CoreWood_Stair",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Stair",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_stair"
+    },
+    {
+      "Prefab": "BCW_CoreWood_TrapDoor",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "TrapDoor"
+      ],
+      "name": "CoreWood TrapDoor",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_trapdoor"
+    },
+    {
+      "Prefab": "BCW_CoreWood_WallRoof26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Wall Roof 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_wallroof26"
+    },
+    {
+      "Prefab": "BCW_CoreWood_WallRoof45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Wall Roof 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_wallroof45"
+    },
+    {
+      "Prefab": "BCW_CoreWood_WallRoofTop26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Roof Cross 26°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_wallrooftop26"
+    },
+    {
+      "Prefab": "BCW_CoreWood_WallRoofTop45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Roof Cross 45°",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_wallrooftop45"
+    },
+    {
+      "Prefab": "BCW_CoreWood_WallRoof_UpsideDown26",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Wall Roof 26° (Inverted)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_wallroof_upsidedown26"
+    },
+    {
+      "Prefab": "BCW_CoreWood_WallRoof_UpsideDown45",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "CoreWood Wall Roof 45° (Inverted)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_wallroof_upsidedown45"
+    },
+    {
+      "Prefab": "BCW_CoreWood_Window1",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "CoreWood Window",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_window1"
+    },
+    {
+      "Prefab": "BCW_CoreWood_WindowHalf",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "CoreWood Window Half",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 3,
+          "required": "Corewood"
+        },
+        {
+          "amount": 1,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$bcw_corewood_windowhalf"
+    }
+  ]
+}

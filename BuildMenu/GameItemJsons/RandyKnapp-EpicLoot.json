@@ -1,0 +1,82 @@
+{
+  "pieces": [
+    {
+      "Prefab": "piece_augmenter",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Augmenter Relic",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Obsidian"
+        },
+        {
+          "amount": 3,
+          "required": "Crystal"
+        },
+        {
+          "amount": 3,
+          "required": "Bronze"
+        },
+        {
+          "amount": 1,
+          "required": "Cheat sword"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$mod_epicloot_assets_augmenter"
+    },
+    {
+      "Prefab": "piece_enchanter",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Enchanter Relic",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Stone"
+        },
+        {
+          "amount": 3,
+          "required": "Surtling Core"
+        },
+        {
+          "amount": 3,
+          "required": "Copper"
+        },
+        {
+          "amount": 1,
+          "required": "Cheat sword"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$mod_epicloot_assets_enchanter"
+    },
+    {
+      "Prefab": "piece_enchantingtable",
+      "category": 0,
+      "craftingStation": "",
+      "interactionHooks": [
+        "EnchantingTable"
+      ],
+      "name": "Enchanting Table",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Finewood"
+        },
+        {
+          "amount": 1,
+          "required": "Surtling Core"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$mod_epicloot_assets_enchantingtable"
+    }
+  ]
+}

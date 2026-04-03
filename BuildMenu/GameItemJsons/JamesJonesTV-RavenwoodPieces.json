@@ -1,0 +1,2374 @@
+{
+  "pieces": [
+    {
+      "Prefab": "fb_bridge_01",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Roofed Wood Bridge",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_bridge_01"
+    },
+    {
+      "Prefab": "fb_bridge_02",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Bridge",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_bridge_02"
+    },
+    {
+      "Prefab": "fb_bridge_stairs",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Bridge Stairs",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_bridge_stairs"
+    },
+    {
+      "Prefab": "fb_fortress_gates",
+      "category": "9",
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Wall Gate",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_gates"
+    },
+    {
+      "Prefab": "fb_fortress_portcullis",
+      "category": "9",
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Portcullis Gate",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_portcullis"
+    },
+    {
+      "Prefab": "fb_fortress_wall",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall"
+    },
+    {
+      "Prefab": "fb_fortress_wall_corner",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall Corner",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_corner"
+    },
+    {
+      "Prefab": "fb_fortress_wall_cross",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall Cross",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 500,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_cross"
+    },
+    {
+      "Prefab": "fb_fortress_wall_end",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall End",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_end"
+    },
+    {
+      "Prefab": "fb_fortress_wall_gateway",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall Gateway",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_gateway"
+    },
+    {
+      "Prefab": "fb_fortress_wall_portcullis",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall Portcullis",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_portcullis"
+    },
+    {
+      "Prefab": "fb_fortress_wall_stair_left",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall Stair Left",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_stair_left"
+    },
+    {
+      "Prefab": "fb_fortress_wall_stair_right",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall Stair Right",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_stair_right"
+    },
+    {
+      "Prefab": "fb_fortress_wall_tjunction",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall T-Junction",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_tjunction"
+    },
+    {
+      "Prefab": "fb_fortress_wall_tower",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Fortress Wall Tower",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wall_tower"
+    },
+    {
+      "Prefab": "fb_house_01",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "House 01",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Finewood"
+        },
+        {
+          "amount": 300,
+          "required": "Stone"
+        },
+        {
+          "amount": 50,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_house_01"
+    },
+    {
+      "Prefab": "fb_house_02",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "House 02",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 150,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Finewood"
+        },
+        {
+          "amount": 200,
+          "required": "Stone"
+        },
+        {
+          "amount": 80,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_house_02"
+    },
+    {
+      "Prefab": "fb_house_03",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "House 03",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Finewood"
+        },
+        {
+          "amount": 400,
+          "required": "Stone"
+        },
+        {
+          "amount": 100,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_house_03"
+    },
+    {
+      "Prefab": "fb_house_04",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "House 04",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 450,
+          "required": "Wood"
+        },
+        {
+          "amount": 200,
+          "required": "Finewood"
+        },
+        {
+          "amount": 400,
+          "required": "Stone"
+        },
+        {
+          "amount": 100,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_house_04"
+    },
+    {
+      "Prefab": "fb_shelter_01",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Shelter",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Finewood"
+        },
+        {
+          "amount": 100,
+          "required": "Stone"
+        },
+        {
+          "amount": 50,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_shelter_01"
+    },
+    {
+      "Prefab": "fb_viking_house_01",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Viking House 01",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Finewood"
+        },
+        {
+          "amount": 400,
+          "required": "Stone"
+        },
+        {
+          "amount": 50,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_viking_house_01"
+    },
+    {
+      "Prefab": "fb_viking_house_02",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Viking House 02",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Wood"
+        },
+        {
+          "amount": 200,
+          "required": "Finewood"
+        },
+        {
+          "amount": 50,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_viking_house_02"
+    },
+    {
+      "Prefab": "fb_viking_house_03",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Viking House 03",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 600,
+          "required": "Wood"
+        },
+        {
+          "amount": 300,
+          "required": "Finewood"
+        },
+        {
+          "amount": 200,
+          "required": "Stone"
+        },
+        {
+          "amount": 150,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_viking_house_03"
+    },
+    {
+      "Prefab": "fb_viking_house_04",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Viking House 04",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Wood"
+        },
+        {
+          "amount": 150,
+          "required": "Finewood"
+        },
+        {
+          "amount": 400,
+          "required": "Stone"
+        },
+        {
+          "amount": 95,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_viking_house_04"
+    },
+    {
+      "Prefab": "fb_viking_house_05",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Viking House 05",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Finewood"
+        },
+        {
+          "amount": 300,
+          "required": "Stone"
+        },
+        {
+          "amount": 50,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_viking_house_05"
+    },
+    {
+      "Prefab": "fb_viking_house_06",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Viking House 06",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Wood"
+        },
+        {
+          "amount": 200,
+          "required": "Finewood"
+        },
+        {
+          "amount": 400,
+          "required": "Stone"
+        },
+        {
+          "amount": 100,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_viking_house_06"
+    },
+    {
+      "Prefab": "fb_viking_house_07",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Viking House 07",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 600,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Finewood"
+        },
+        {
+          "amount": 400,
+          "required": "Stone"
+        },
+        {
+          "amount": 50,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_viking_house_07"
+    },
+    {
+      "Prefab": "fb_viking_house_08",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Viking House 08",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Finewood"
+        },
+        {
+          "amount": 200,
+          "required": "Stone"
+        },
+        {
+          "amount": 50,
+          "required": "Resin"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_viking_house_08"
+    },
+    {
+      "Prefab": "fb_wood_door_01",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Wood Door 01",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "$piece_fb_wood_door_01"
+    },
+    {
+      "Prefab": "mm_ancient_tree",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Ancient Tree",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Wood"
+        },
+        {
+          "amount": 100,
+          "required": "Ancient Bark"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Ancient Tree"
+    },
+    {
+      "Prefab": "mm_ashwood_tree",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Ashwood Tree",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Wood"
+        },
+        {
+          "amount": 50,
+          "required": "Ashwood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Ashwood Tree"
+    },
+    {
+      "Prefab": "mm_asksvin_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Asksvin Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Asksvin Sign"
+    },
+    {
+      "Prefab": "mm_black_bear_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Black Bear Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Black Bear Sign"
+    },
+    {
+      "Prefab": "mm_boar_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Boar Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Boar Sign"
+    },
+    {
+      "Prefab": "mm_brown_bear_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Brown Bear Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Brown Bear Sign"
+    },
+    {
+      "Prefab": "mm_castle_floor",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Castle Floor 4x4",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Castle Floor 4x4"
+    },
+    {
+      "Prefab": "mm_castle_floor_2x2",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Castle Floor 2x2",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Castle Floor 2x2"
+    },
+    {
+      "Prefab": "mm_castle_floor_8x8",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Castle Floor 8x8",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Castle Floor 8x8"
+    },
+    {
+      "Prefab": "mm_castle_gateway",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Castle Gateway",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 80,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Castle Gateway"
+    },
+    {
+      "Prefab": "mm_castle_tower",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Castle Tower",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 60,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Castle Tower"
+    },
+    {
+      "Prefab": "mm_castle_wall",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Castle Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Castle Wall"
+    },
+    {
+      "Prefab": "mm_chicken_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Chicken Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Chicken Sign"
+    },
+    {
+      "Prefab": "mm_darkhorn_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Darkhorn Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Darkhorn Sign"
+    },
+    {
+      "Prefab": "mm_displaycase",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Display Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 10,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Display Wall"
+    },
+    {
+      "Prefab": "mm_fir_tree_large",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Fir Tree",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Fir Tree"
+    },
+    {
+      "Prefab": "mm_fir_tree_massive",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Massive Fir Tree",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Massive Fir Tree"
+    },
+    {
+      "Prefab": "mm_fir_tree_medium",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Medium Fir Tree",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Medium Fir Tree"
+    },
+    {
+      "Prefab": "mm_fir_tree_small",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Small Fir Tree",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 25,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Small Fir Tree"
+    },
+    {
+      "Prefab": "mm_fox_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fox Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Fox Sign"
+    },
+    {
+      "Prefab": "mm_hedge_angle_15",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Hedge Angle 15",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Hedge Angle 15"
+    },
+    {
+      "Prefab": "mm_hedge_angle_45",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Hedge Angle 45",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Hedge Angle 45"
+    },
+    {
+      "Prefab": "mm_hedge_angle_90",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Hedge Angle 90",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Hedge Angle 90"
+    },
+    {
+      "Prefab": "mm_hedge_arch",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Hedge Arch",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Hedge Arch"
+    },
+    {
+      "Prefab": "mm_hedge_half_horizontal",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Hedge Half Horizontal",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Hedge Half Horizontal"
+    },
+    {
+      "Prefab": "mm_hedge_half_vertical",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Hedge Half Vertical",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Hedge Half Vertical"
+    },
+    {
+      "Prefab": "mm_hedge_quarter",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Hedge Quarter",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Hedge Quarter"
+    },
+    {
+      "Prefab": "mm_hedge_straight",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Hedge Straight",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Hedge Straight"
+    },
+    {
+      "Prefab": "mm_large_gate",
+      "category": "9",
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Large Wall Gate",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 100,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Iron"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall Gate"
+    },
+    {
+      "Prefab": "mm_large_wall",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall"
+    },
+    {
+      "Prefab": "mm_large_wall_corner",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall Corner",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall Corner"
+    },
+    {
+      "Prefab": "mm_large_wall_cross",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall Cross",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 500,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall Cross"
+    },
+    {
+      "Prefab": "mm_large_wall_end",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall End",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 200,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall End"
+    },
+    {
+      "Prefab": "mm_large_wall_gateway",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall Gateway",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall Gateway"
+    },
+    {
+      "Prefab": "mm_large_wall_glass",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall Glass",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Crystal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall Glass"
+    },
+    {
+      "Prefab": "mm_large_wall_ice",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Ice Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Ice Wall"
+    },
+    {
+      "Prefab": "mm_large_wall_ice_corner",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Ice Wall Corner",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Ice Wall Corner"
+    },
+    {
+      "Prefab": "mm_large_wall_ice_gateway",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Ice Wall Gateway",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Ice Wall Gateway"
+    },
+    {
+      "Prefab": "mm_large_wall_ice_glass",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Ice Wall Glass",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Crystal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Ice Wall Glass"
+    },
+    {
+      "Prefab": "mm_large_wall_ice_stairs",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Ice Wall Stairs",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Ice Wall Stairs"
+    },
+    {
+      "Prefab": "mm_large_wall_ice_stairs_reverse",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Ice Wall Stairs Alt",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Ice Wall Stairs Alt"
+    },
+    {
+      "Prefab": "mm_large_wall_ice_tower",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Ice Wall Tower",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Ice Wall Tower"
+    },
+    {
+      "Prefab": "mm_large_wall_lava",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Lava Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Lava Wall"
+    },
+    {
+      "Prefab": "mm_large_wall_lava_corner",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Lava Wall Corner",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Lava Wall Corner"
+    },
+    {
+      "Prefab": "mm_large_wall_lava_gateway",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Lava Wall Gateway",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Lava Wall Gateway"
+    },
+    {
+      "Prefab": "mm_large_wall_lava_stairs",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Lava Wall Stairs",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Lava Wall Stairs"
+    },
+    {
+      "Prefab": "mm_large_wall_lava_stairs_reverse",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Lava Wall Stairs Alt",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Lava Wall Stairs Alt"
+    },
+    {
+      "Prefab": "mm_large_wall_lava_tower",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Lava Wall Tower",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Lava Wall Tower"
+    },
+    {
+      "Prefab": "mm_large_wall_marble",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Dark Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Dark Wall"
+    },
+    {
+      "Prefab": "mm_large_wall_marble_corner",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large  Dark Wall Corner",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large  Dark Wall Corner"
+    },
+    {
+      "Prefab": "mm_large_wall_marble_gateway",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large  Dark Wall Gateway",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large  Dark Wall Gateway"
+    },
+    {
+      "Prefab": "mm_large_wall_marble_glass",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Dark Wall Glass",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        },
+        {
+          "amount": 20,
+          "required": "Crystal"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Dark Wall Glass"
+    },
+    {
+      "Prefab": "mm_large_wall_marble_stairs",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large  Dark Wall Stairs",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large  Dark Wall Stairs"
+    },
+    {
+      "Prefab": "mm_large_wall_marble_stairs_reverse",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Dark Wall Stairs Alt",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Dark Wall Stairs Alt"
+    },
+    {
+      "Prefab": "mm_large_wall_marble_tower",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Dark Wall Tower",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Dark Wall Tower"
+    },
+    {
+      "Prefab": "mm_large_wall_mossy",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Mossy Wall",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Mossy Wall"
+    },
+    {
+      "Prefab": "mm_large_wall_mossy_corner",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large  Mossy Wall Corner",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large  Mossy Wall Corner"
+    },
+    {
+      "Prefab": "mm_large_wall_mossy_gateway",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large  Mossy Wall Gateway",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 300,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large  Mossy Wall Gateway"
+    },
+    {
+      "Prefab": "mm_large_wall_mossy_stairs",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large  Mossy Wall Stairs",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large  Mossy Wall Stairs"
+    },
+    {
+      "Prefab": "mm_large_wall_mossy_stairs_reverse",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Mossy Wall Stairs Alt",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Mossy Wall Stairs Alt"
+    },
+    {
+      "Prefab": "mm_large_wall_mossy_tower",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Mossy Wall Tower",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Mossy Wall Tower"
+    },
+    {
+      "Prefab": "mm_large_wall_stairs",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall Stairs",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall Stairs"
+    },
+    {
+      "Prefab": "mm_large_wall_stairs_reverse",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall Stairs Alt",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall Stairs Alt"
+    },
+    {
+      "Prefab": "mm_large_wall_tjunction",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall T-Junction",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall T-Junction"
+    },
+    {
+      "Prefab": "mm_large_wall_tower",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Large Wall Tower",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 400,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Wall Tower"
+    },
+    {
+      "Prefab": "mm_lox_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Lox Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Lox Sign"
+    },
+    {
+      "Prefab": "mm_maple_tree_01",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Maple Tree 01",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Maple Tree 01"
+    },
+    {
+      "Prefab": "mm_maple_tree_02",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Maple Tree 02",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Maple Tree 02"
+    },
+    {
+      "Prefab": "mm_oak_tree",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Oak Tree",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Wood"
+        },
+        {
+          "amount": 50,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Oak Tree"
+    },
+    {
+      "Prefab": "mm_pine_tree",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Pine Tree",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 25,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Pine Tree"
+    },
+    {
+      "Prefab": "mm_prowler_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Prowler Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Prowler Sign"
+    },
+    {
+      "Prefab": "mm_razorback_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Razorback Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Razorback Sign"
+    },
+    {
+      "Prefab": "mm_sakura_tree_01",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Sakura Tree 01",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Sakura Tree 01"
+    },
+    {
+      "Prefab": "mm_sakura_tree_02",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Sakura Tree 02",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Sakura Tree 02"
+    },
+    {
+      "Prefab": "mm_sakura_tree_03",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Sakura Tree 03",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Sakura Tree 03"
+    },
+    {
+      "Prefab": "mm_sakura_tree_04",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Sakura Tree 04",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Sakura Tree 04"
+    },
+    {
+      "Prefab": "mm_willow_tree",
+      "category": "9",
+      "craftingStation": "",
+      "interactionHooks": [],
+      "name": "Large Willow Tree",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 50,
+          "required": "Corewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Large Willow Tree"
+    },
+    {
+      "Prefab": "mm_wolf_sign",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wolf Sign",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Corewood"
+        },
+        {
+          "amount": 2,
+          "required": "Finewood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wolf Sign"
+    },
+    {
+      "Prefab": "rp_double_doors",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [
+        "Door"
+      ],
+      "name": "Double Doors",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 12,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Double Doors"
+    },
+    {
+      "Prefab": "rp_monster_protector_blue_new",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Monster Protector (50m)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Blue Mushroom"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Monster Protector (50m)"
+    },
+    {
+      "Prefab": "rp_monster_protector_green_new",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Monster Protector (75m)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Blue Mushroom"
+        },
+        {
+          "amount": 10,
+          "required": "Yellow Mushroom"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Monster Protector (75m)"
+    },
+    {
+      "Prefab": "rp_monster_protector_purple_new",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Monster Protector (100m)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Blue Mushroom"
+        },
+        {
+          "amount": 10,
+          "required": "Mushroom"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Monster Protector (100m)"
+    },
+    {
+      "Prefab": "rp_monster_protector_red_new",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Monster Protector (10m)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Mushroom"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Monster Protector (10m)"
+    },
+    {
+      "Prefab": "rp_monster_protector_yellow_new",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Monster Protector (25m)",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        },
+        {
+          "amount": 10,
+          "required": "Yellow Mushroom"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Monster Protector (25m)"
+    },
+    {
+      "Prefab": "rp_road_angled",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Angled Road",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Angled Road"
+    },
+    {
+      "Prefab": "rp_road_curved",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Curved Road",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Curved Road"
+    },
+    {
+      "Prefab": "rp_road_l",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "L-Junction",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "L-Junction"
+    },
+    {
+      "Prefab": "rp_road_straight",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Straight Road",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Straight Road"
+    },
+    {
+      "Prefab": "rp_road_support",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Road Support",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 15,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Road Support"
+    },
+    {
+      "Prefab": "rp_road_t",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "T-Junction",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "T-Junction"
+    },
+    {
+      "Prefab": "rp_road_x",
+      "category": "9",
+      "craftingStation": "Stonecutter",
+      "interactionHooks": [],
+      "name": "Cross Road",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Stone"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Cross Road"
+    },
+    {
+      "Prefab": "rp_stepladder",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Stepladder",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Stepladder"
+    },
+    {
+      "Prefab": "rp_wood_angle_floor_1x1",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Floor Corner 1m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Floor Corner 1m"
+    },
+    {
+      "Prefab": "rp_wood_angle_floor_2x2",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Floor Corner 2m",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Floor Corner 2m"
+    },
+    {
+      "Prefab": "rp_wood_floor_1x1",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Floor 1x1",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Floor 1x1"
+    },
+    {
+      "Prefab": "rp_wood_floor_2x2",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Floor 2x2",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Floor 2x2"
+    },
+    {
+      "Prefab": "rp_wood_floor_4x4",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Floor 4x4",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Floor 4x4"
+    },
+    {
+      "Prefab": "rp_wood_floor_8x8",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Floor 8x8",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 16,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Floor 8x8"
+    },
+    {
+      "Prefab": "rp_wood_wall_1x1",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Wall 1x1",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 2,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Wall 1x1"
+    },
+    {
+      "Prefab": "rp_wood_wall_2x2",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Wall 2x2",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Wall 2x2"
+    },
+    {
+      "Prefab": "rp_wood_wall_4x4",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Wall 4x4",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 8,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Wall 4x4"
+    },
+    {
+      "Prefab": "rp_wood_wall_8x8",
+      "category": "9",
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Wood Wall 8x8",
+      "pieceTable": "Hammer",
+      "required": [
+        {
+          "amount": 16,
+          "required": "Wood"
+        }
+      ],
+      "systemEffects": [],
+      "token": "Wood Wall 8x8"
+    }
+  ]
+}

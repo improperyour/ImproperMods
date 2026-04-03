@@ -1,0 +1,92 @@
+{
+  "pieces": [
+    {
+      "Prefab": "rug_BlackBear_TW",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Black bear rug",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 4,
+          "required": "Black Bear Pelt"
+        },
+        {
+          "amount": 1,
+          "required": "Black Bear Trophy"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "$piece_rug_blackbear_TW"
+    },
+    {
+      "Prefab": "rug_Fox_TW",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Fox rug",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 5,
+          "required": "Fox Pelt"
+        },
+        {
+          "amount": 1,
+          "required": "Fox Trophy"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "$piece_rug_fox_TW"
+    },
+    {
+      "Prefab": "rug_GrizzlyBear_TW",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Grizzly rug",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Grizzly Pelt"
+        },
+        {
+          "amount": 1,
+          "required": "Grizzly Bear Trophy"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "$piece_rug_grizzlybear_TW"
+    },
+    {
+      "Prefab": "rug_Rotten_TW",
+      "category": 0,
+      "craftingStation": "Workbench",
+      "interactionHooks": [],
+      "name": "Rotten Rug",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 6,
+          "required": "Rotten Pelt"
+        },
+        {
+          "amount": 1,
+          "required": "Rotting Elk Trophy"
+        }
+      ],
+      "systemEffects": [
+        "Comfort:1"
+      ],
+      "token": "$piece_rug_rotten_TW"
+    }
+  ]
+}

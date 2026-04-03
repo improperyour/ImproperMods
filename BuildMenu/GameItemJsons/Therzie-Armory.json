@@ -1,0 +1,41 @@
+{
+  "pieces": [
+    {
+      "Prefab": "Armory_TW",
+      "category": 0,
+      "craftingStation": "Forge",
+      "interactionHooks": [
+        "CraftingStation",
+        "Smelter"
+      ],
+      "name": "Armory",
+      "pieceTable": "Hammer, _HammerPieceTable",
+      "required": [
+        {
+          "amount": 20,
+          "required": "Stone"
+        },
+        {
+          "amount": 40,
+          "required": "Bronze Nails"
+        },
+        {
+          "amount": 10,
+          "required": "Bronze"
+        },
+        {
+          "amount": 5,
+          "required": "Surtling Core"
+        },
+        {
+          "amount": 1,
+          "required": "Eikthyr Trophy"
+        }
+      ],
+      "systemEffects": [
+        "CraftingStation"
+      ],
+      "token": "$piece_armory_TW"
+    }
+  ]
+}
