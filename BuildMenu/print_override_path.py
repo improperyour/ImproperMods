@@ -60,7 +60,7 @@ def _append_placement_rules(
         overrides.get("placement_rules"),
         "overrides.placement_rules",
     )
-    for entry in rules:
+    for idx, entry in enumerate(rules, start=1):
         property_name = str(entry.get("property", "")).strip()
         match_type = str(entry.get("match_type", "")).strip()
         patterns_raw = entry.get("patterns", [])
@@ -85,6 +85,7 @@ def _append_placement_rules(
         rows.append(
             {
                 "stage": "placement",
+                "precedence": str(idx),
                 "node": _target_text(forced_top, out_sub),
                 "property": property_name,
                 "match_type": match_type,
@@ -99,11 +100,17 @@ def _append_subcategory_rules(
     target_top: str,
     target_sub: str,
 ) -> None:
+    placement_rule_count = len(
+        _extract_rules_list(
+            overrides.get("placement_rules"),
+            "overrides.placement_rules",
+        )
+    )
     rules = _extract_rules_list(
         overrides.get("subcategory_overrides"),
         "overrides.subcategory_overrides",
     )
-    for entry in rules:
+    for idx, entry in enumerate(rules, start=1):
         property_name = str(entry.get("property", "")).strip()
         pattern = str(entry.get("pattern", "")).strip()
         forced_sub = str(entry.get("subcategory", "")).strip()
@@ -120,6 +127,7 @@ def _append_subcategory_rules(
         rows.append(
             {
                 "stage": "subcategory",
+                "precedence": str(placement_rule_count + idx),
                 "node": _target_text(target_top, forced_sub),
                 "property": property_name,
                 "match_type": "regex",
@@ -131,11 +139,13 @@ def _append_subcategory_rules(
 def _print_rows(rows: list[dict[str, str]]) -> None:
     if not rows:
         return
+    precedence_w = max(len(row.get("precedence", "")) for row in rows)
     node_w = max(len(row["node"]) for row in rows)
     prop_w = max(len(row["property"]) for row in rows)
     match_w = max(len(row["match_type"]) for row in rows)
     for row in rows:
         print(
+            f"#{row.get('precedence', '').rjust(precedence_w)}|"
             f"{row['node'].ljust(node_w)}|"
             f"{row['property'].ljust(prop_w)}|"
             f"{row['match_type'].ljust(match_w)}|"
@@ -209,11 +219,13 @@ def _summarize_criteria(rows: list[dict[str, str]]) -> str:
 
     parts: list[str] = []
     for row in rows:
+        precedence = row.get("precedence", "")
+        node = row.get("node", "")
         stage = row.get("stage", "")
         prop = row.get("property", "")
         match_type = row.get("match_type", "")
         patterns = row.get("patterns", "")
-        token = f"{stage}|{prop}|{match_type}|{patterns}"
+        token = f"#{precedence}|{node}|{stage}|{prop}|{match_type}|{patterns}"
         parts.append(token)
 
     return "; ".join(parts)
@@ -230,9 +242,8 @@ def _print_target_summaries(overrides: dict[str, Any]) -> None:
         rows = _collect_rows_for_target(overrides, top, sub)
         summaries[target] = _summarize_criteria(rows)
 
-    target_w = max(len(t) for t in targets)
     for target in targets:
-        print(f"{target.ljust(target_w)}|{summaries[target]}")
+        print(summaries[target])
 
 
 def main() -> int:

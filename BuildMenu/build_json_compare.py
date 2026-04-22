@@ -28,7 +28,6 @@ def parse_args() -> argparse.Namespace:
         help="Single JSON file to compare against the combined --dir input.",
     )
     parser.add_argument(
-        "-output",
         "--output",
         required=True,
         help="Output JSON path for differing records.",

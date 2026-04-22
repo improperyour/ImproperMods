@@ -20,9 +20,9 @@ namespace BuildMenu
     [BepInPlugin(ModGuid, ModName, ModVersion)]
     public class BuildMenuPlugin : BaseUnityPlugin
     {
-        public const string ModGuid = "com.paradoxpoint.valheim.buildmenufilter";
+        public const string ModGuid = "com.improperyour.buildmenufilter";
         public const string ModName = "Build Menu";
-        public const string ModVersion = "0.1.0";
+        public const string ModVersion = "0.9.1";
 
         internal static BuildMenuPlugin Instance;
         internal static Harmony Harmony;

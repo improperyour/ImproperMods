@@ -627,7 +627,7 @@ def apply_placement_rules(
     crafting_station: CraftingStationName,
     interaction_hooks: list[InteractionHookName],
     system_effects: list[str],
-) -> tuple[TopCategoryName | None, SubCategoryName | None, str | None]:
+) -> tuple[TopCategoryName | None, SubCategoryName | None, str | None, list[str], int | None]:
     """
     Evaluate full-placement rules that can force top and optionally subcategory.
 
@@ -640,10 +640,12 @@ def apply_placement_rules(
         system_effects (list[str]): Normalized system effects.
 
     Returns:
-        tuple[TopCategoryName | None, SubCategoryName | None, str | None]:
+        tuple[TopCategoryName | None, SubCategoryName | None, str | None, list[str], int | None]:
             - forced top category declared by the matched rule
             - forced subcategory declared by the matched rule
             - reason string for diagnostics
+            - reasoning lines for checked placement rules (up to chosen rule)
+            - chosen rule index (1-based), if matched
     """
     lowered_name = name.lower()
     lowered_prefab = prefab.lower()
@@ -653,9 +655,25 @@ def apply_placement_rules(
     lowered_system_effects = [effect.lower() for effect in system_effects]
     combined_text = f"{lowered_name} {lowered_prefab}"
 
-    top_only_fallback: tuple[TopCategoryName | None, SubCategoryName | None, str | None] | None = None
+    top_only_fallback: tuple[
+        TopCategoryName | None,
+        SubCategoryName | None,
+        str | None,
+        int,
+    ] | None = None
+    checked_rule_lines: list[str] = []
 
-    for property_name, match_type, patterns, forced_top, forced_subcategory in PLACEMENT_RULES:
+    for idx, (property_name, match_type, patterns, forced_top, forced_subcategory) in enumerate(PLACEMENT_RULES, start=1):
+        shown = patterns[:3]
+        remaining = len(patterns) - len(shown)
+        pattern_tokens = list(shown)
+        if remaining > 0:
+            pattern_tokens.append(f"+{remaining}")
+        pattern_list = ",".join(pattern_tokens)
+        checked_rule_lines.append(
+            f"rule{idx} -> {property_name},{match_type},[{pattern_list}]"
+        )
+
         scalar_targets: dict[str, str] = {
             "name": lowered_name,
             "prefab": lowered_prefab,
@@ -695,23 +713,35 @@ def apply_placement_rules(
                     break
 
         if matched:
-            to_part = (
+            display_target = (
                 f"{forced_top}:{forced_subcategory}"
                 if forced_subcategory is not None
                 else forced_top
             )
             reason = (
                 f"placement rule {property_name} {match_type} '{matched_pattern or '<matched>'}'"
-                f" -> {to_part}"
+                f" -> {display_target}"
             )
             if forced_subcategory is not None:
-                return forced_top, forced_subcategory, reason
+                checked_rule_lines[-1] = (
+                    f"{checked_rule_lines[-1]} -> chosen ({forced_top}:{forced_subcategory})"
+                )
+                return forced_top, forced_subcategory, reason, checked_rule_lines, idx
             if top_only_fallback is None:
-                top_only_fallback = (forced_top, forced_subcategory, reason)
+                top_only_fallback = (forced_top, forced_subcategory, reason, idx)
 
     if top_only_fallback is not None:
-        return top_only_fallback
-    return None, None, None
+        forced_top, forced_subcategory, reason, chosen_idx = top_only_fallback
+        out_lines = checked_rule_lines[:chosen_idx]
+        if out_lines:
+            chosen_target = (
+                f"{forced_top}:{forced_subcategory}"
+                if forced_subcategory is not None
+                else f"{forced_top}"
+            )
+            out_lines[-1] = f"{out_lines[-1]} -> chosen ({chosen_target})"
+        return forced_top, forced_subcategory, reason, out_lines, chosen_idx
+    return None, None, None, checked_rule_lines, None
 
 
 def classify_top_category(
@@ -1258,7 +1288,7 @@ def classify_records_to_grouped_exact(
         system_effects: list[str] = record["system_effects"]
         required_items: list[RequiredItem] = record["required_items"]
 
-        forced_top, forced_sub, full_placement_reason = apply_placement_rules(
+        forced_top, forced_sub, full_placement_reason, placement_rule_reasoning, chosen_rule_idx = apply_placement_rules(
             name=name,
             prefab=prefab,
             source_category=source_category,
@@ -1267,25 +1297,24 @@ def classify_records_to_grouped_exact(
             system_effects=system_effects,
         )
 
-        reasoning: list[str] = []
+        reasoning: list[str] = list(placement_rule_reasoning)
         if forced_top is not None:
             top_category = forced_top
-            top_reasons = [full_placement_reason or "full placement override"]
-            top_trace = [
-                "PLACEMENT_RULES: chosen "
-                f"({full_placement_reason or 'placement rule'}; top forced)"
-            ]
+            top_reason_text = full_placement_reason or "full placement override"
+            if chosen_rule_idx is not None:
+                top_reason_text = f"(rule #{chosen_rule_idx}) {top_reason_text}"
+            top_reasons = [top_reason_text]
         else:
             top_category, top_reasons, top_trace = classify_top_category(
                 source_category=source_category,
             )
-            top_trace = ["PLACEMENT_RULES: none", *top_trace]
-        reasoning.extend(top_trace)
-
         full_applied = False
         if forced_sub is not None:
             subcategory_raw = forced_sub
-            sub_reasons = [full_placement_reason or "full placement subcategory override"]
+            sub_reason_text = full_placement_reason or "full placement subcategory override"
+            if chosen_rule_idx is not None:
+                sub_reason_text = f"(rule #{chosen_rule_idx}) {sub_reason_text}"
+            sub_reasons = [sub_reason_text]
             sub_trace = [
                 "PLACEMENT_RULES: chosen "
                 f"({full_placement_reason or 'placement rule'}; subcategory forced)"
@@ -1301,7 +1330,6 @@ def classify_records_to_grouped_exact(
                 global_material_presence=global_material_presence,
             )
 
-        reasoning.extend(sub_trace)
         subcategory = subcategory_raw
         subcategory_after_overrides = subcategory
         subcategory = normalize_material_family(subcategory)
@@ -1309,12 +1337,6 @@ def classify_records_to_grouped_exact(
             sub_reasons.append(
                 f"family normalization: {subcategory_after_overrides} -> {subcategory}"
             )
-            reasoning.append(
-                "MATERIAL_FAMILY_NORMALIZATION: chosen "
-                f"({subcategory_after_overrides} -> {subcategory})"
-            )
-        else:
-            reasoning.append("MATERIAL_FAMILY_NORMALIZATION: none")
         grouped_exact[top_category][subcategory].append({
             "name": name,
             "prefab": prefab,
@@ -1326,11 +1348,9 @@ def classify_records_to_grouped_exact(
             "top_category": top_category,
             "subcategory_raw": subcategory_raw,
             "subcategory": subcategory,
-            "split": "exact",
             "reasoning": reasoning,
             "top_reasons": top_reasons,
             "sub_reasons": sub_reasons,
-            "split_reasons": ["contains output is currently disabled; all records routed to exact"],
             "full_placement_target_top": forced_top,
             "full_placement_target_subcategory": forced_sub,
             "required": [
@@ -1664,7 +1684,6 @@ SYNOPSIS
 DESCRIPTION
     This tool reads a Valheim piece dump JSON and produces a combined output JSON containing:
     - exact: hierarchical matrix of top category -> subcategory -> item records
-    - contains: currently emitted as an empty object
     - summary and diagnostics fields for tuning classifications
 
     Item records include both source fields and classification reasoning so you can audit placements.
@@ -1773,7 +1792,6 @@ OVERRIDE STRATEGY (HIGH LEVEL)
 OUTPUT OVERVIEW
     Output JSON top-level keys:
       exact
-      contains
       summary
       observed_materials
       material_frequency_counts
@@ -1784,8 +1802,8 @@ OUTPUT OVERVIEW
     Each item record in exact includes:
       name, prefab, category, craftingStation, source_category,
       interaction_hooks, system_effects,
-      top_category, subcategory_raw, subcategory, split,
-      reasoning, top_reasons, sub_reasons, split_reasons,
+      top_category, subcategory_raw, subcategory,
+      reasoning, top_reasons, sub_reasons,
       required
 
 EXAMPLES
@@ -1989,7 +2007,6 @@ def discover_input_files(input_dir: Path, pattern: str, recursive: bool) -> list
 def build_combined_output(matrix: SplitMatrix, diagnostics: Diagnostics) -> dict[str, Any]:
     return {
         "exact": matrix.get("exact", {}),
-        "contains": matrix.get("contains", {}),
         **diagnostics,
     }
 
@@ -2145,8 +2162,7 @@ def main() -> None:
             sub_keep=sub_keep,
         )
         matrix: SplitMatrix = {
-            "exact": sort_matrix_for_output(grouped_limited),
-            "contains": {},
+            "exact": sort_matrix_for_output(grouped_limited)
         }
 
         material_frequency_counts: CounterType[MaterialName] = Counter()
