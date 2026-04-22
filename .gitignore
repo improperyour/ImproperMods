@@ -43,3 +43,6 @@
 obj/
 bin/
 .idea/
+
+__pycache__
+*DotSettings*
