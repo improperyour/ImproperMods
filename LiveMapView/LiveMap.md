@@ -1,4 +1,4 @@
-﻿## Phase 1: Research & Design
+## Phase 1: Research & Design
 ### 1.1 Game Data Investigation
 - Reverse engineer Valheim's map data format and storage location
 - Identify player position data structures and update frequency
